@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>사소해도 기록</title>
- <link href="https://fftl.github.io///atom.xml" rel="self"/>
- <link href="https://fftl.github.io///"/>
- <updated>2021-01-09T21:55:40+09:00</updated>
- <id>https://fftl.github.io/</id>
+ <link href="https://fftl.github.io/atom.xml" rel="self"/>
+ <link href="https://fftl.github.io/"/>
+ <updated>2021-01-09T22:08:27+09:00</updated>
+ <id>https://fftl.github.io</id>
  <author>
    <name></name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Springboot thymeleaf form post error..?</title>
-   <link href="https://fftl.github.io//springboot/2021/01/09/springboot-thymeleaf-form-post-error.html"/>
+   <link href="https://fftl.github.io/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html"/>
    <updated>2021-01-09T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///springboot/2021/01/09/springboot thymeleaf form post error</id>
+   <id>https://fftl.github.io/springboot/2021/01/09/springboot thymeleaf form post error</id>
    <content type="html">&lt;p&gt;springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;그래서 저는 Dto를 생성했고, Dto 에서 @Builder 를 이용해 Dto로 받은 객체를 Entity로 변환하는 작업을 사용하고 있었습니다. 그런데 아무리 작업을 해도 PostMapping 와 @ModelAttribute 를 이용해 Dto 로 입력을 받았는데 자꾸 null 값만 들어오고 있었습니다.&lt;/p&gt;
@@ -27,9 +27,9 @@
  
  <entry>
    <title>[baekjoon] 3052_나머지 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/18/baekjoon-_3052_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/18/baekjoon-_3052_(java).html"/>
    <updated>2020-12-18T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/18/[baekjoon]_3052_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/18/[baekjoon]_3052_(java)</id>
    <content type="html">&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/3052&quot; target=&quot;_blank&quot;&gt;3052_나머지 (java)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -65,9 +65,9 @@
  
  <entry>
    <title>[baekjoon] 1546_평균 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/18/baekjoon-_1546_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/18/baekjoon-_1546_(java).html"/>
    <updated>2020-12-18T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/18/[baekjoon]_1546_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/18/[baekjoon]_1546_(java)</id>
    <content type="html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://www.acmicpc.net/problem/1546&quot; target=&quot;_blank&quot;&gt;1546_평균 (java)&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -102,9 +102,9 @@
  
  <entry>
    <title>Spring Security 기본 따라해보기</title>
-   <link href="https://fftl.github.io//springsecurity/2020/12/18/Spring_Security_Study_01.html"/>
+   <link href="https://fftl.github.io/springsecurity/2020/12/18/Spring_Security_Study_01.html"/>
    <updated>2020-12-18T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///springsecurity/2020/12/18/Spring_Security_Study_01</id>
+   <id>https://fftl.github.io/springsecurity/2020/12/18/Spring_Security_Study_01</id>
    <content type="html">&lt;ul&gt;
   &lt;li&gt;백기선님의 유튜브 영상 &lt;a href=&quot;https://www.youtube.com/watch?v=zANzxwy4y3k&quot;&gt;https://www.youtube.com/watch?v=zANzxwy4y3k&lt;/a&gt; 에 대한 메모입니다.&lt;/li&gt;
   &lt;li&gt;해당 영상은 스프링 공식 가이드를 따라하며 설명을 해주는 강의 입니다. (&lt;a href=&quot;https://spring.io/guides/gs/securing-web/&quot;&gt;https://spring.io/guides/gs/securing-web/&lt;/a&gt;)&lt;/li&gt;
@@ -336,9 +336,9 @@ test {
  
  <entry>
    <title>[baekjoon] 10817_세 수 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/17/baekjoon-_10817_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/17/baekjoon-_10817_(java).html"/>
    <updated>2020-12-17T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/17/[baekjoon]_10817_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/17/[baekjoon]_10817_(java)</id>
    <content type="html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://www.acmicpc.net/problem/10817&quot; target=&quot;_blank&quot;&gt;10817_세 수 (java)&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -366,9 +366,9 @@ test {
  
  <entry>
    <title>[baekjoon] 1110_더하기 사이클 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/16/baekjoon-_1110_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/16/baekjoon-_1110_(java).html"/>
    <updated>2020-12-16T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/16/[baekjoon]_1110_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/16/[baekjoon]_1110_(java)</id>
    <content type="html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://www.acmicpc.net/problem/1110&quot; target=&quot;_blank&quot;&gt;1110_더하기 사이클 (java)&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -406,9 +406,9 @@ test {
  
  <entry>
    <title>[baekjoon] 4344_평균은 넘겠지 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/14/baekjoon-_4344_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/14/baekjoon-_4344_(java).html"/>
    <updated>2020-12-14T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/14/[baekjoon]_4344_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/14/[baekjoon]_4344_(java)</id>
    <content type="html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://www.acmicpc.net/problem/4344&quot; target=&quot;_blank&quot;&gt;4344_평균은 넘겠지 (java)&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//BufferedReader 를 사용하기 위함&lt;/span&gt;
@@ -465,9 +465,9 @@ test {
  
  <entry>
    <title>[baekjoon] 2577_숫자의 개수 (java)</title>
-   <link href="https://fftl.github.io//java_ps/2020/12/14/baekjoon-_2577_(java).html"/>
+   <link href="https://fftl.github.io/java_ps/2020/12/14/baekjoon-_2577_(java).html"/>
    <updated>2020-12-14T00:00:00+09:00</updated>
-   <id>https://fftl.github.io///java_ps/2020/12/14/[baekjoon]_2577_(java)</id>
+   <id>https://fftl.github.io/java_ps/2020/12/14/[baekjoon]_2577_(java)</id>
    <content type="html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://www.acmicpc.net/problem/2577&quot; target=&quot;_blank&quot;&gt;2577_숫자의 개수 (java)&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//BufferedReader 를 사용하기 위함&lt;/span&gt;
