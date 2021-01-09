@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      [baekjoon] 1546_평균 (java) &middot; 사소해도 기록
+    
+  </title>
+
+  
+  <link rel="canonical" href="https://fftl.github.io//java_ps/2020/12/18/baekjoon-_1546_(java).html">
+  
+
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/poole.css">
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/syntax.css">
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://fftl.github.io//public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://fftl.github.io//public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://fftl.github.io//atom.xml">
+
+  
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="https://fftl.github.io//">Home</a>
+
+    
+
+    
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="https://fftl.github.io//about.html">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2021. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="//" title="Home">사소해도 기록</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">[baekjoon] 1546_평균 (java)</h1>
+  <span class="post-date">18 Dec 2020</span>
+  <p>=&gt; <a href="https://www.acmicpc.net/problem/1546" target="_blank">1546_평균 (java)</a></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>                      
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>            <span class="c1">//scanner 객체를 생성</span>
+        <span class="nc">String</span> <span class="n">countStr</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>                <span class="c1">//첫번째 입력으로 점수의 개수 입력</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">countStr</span><span class="o">);</span>         <span class="c1">//위의 counterStr을 문자로 받았기 때문에 int로 변환</span>
+        <span class="nc">String</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>                 <span class="c1">//다음 라인의 점수들을 입력받음</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">numbersS</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>         <span class="c1">//받은 점수 문자열을 공백을 기준으로 잘라서 numbersS배열에 입력</span>
+        
+        <span class="kt">double</span><span class="o">[]</span> <span class="n">numbersD</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">count</span><span class="o">];</span>          <span class="c1">//점수 개수만큼의 double 배열 선언</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                     <span class="c1">//현재 문자열 숫자인 numbersS 배열을 double 로 변환하여 입력</span>
+            <span class="n">numbersD</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">numbersS</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">numbersD</span><span class="o">);</span>                          <span class="c1">//최고값을 찾기위해 정렬을 해줌(오름차순)</span>
+        <span class="kt">double</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="n">numbersD</span><span class="o">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>              <span class="c1">//가장 마지막의 숫자가 최고값 그러므로 최고값을 maxNum에 담아줌</span>
+        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                                 <span class="c1">//평균을 구하기 위한 점수의 총합을 담을 double 선언</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">double</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbersD</span><span class="o">){</span>                     <span class="c1">//numberD만큼의 반복을 함</span>
+            <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">num</span><span class="o">/</span><span class="n">maxNum</span><span class="o">*</span><span class="mi">100</span><span class="o">;</span>                 <span class="c1">//문제에서 주어진 조작된 평균을 구하기위한 점수/최대점수*100 의 총합을 구함</span>
+        <span class="o">}</span>
+        <span class="kt">double</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">sum</span><span class="o">/</span><span class="n">count</span><span class="o">;</span>                      <span class="c1">//조작된 평균을 구하기위한 합을 점수개수로 나눠줌</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.6f"</span><span class="o">,</span> <span class="n">answer</span><span class="o">));</span>  <span class="c1">//예제처럼 여섯번째 자리까지 반올림하기 위한 String.format 사용</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+</div>
+
+
+<div class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="//springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
+            Springboot thymeleaf form post error..?
+            <small>09 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//java_ps/2020/12/18/baekjoon-_3052_(java).html">
+            [baekjoon] 3052_나머지 (java)
+            <small>18 Dec 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//springsecurity/2020/12/18/Spring_Security_Study_01.html">
+            Spring Security 기본 따라해보기
+            <small>18 Dec 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='//public/js/script.js'></script>
+  </body>
+</html>

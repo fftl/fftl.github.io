@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "Spring Security Study. 01"
-categories: Spring_Security
+title: "Spring Security 기본 따라해보기"
+categories: SpringSecurity
 ---
-
-# SpringSecurity Study. 01
 
 - 백기선님의 유튜브 영상 [https://www.youtube.com/watch?v=zANzxwy4y3k](https://www.youtube.com/watch?v=zANzxwy4y3k) 에 대한 메모입니다.
 - 해당 영상은 스프링 공식 가이드를 따라하며 설명을 해주는 강의 입니다. ([https://spring.io/guides/gs/securing-web/](https://spring.io/guides/gs/securing-web/))

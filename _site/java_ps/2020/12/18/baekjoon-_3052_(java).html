@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      [baekjoon] 3052_나머지 (java) &middot; 사소해도 기록
+    
+  </title>
+
+  
+  <link rel="canonical" href="https://fftl.github.io//java_ps/2020/12/18/baekjoon-_3052_(java).html">
+  
+
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/poole.css">
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/syntax.css">
+  <link rel="stylesheet" href="https://fftl.github.io//public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://fftl.github.io//public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://fftl.github.io//public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://fftl.github.io//atom.xml">
+
+  
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="https://fftl.github.io//">Home</a>
+
+    
+
+    
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="https://fftl.github.io//about.html">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2021. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="//" title="Home">사소해도 기록</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">[baekjoon] 3052_나머지 (java)</h1>
+  <span class="post-date">18 Dec 2020</span>
+  <ul>
+  <li><a href="https://www.acmicpc.net/problem/3052" target="_blank">3052_나머지 (java)</a></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>    <span class="c1">//숫자를 입력받기위한 scanner 객체 생성</span>
+        
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>                        <span class="c1">//숫자가 10개라고 주어졌기 때문에 크기가 10인 배열 생성</span>
+        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">numberList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>  <span class="c1">//add 기능을 사용하기 위해 ArrayList 생성</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                 <span class="c1">//10번의 입력을 받기위한 for문</span>
+            <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                <span class="c1">//입력을 받음</span>
+            <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="mi">42</span><span class="o">;</span>                   <span class="c1">//문제에서 주어진 수은 42로 나눈 나머지를 구해 numbers 배열에 입력</span>
+        <span class="o">}</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>                              <span class="c1">//scanner를 사용할일이 없기에 종료</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbers</span><span class="o">){</span>                  <span class="c1">//완성된 numbers배열을 반복함</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">numberList</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">num</span><span class="o">))</span>        <span class="c1">//numberList 에 존재하는 수인지 판별</span>
+                <span class="n">numberList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>             <span class="c1">//없는 수일경우 추가해줍니다.</span>
+        <span class="o">}</span>
+        
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">numberList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>   <span class="c1">//중복이 제거된 numberList가 완성 그 갯수를 출력</span>
+        
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+
+
+<div class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="//springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
+            Springboot thymeleaf form post error..?
+            <small>09 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//java_ps/2020/12/18/baekjoon-_1546_(java).html">
+            [baekjoon] 1546_평균 (java)
+            <small>18 Dec 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//springsecurity/2020/12/18/Spring_Security_Study_01.html">
+            Spring Security 기본 따라해보기
+            <small>18 Dec 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='//public/js/script.js'></script>
+  </body>
+</html>
