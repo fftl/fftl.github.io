@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spring Security 기본 따라해보기"
-categories: SpringSecurity
+categories: SpringBoot
 ---
 
 - 백기선님의 유튜브 영상 [https://www.youtube.com/watch?v=zANzxwy4y3k](https://www.youtube.com/watch?v=zANzxwy4y3k) 에 대한 메모입니다.

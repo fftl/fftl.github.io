@@ -4,7 +4,7 @@
  <title>사소해도 기록</title>
  <link href="https://fftl.github.io/atom.xml" rel="self"/>
  <link href="https://fftl.github.io/"/>
- <updated>2021-01-09T22:08:27+09:00</updated>
+ <updated>2021-01-10T09:52:57+09:00</updated>
  <id>https://fftl.github.io</id>
  <author>
    <name></name>
@@ -102,9 +102,9 @@
  
  <entry>
    <title>Spring Security 기본 따라해보기</title>
-   <link href="https://fftl.github.io/springsecurity/2020/12/18/Spring_Security_Study_01.html"/>
+   <link href="https://fftl.github.io/springboot/2020/12/18/Spring_Security_Study_01.html"/>
    <updated>2020-12-18T00:00:00+09:00</updated>
-   <id>https://fftl.github.io/springsecurity/2020/12/18/Spring_Security_Study_01</id>
+   <id>https://fftl.github.io/springboot/2020/12/18/Spring_Security_Study_01</id>
    <content type="html">&lt;ul&gt;
   &lt;li&gt;백기선님의 유튜브 영상 &lt;a href=&quot;https://www.youtube.com/watch?v=zANzxwy4y3k&quot;&gt;https://www.youtube.com/watch?v=zANzxwy4y3k&lt;/a&gt; 에 대한 메모입니다.&lt;/li&gt;
   &lt;li&gt;해당 영상은 스프링 공식 가이드를 따라하며 설명을 해주는 강의 입니다. (&lt;a href=&quot;https://spring.io/guides/gs/securing-web/&quot;&gt;https://spring.io/guides/gs/securing-web/&lt;/a&gt;)&lt;/li&gt;
