@@ -2,6 +2,7 @@
 layout: post
 title: "JPA 영속성 컨텍스트란?"
 categories: SpringBoot
+comments: true
 ---
 
 # 영속성 컨텍스트
