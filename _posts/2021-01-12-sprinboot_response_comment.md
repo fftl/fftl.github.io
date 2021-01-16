@@ -2,6 +2,7 @@
 layout: post
 title: "Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)"
 categories: SpringBoot
+comments: true
 ---
 
 요즘 친구들과 미니 프로젝트를 진행중 입니다. 저는 SpringBoot, SpringSecurity, Jwt를 이용한 rest api를 만들고 있습니다.
