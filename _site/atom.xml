@@ -4,7 +4,7 @@
  <title>기록하기</title>
  <link href="https://fftl.github.io/atom.xml" rel="self"/>
  <link href="https://fftl.github.io/"/>
- <updated>2021-01-16T00:14:06+09:00</updated>
+ <updated>2021-01-16T22:15:00+09:00</updated>
  <id>https://fftl.github.io</id>
  <author>
    <name></name>
@@ -32,7 +32,7 @@
   &lt;li&gt;EntityManager.persist(entity); 는 DB에 저장하는 것이 아니라 entity를 영속화 한다는 뜻. 영속성 컨텍스트에 넣는다.&lt;/li&gt;
   &lt;li&gt;영속성 컨텍스트는 논리적인 개념, 눈에 보이지 않는다. 엔티티 매니저를 통해서 영속성 컨텍스트에 접근한다.&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;EntityManager 를 생성하면 PersistenceContext가 생성이 된다.&lt;/p&gt;
+    &lt;p&gt;EntityManager 를 생성하면 영속성 컨텍스트(PersistenceContext)가 생성이 된다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;엔티티의 생명주기&lt;/strong&gt;
     &lt;ul&gt;
@@ -182,12 +182,9 @@
 
 &lt;ul&gt;
   &lt;li&gt;준영속 상태로 만드는 방법
-    &lt;ul&gt;
-      &lt;li&gt;em.detach(entity) - 특정 엔티티만 준영속 상태로 전환&lt;/li&gt;
-      &lt;li&gt;em.clear() - 영속성 컨텍스트를 완전히 초기화&lt;/li&gt;
-      &lt;li&gt;em.close() - 영속성 컨텍스트를 종료 (당연히 완전 종료)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  ⇒ em.detach(entity) - 특정 엔티티만 준영속 상태로 전환
+  ⇒ em.clear() - 영속성 컨텍스트를 완전히 초기화
+  ⇒ em.close() - 영속성 컨텍스트를 종료 (당연히 완전 종료)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//이렇게 가져온 member는 상태는 영속상태가 됨&lt;/span&gt;
