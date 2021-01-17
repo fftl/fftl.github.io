@@ -9,7 +9,7 @@
 
   <title>
     
-      [baekjoon] 4344_평균은 넘겠지 (java) &middot; 기록하기
+      [baekjoon]4344_평균은 넘겠지 (java) &middot; 기록하기
     
   </title>
 
@@ -96,7 +96,7 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[baekjoon] 4344_평균은 넘겠지 (java)</h1>
+  <h1 class="post-title">[baekjoon]4344_평균은 넘겠지 (java)</h1>
   <span class="post-date">14 Dec 2020</span>
   <p>=&gt; <a href="https://www.acmicpc.net/problem/4344" target="_blank">4344_평균은 넘겠지 (java)</a></p>
 
@@ -128,7 +128,8 @@
             <span class="o">}</span>
             
             <span class="nc">String</span> <span class="n">linse</span><span class="o">[]</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>           <span class="c1">//라인을 공백으로 분리 해서 linse[] 배열에 넣어줌</span>
-            <span class="n">lineCount</span> <span class="o">=</span> <span class="nc">Float</span><span class="o">.</span><span class="na">parseFloat</span><span class="o">(</span><span class="n">linse</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>     <span class="c1">//라인의 첫번째 수를 선언해놓은 lineCount 에 담아줌(점수의 개수) </span>
+            <span class="c1">//라인의 첫번째 수를 선언해놓은 lineCount 에 담아줌(점수의 개수)</span>
+            <span class="n">lineCount</span> <span class="o">=</span> <span class="nc">Float</span><span class="o">.</span><span class="na">parseFloat</span><span class="o">(</span><span class="n">linse</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>      
             
             <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">linse</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>          <span class="c1">//라인의 점수 갯수만큼 반복함</span>
                 <span class="n">lineSum</span> <span class="o">=</span> <span class="n">lineSum</span> <span class="o">+</span> <span class="nc">Float</span><span class="o">.</span><span class="na">parseFloat</span><span class="o">(</span><span class="n">linse</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span> <span class="c1">//점수들의 합계를 구함</span>
@@ -142,7 +143,8 @@
                 <span class="o">}</span>
             <span class="o">}</span>
             <span class="n">upAve</span> <span class="o">=</span> <span class="n">upCount</span><span class="o">/</span><span class="n">lineCount</span><span class="o">*</span><span class="mi">100</span><span class="o">;</span>              <span class="c1">//upCount를 점수 개수로 나누고 *100 하여 비율을 구해줌</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.3f%%"</span><span class="o">,</span> <span class="n">upAve</span><span class="o">));</span> <span class="c1">//String.format을 이용해 소숫점 셋째자리까지 출력해 줌</span>
+            <span class="c1">//String.format을 이용해 소숫점 셋째자리까지 출력해 줌</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.3f%%"</span><span class="o">,</span> <span class="n">upAve</span><span class="o">));</span> 
             
             
         <span class="o">}</span>
@@ -159,27 +161,27 @@
     
       <li>
         <h3>
+          <a href="/java_ps/2021/01/17/programmers-crain.html">
+            [programmers]크레인 인형뽑기 게임 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
+            [programmers]모의고사 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/springboot/2021/01/16/JPA-Persistence-Context.html">
             JPA 영속성 컨텍스트란?
             <small>16 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-            <small>12 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Springboot thymeleaf form post error..?
-            <small>09 Jan 2021</small>
           </a>
         </h3>
       </li>

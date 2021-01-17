@@ -9,7 +9,7 @@
 
   <title>
     
-      [baekjoon] 2577_숫자의 개수 (java) &middot; 기록하기
+      [baekjoon]2577_숫자의 개수 (java) &middot; 기록하기
     
   </title>
 
@@ -96,7 +96,7 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[baekjoon] 2577_숫자의 개수 (java)</h1>
+  <h1 class="post-title">[baekjoon]2577_숫자의 개수 (java)</h1>
   <span class="post-date">14 Dec 2020</span>
   <p>=&gt; <a href="https://www.acmicpc.net/problem/2577" target="_blank">2577_숫자의 개수 (java)</a></p>
 
@@ -120,7 +120,8 @@
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>            <span class="c1">//0~9의 개수를 구하기 위한 10번 반복</span>
             <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                  <span class="c1">//0~9의 개수를 각각 세어주기 위한 count</span>
             <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">num</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">j</span><span class="o">++){</span> <span class="c1">//세수의 곱을 자리수 만큼 반복</span>
-                <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">)-</span><span class="sc">'0'</span><span class="o">;</span>     <span class="c1">//첫번째 숫자부터 가져옴 char으로 가져왔으니 int로 변환해주기 위해 '0'을 뺴주는 편법을 사용함 </span>
+                <span class="c1">//첫번째 숫자부터 가져옴 char으로 가져왔으니 int로 변환해주기 위해 '0'을 뺴주는 편법을 사용함</span>
+                <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">)-</span><span class="sc">'0'</span><span class="o">;</span>      
                 <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">==</span><span class="n">i</span><span class="o">){</span>                      <span class="c1">//가져온 수가 0~9 각각의 수와 같으면 count값 증가</span>
                     <span class="n">count</span><span class="o">++;</span>
                 <span class="o">}</span>
@@ -143,27 +144,27 @@
     
       <li>
         <h3>
+          <a href="/java_ps/2021/01/17/programmers-crain.html">
+            [programmers]크레인 인형뽑기 게임 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
+            [programmers]모의고사 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/springboot/2021/01/16/JPA-Persistence-Context.html">
             JPA 영속성 컨텍스트란?
             <small>16 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-            <small>12 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Springboot thymeleaf form post error..?
-            <small>09 Jan 2021</small>
           </a>
         </h3>
       </li>

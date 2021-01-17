@@ -9,7 +9,7 @@
 
   <title>
     
-      [baekjoon] 3052_나머지 (java) &middot; 기록하기
+      [baekjoon]3052_나머지 (java) &middot; 기록하기
     
   </title>
 
@@ -96,35 +96,42 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[baekjoon] 3052_나머지 (java)</h1>
+  <h1 class="post-title">[baekjoon]3052_나머지 (java)</h1>
   <span class="post-date">18 Dec 2020</span>
-  <ul>
-  <li><a href="https://www.acmicpc.net/problem/3052" target="_blank">3052_나머지 (java)</a></li>
-</ul>
+  <p>=&gt; <a href="https://www.acmicpc.net/problem/3052" target="_blank">3052_나머지 (java)</a></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
-        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>    <span class="c1">//숫자를 입력받기위한 scanner 객체 생성</span>
+        <span class="c1">//숫자를 입력받기위한 scanner 객체 생성</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>    
         
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>                        <span class="c1">//숫자가 10개라고 주어졌기 때문에 크기가 10인 배열 생성</span>
-        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">numberList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>  <span class="c1">//add 기능을 사용하기 위해 ArrayList 생성</span>
+        <span class="c1">//숫자가 10개라고 주어졌기 때문에 크기가 10인 배열 생성</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>                        
+        <span class="c1">//add 기능을 사용하기 위해 ArrayList 생성</span>
+        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">numberList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>  
         
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                 <span class="c1">//10번의 입력을 받기위한 for문</span>
-            <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                <span class="c1">//입력을 받음</span>
-            <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="mi">42</span><span class="o">;</span>                   <span class="c1">//문제에서 주어진 수은 42로 나눈 나머지를 구해 numbers 배열에 입력</span>
+        <span class="c1">//10번의 입력을 받기위한 for문</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                 
+            <span class="c1">//입력을 받음</span>
+            <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                
+            <span class="c1">//문제에서 주어진 수은 42로 나눈 나머지를 구해 numbers 배열에 입력</span>
+            <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="mi">42</span><span class="o">;</span>                   
         <span class="o">}</span>
-        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>                              <span class="c1">//scanner를 사용할일이 없기에 종료</span>
+        <span class="c1">//scanner를 사용할일이 없기에 종료</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>                              
         
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbers</span><span class="o">){</span>                  <span class="c1">//완성된 numbers배열을 반복함</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">numberList</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">num</span><span class="o">))</span>        <span class="c1">//numberList 에 존재하는 수인지 판별</span>
-                <span class="n">numberList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>             <span class="c1">//없는 수일경우 추가해줍니다.</span>
+        <span class="c1">//완성된 numbers배열을 반복함</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbers</span><span class="o">){</span>                  
+            <span class="c1">//numberList 에 존재하는 수인지 판별</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">numberList</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">num</span><span class="o">))</span>        
+                <span class="c1">//없는 수일경우 추가해줍니다.</span>
+                <span class="n">numberList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>             
         <span class="o">}</span>
         
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">numberList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>   <span class="c1">//중복이 제거된 numberList가 완성 그 갯수를 출력</span>
-        
-        
+        <span class="c1">//중복이 제거된 numberList가 완성 그 갯수를 출력</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">numberList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>   
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
@@ -138,27 +145,27 @@
     
       <li>
         <h3>
+          <a href="/java_ps/2021/01/17/programmers-crain.html">
+            [programmers]크레인 인형뽑기 게임 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
+            [programmers]모의고사 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/springboot/2021/01/16/JPA-Persistence-Context.html">
             JPA 영속성 컨텍스트란?
             <small>16 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-            <small>12 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Springboot thymeleaf form post error..?
-            <small>09 Jan 2021</small>
           </a>
         </h3>
       </li>

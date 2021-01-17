@@ -9,7 +9,7 @@
 
   <title>
     
-      [baekjoon] 1110_더하기 사이클 (java) &middot; 기록하기
+      [baekjoon]1110_더하기 사이클 (java) &middot; 기록하기
     
   </title>
 
@@ -96,7 +96,7 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[baekjoon] 1110_더하기 사이클 (java)</h1>
+  <h1 class="post-title">[baekjoon]1110_더하기 사이클 (java)</h1>
   <span class="post-date">16 Dec 2020</span>
   <p>=&gt; <a href="https://www.acmicpc.net/problem/1110" target="_blank">1110_더하기 사이클 (java)</a></p>
 
@@ -104,27 +104,41 @@
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
-        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span> <span class="c1">//입력값을 받아오기 위한 스캐너</span>
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                <span class="c1">//공백이전까지의 숫자를 받아옴</span>
-        <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>                       <span class="c1">//처음에 받아온 숫자를 first에 넣어줌</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                       <span class="c1">//몇번의 시도만에 돌아올지 count를 담아줄 변수</span>
+        <span class="c1">//입력값을 받아오기 위한 스캐너</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span> 
+        <span class="c1">//공백이전까지의 숫자를 받아옴</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                
+        <span class="c1">//처음에 받아온 숫자를 first에 넣어줌</span>
+        <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>                       
+        <span class="c1">//몇번의 시도만에 돌아올지 count를 담아줄 변수</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                       
         <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>                         <span class="c1">//n이 0이면 바로 count=1 </span>
+            <span class="c1">//n이 0이면 바로 count=1</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>                          
                 <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-                <span class="k">break</span><span class="o">;</span>                          <span class="c1">//바로종료</span>
+                <span class="k">break</span><span class="o">;</span>                         
             <span class="o">}</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">){</span>                 <span class="c1">//처음시작할때 n이 10보다 작을경우에는 따로 계산함</span>
-                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="mi">10</span><span class="o">;</span>                     <span class="c1">//0+n=n =&gt; nn 이런 형식을 표현하기위함</span>
+            <span class="c1">//처음시작할때 n이 10보다 작을경우에는 따로 계산함</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">){</span>                 
+                <span class="c1">//0+n=n =&gt; nn 이런 형식을 표현하기위함</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="mi">10</span><span class="o">;</span>  
+                <span class="c1">//카운트를 올려줌</span>
                 <span class="n">count</span><span class="o">++;</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>                            <span class="c1">//10 이상일경우</span>
-                <span class="n">n</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="o">)*</span><span class="mi">10</span><span class="o">+(</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="o">+</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="o">)%</span><span class="mi">10</span><span class="o">;</span>   <span class="c1">//메인 공식</span>
-                <span class="n">count</span><span class="o">++;</span>                        <span class="c1">//카운트를 올려줌</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">first</span><span class="o">){</span>                 <span class="c1">//만약 공식을 통해 나온 n이 첫번째 수로 돌아왔으면 종료</span>
+                
+                <span class="c1">//10 이상일경우</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>                            
+                <span class="c1">//메인 공식</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="o">)*</span><span class="mi">10</span><span class="o">+(</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="o">+</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="o">)%</span><span class="mi">10</span><span class="o">;</span>   
+                <span class="c1">//카운트를 올려줌</span>
+                <span class="n">count</span><span class="o">++;</span>                        
+                <span class="c1">//만약 공식을 통해 나온 n이 첫번째 수로 돌아왔으면 종료</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">first</span><span class="o">){</span>                 
                     <span class="k">break</span><span class="o">;</span>
                 <span class="o">}</span>
             <span class="o">}</span>
         <span class="o">}</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">);</span> <span class="c1">//count를 출력 </span>
+        <span class="c1">//count를 출력</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">);</span>  
         
         <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
         <span class="o">}</span>
@@ -140,27 +154,27 @@
     
       <li>
         <h3>
+          <a href="/java_ps/2021/01/17/programmers-crain.html">
+            [programmers]크레인 인형뽑기 게임 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
+            [programmers]모의고사 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/springboot/2021/01/16/JPA-Persistence-Context.html">
             JPA 영속성 컨텍스트란?
             <small>16 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-            <small>12 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Springboot thymeleaf form post error..?
-            <small>09 Jan 2021</small>
           </a>
         </h3>
       </li>

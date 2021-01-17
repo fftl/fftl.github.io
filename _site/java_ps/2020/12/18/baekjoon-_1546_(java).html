@@ -9,7 +9,7 @@
 
   <title>
     
-      [baekjoon] 1546_평균 (java) &middot; 기록하기
+      [baekjoon]1546_평균 (java) &middot; 기록하기
     
   </title>
 
@@ -96,32 +96,47 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[baekjoon] 1546_평균 (java)</h1>
+  <h1 class="post-title">[baekjoon]1546_평균 (java)</h1>
   <span class="post-date">18 Dec 2020</span>
   <p>=&gt; <a href="https://www.acmicpc.net/problem/1546" target="_blank">1546_평균 (java)</a></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>                      
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
-        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>            <span class="c1">//scanner 객체를 생성</span>
-        <span class="nc">String</span> <span class="n">countStr</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>                <span class="c1">//첫번째 입력으로 점수의 개수 입력</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">countStr</span><span class="o">);</span>         <span class="c1">//위의 counterStr을 문자로 받았기 때문에 int로 변환</span>
-        <span class="nc">String</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>                 <span class="c1">//다음 라인의 점수들을 입력받음</span>
-        <span class="nc">String</span><span class="o">[]</span> <span class="n">numbersS</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>         <span class="c1">//받은 점수 문자열을 공백을 기준으로 잘라서 numbersS배열에 입력</span>
+        <span class="c1">//scanner 객체를 생성</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="c1">//첫번째 입력으로 점수의 개수 입력</span>
+        <span class="nc">String</span> <span class="n">countStr</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>                
+        <span class="c1">//위의 counterStr을 문자로 받았기 때문에 int로 변환</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">countStr</span><span class="o">);</span>         
+        <span class="c1">//다음 라인의 점수들을 입력받음</span>
+        <span class="nc">String</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+        <span class="c1">//받은 점수 문자열을 공백을 기준으로 잘라서 numbersS배열에 입력</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">numbersS</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>         
         
-        <span class="kt">double</span><span class="o">[]</span> <span class="n">numbersD</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">count</span><span class="o">];</span>          <span class="c1">//점수 개수만큼의 double 배열 선언</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                     <span class="c1">//현재 문자열 숫자인 numbersS 배열을 double 로 변환하여 입력</span>
+        <span class="c1">//점수 개수만큼의 double 배열 선언</span>
+        <span class="kt">double</span><span class="o">[]</span> <span class="n">numbersD</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">count</span><span class="o">];</span>          
+        <span class="c1">//현재 문자열 숫자인 numbersS 배열을 double 로 변환하여 입력</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                     
             <span class="n">numbersD</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">numbersS</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
         <span class="o">}</span>
-        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">numbersD</span><span class="o">);</span>                          <span class="c1">//최고값을 찾기위해 정렬을 해줌(오름차순)</span>
-        <span class="kt">double</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="n">numbersD</span><span class="o">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>              <span class="c1">//가장 마지막의 숫자가 최고값 그러므로 최고값을 maxNum에 담아줌</span>
-        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                                 <span class="c1">//평균을 구하기 위한 점수의 총합을 담을 double 선언</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">double</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbersD</span><span class="o">){</span>                     <span class="c1">//numberD만큼의 반복을 함</span>
-            <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">num</span><span class="o">/</span><span class="n">maxNum</span><span class="o">*</span><span class="mi">100</span><span class="o">;</span>                 <span class="c1">//문제에서 주어진 조작된 평균을 구하기위한 점수/최대점수*100 의 총합을 구함</span>
+        <span class="c1">//최고값을 찾기위해 정렬을 해줌(오름차순)</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">numbersD</span><span class="o">);</span>                          
+        <span class="c1">//가장 마지막의 숫자가 최고값 그러므로 최고값을 maxNum에 담아줌</span>
+        <span class="kt">double</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="n">numbersD</span><span class="o">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>              
+        <span class="c1">//평균을 구하기 위한 점수의 총합을 담을 double 선언</span>
+        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>                                 
+        <span class="c1">//numberD만큼의 반복을 함</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">double</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbersD</span><span class="o">){</span>                     
+            <span class="c1">//문제에서 주어진 조작된 평균을 구하기위한 점수/최대점수*100 의 총합을 구함</span>
+            <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">num</span><span class="o">/</span><span class="n">maxNum</span><span class="o">*</span><span class="mi">100</span><span class="o">;</span>                 
         <span class="o">}</span>
-        <span class="kt">double</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">sum</span><span class="o">/</span><span class="n">count</span><span class="o">;</span>                      <span class="c1">//조작된 평균을 구하기위한 합을 점수개수로 나눠줌</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.6f"</span><span class="o">,</span> <span class="n">answer</span><span class="o">));</span>  <span class="c1">//예제처럼 여섯번째 자리까지 반올림하기 위한 String.format 사용</span>
+        <span class="c1">//조작된 평균을 구하기위한 합을 점수개수로 나눠줌</span>
+        <span class="kt">double</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">sum</span><span class="o">/</span><span class="n">count</span><span class="o">;</span>                      
+        <span class="c1">//예제처럼 여섯번째 자리까지 반올림하기 위한 String.format 사용</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.6f"</span><span class="o">,</span> <span class="n">answer</span><span class="o">));</span>  
+        
         <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
         <span class="o">}</span>
 <span class="o">}</span>
@@ -137,27 +152,27 @@
     
       <li>
         <h3>
+          <a href="/java_ps/2021/01/17/programmers-crain.html">
+            [programmers]크레인 인형뽑기 게임 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
+            [programmers]모의고사 (java)
+            <small>17 Jan 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/springboot/2021/01/16/JPA-Persistence-Context.html">
             JPA 영속성 컨텍스트란?
             <small>16 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-            <small>12 Jan 2021</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Springboot thymeleaf form post error..?
-            <small>09 Jan 2021</small>
           </a>
         </h3>
       </li>

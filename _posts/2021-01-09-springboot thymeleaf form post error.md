@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Springboot thymeleaf form post error..?"
+title: "Spring Boot thymeleaf form post error..?"
 categories: SpringBoot
 comments: true
 ---
