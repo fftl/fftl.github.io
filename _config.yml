@@ -36,6 +36,7 @@ plugins:
 github:
     repo: https://github.com/fftl/fftl.github.io
 
+google_fonts: Nanum+Gothic:wght@400;700;800
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
