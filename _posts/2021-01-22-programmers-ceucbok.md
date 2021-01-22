@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[programmers]체육복 (java)"
-categories: SpringBoot
+categories: JAVA_PS
 comments: true
 ---
 => [체육복](https://programmers.co.kr/learn/courses/30/lessons/42862){: target="_blank"}

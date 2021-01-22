@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[programmers]2016년 (java)"
-categories: SpringBoot
+categories: JAVA_PS
 comments: true
 ---
 => [2016년](https://programmers.co.kr/learn/courses/30/lessons/12901){: target="_blank"}

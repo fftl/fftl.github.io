@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[programmers]K번째수 (java)"
-categories: SpringBoot
+categories: JAVA_PS
 comments: true
 ---
 => [K번째수](https://programmers.co.kr/learn/courses/30/lessons/42748){: target="_blank"}
