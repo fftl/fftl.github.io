@@ -3,8 +3,10 @@
 
   <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+  <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
@@ -13,24 +15,23 @@
     
   </title>
 
-  
-
-  <link rel="stylesheet" href="https://fftl.github.io/public/css/poole.css">
-  <link rel="stylesheet" href="https://fftl.github.io/public/css/syntax.css">
-  <link rel="stylesheet" href="https://fftl.github.io/public/css/lanyon.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://fftl.github.io/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="https://fftl.github.io/public/favicon.ico">
 
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://fftl.github.io/atom.xml">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   
 </head>
 
 
-  <body class="layout-reverse sidebar-overlay">
+  <body>
 
     <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
@@ -39,55 +40,104 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p></p>
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <!-- <a href="http://gravatar.com/"> -->
+          <a href="http://gravatar.com/"></a>
+          <!-- <img src="http://www.gravatar.com/avatar/?s=350" title="View on Gravatar" alt="View on Gravatar" /> -->
+          <!-- <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" /> -->
+<!--          <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" />-->
+          
+
+          
+        </a>
+      </div>
+      <div class="sidebar-personal-info-section" >
+      </div>
+      
+    </div>
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="https://fftl.github.io/">Home</a>
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="foldable">
+        <a class="sidebar-nav-item " href="/blog/">
+          Blog
+        </a>
+
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
+                Categories
+              </a>
+          
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/tags/">
+                Tags
+              </a>
+          
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
 
     
 
-    
-    
-      
-    
-      
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="https://fftl.github.io/about.html">About</a>
-        
-      
-    
-      
-    
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-    
-      
-    
-
-    <a class="sidebar-nav-item" href="https://github.com/fftl/fftl.github.io">This Blog GitHub</a>
     <span class="sidebar-nav-item">Currently v</span>
   </nav>
 
   <div class="sidebar-item">
     <p>
-      &copy; 2021. All rights reserved.
+    &copy; 2021 . This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
     </p>
   </div>
 
+  <div class="sidebar-item">
+    <p>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>
+    </p>
+  </div>
 </div>
 
 
@@ -97,8 +147,11 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">기록하기</a>
-            <small></small>
+            <a href="/" title="Home" title="기록하기">
+              <img class="masthead-logo" src=""/>
+              기록하기
+            </a>
+<!--            <small>기록하기</small>-->
           </h3>
         </div>
       </div>
@@ -107,75 +160,80 @@
         <div class="post">
   <h1 class="post-title">Spring Boot thymeleaf form post error..?</h1>
   <span class="post-date">09 Jan 2021</span>
-  <p>springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.</p>
+   | 
+  
+  
+  <article>
+    <p>springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.</p>
 
 <p>그래서 저는 Dto를 생성했고, Dto 에서 @Builder 를 이용해 Dto로 받은 객체를 Entity로 변환하는 작업을 사용하고 있었습니다. 그런데 아무리 작업을 해도 PostMapping 와 @ModelAttribute 를 이용해 Dto 로 입력을 받았는데 자꾸 null 값만 들어오고 있었습니다.</p>
 
 <p>나의 thymeleaf 문법이 잘못되었는지, Dto를 잘못 만들었는지 많은 고민과 테스트를 했으나 결론은 Dto에도 setter를 선언해 주지 않았더니 @ModelAttribute에서 setter를 이용해 Dto 객체에 값이 할당되어야 하는데 그것을 못하고 있었던 것입니다. 저 과정에서 setter를 이용해 할당을 하는 것을 이제야 깨달았습니다.</p>
 
+  </article>
 </div>
 
-
 <div class="related">
-  <h2>Related posts</h2>
+  <h2>Related Posts</h2>
   <ul class="related-posts">
     
       <li>
         <h3>
-          <a href="/springboot/2021/01/19/java_long_null_error.html">
-            java @RequestParam Long 값 null, 비었는지 확인
-            <small>19 Jan 2021</small>
+          <a href="/java_ps/2021/01/22/programmers-knumbersu.html">
+            [programmers]K번째수 (java)
+            <small>22 Jan 2021</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/java_ps/2021/01/17/programmers-crain.html">
-            [programmers]크레인 인형뽑기 게임 (java)
-            <small>17 Jan 2021</small>
+          <a href="/java_ps/2021/01/22/programmers-ceucbok.html">
+            [programmers]체육복 (java)
+            <small>22 Jan 2021</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/java_ps/2021/01/17/programmers-Practicetest.html">
-            [programmers]모의고사 (java)
-            <small>17 Jan 2021</small>
+          <a href="/java_ps/2021/01/22/programmers-2016year.html">
+            [programmers]2016년 (java)
+            <small>22 Jan 2021</small>
           </a>
         </h3>
       </li>
     
   </ul>
-  <div id="disqus_thread"></div>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 
 
-      </div>
 
+      </div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script src='/public/js/script.js'></script>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://fftl-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
   </body>
+  
 </html>

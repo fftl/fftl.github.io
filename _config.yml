@@ -32,3 +32,7 @@ nav:
     - '/about/'
   # Github Project:
     # - 'http://codinfox.github.io/'
+
+sass:
+  style: compressed
+  sass_dir: _scss
