@@ -1,5 +1,6 @@
 
-title: 기록하기
+site:
+  title: 기록하기
 email: fftl.0710@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 #  Write an awesome description for your new site here. You can edit this
@@ -24,10 +25,10 @@ google_fonts: Nanum+Gothic:wght@400;700;800
 nav:
   Home:
     - '/'
-  Blog:
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+  Categories:
+    - '/blog/categories/'
+  Tags:
+    - '/blog/tags/'
   About:
     - '/about/'
   # Github Project:
