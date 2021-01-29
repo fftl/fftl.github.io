@@ -22,9 +22,10 @@ github:
 google_fonts: Nanum+Gothic:wght@400;700;800
 
 # Navigation (2nd level links supported)
+# sidebar 관리하기
 nav:
   Home:
-    - '/'
+    - '/blog/categories/'
   Categories:
     - '/blog/categories/'
   Tags:
