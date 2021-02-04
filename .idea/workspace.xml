@@ -2,288 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/.springBeans" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/schedule/TransactionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/schedule/TransactionScheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/MessagePublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/RedisMessagePublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/RedisMessageSubscriber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/service/PublisherService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/test/java/com/wkim/addr/RedisPubServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/src/test/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/META-INF/maven/com.wkim/addr/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/META-INF/maven/com.wkim/addr/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/schedule/TransactionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/schedule/TransactionScheduler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/MessagePublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/RedisMessagePublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/RedisMessageSubscriber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/service/PublisherService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/classes/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/maven/com.wkim/addr/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/maven/com.wkim/addr/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/test-classes/com/wkim/addr/RedisPubServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/workspace/addr-server-wkim/target/test-classes/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/categories/algorithm.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/categories/category.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/categories/springboot.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-14-[baekjoon]_2577_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-14-[baekjoon]_4344_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-16-[baekjoon]_1110_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-17-[baekjoon]_10817_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-Spring_Security_Study_01.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-[baekjoon]_1546_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-[baekjoon]_3052_(java).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-09-springboot thymeleaf form post error.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-12-sprinboot_response_comment.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-16-JPA Persistence Context.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-17-programmers-Practicetest.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-17-programmers-crain.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-19-java_long_null_error.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-2016year.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-ceucbok.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-knumbersu.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-centerStringget.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-jusicAccount.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-phonenumberlist.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-sameNumberNo.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-twoNumberSum.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/_config.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/base/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/base/_layout.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/base/_poole.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/base/_syntax.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/_bourbon-deprecated-upcoming.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/_bourbon.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_border-color.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_border-radius.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_border-style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_border-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_ellipsis.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_font-stacks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_hide-text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_margin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_padding.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_position.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_prefixer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_retina-image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_size.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_text-inputs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_timing-functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_triangle.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/addons/_word-wrap.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_animation.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_appearance.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_backface-visibility.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_background-image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_background.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_border-image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_calc.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_columns.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_filter.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_flex-box.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_font-face.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_font-feature-settings.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_hidpi-media-query.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_hyphens.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_image-rendering.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_keyframes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_linear-gradient.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_perspective.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_placeholder.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_radial-gradient.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_selection.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_text-decoration.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_transform.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_transition.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/css3/_user-select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_assign-inputs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_contains-falsy.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_contains.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_is-length.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_is-light.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_is-number.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_is-size.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_modular-scale.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_px-to-em.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_px-to-rem.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_shade.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_strip-units.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_tint.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_transition-property-name.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/functions/_unpack.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_convert-units.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_directional-values.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_font-source-declaration.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_gradient-positions-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_linear-angle-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_linear-gradient-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_linear-positions-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_linear-side-corner-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_radial-arg-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_radial-gradient-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_radial-positions-parser.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_render-gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_shape-size-stripper.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/helpers/_str-to-num.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/settings/_asset-pipeline.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/settings/_prefixer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/bourbon/settings/_px-to-em.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_hero.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_masthead.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_page.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_post.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_sidebar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_scss/component/_tag.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/schedule/TransactionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/com/wkim/addr/schedule/TransactionScheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/MessagePublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/RedisMessagePublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/queue/RedisMessageSubscriber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/java/kr/co/wkim/address/redis/service/PublisherService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/test/java/com/wkim/addr/RedisPubServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/src/test/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/META-INF/maven/com.wkim/addr/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/META-INF/maven/com.wkim/addr/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/schedule/TransactionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/com/wkim/addr/schedule/TransactionScheduler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/MessagePublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/RedisMessagePublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/queue/RedisMessageSubscriber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/kr/co/wkim/address/redis/service/PublisherService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/classes/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/maven/com.wkim/addr/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/m2e-wtp/web-resources/META-INF/maven/com.wkim/addr/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/test-classes/com/wkim/addr/RedisPubServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Documents/workspace/addr-server-wkim/target/test-classes/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/main.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/minima-social-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/atom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/categories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/tags.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/navigation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/navigation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/ui-text.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/ui-text.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/14/baekjoon-_2577_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/14/baekjoon-_4344_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/16/baekjoon-_1110_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/17/baekjoon-_10817_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/18/baekjoon-_1546_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2020/12/18/baekjoon-_3052_(java).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/01/17/programmers-Practicetest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/01/17/programmers-crain.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/01/22/programmers-2016year.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/01/22/programmers-ceucbok.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/01/22/programmers-knumbersu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/02/01/programmers-centerStringget.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/02/01/programmers-jusicAccount.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/02/01/programmers-phonenumberlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/02/01/programmers-sameNumberNo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java_ps/2021/02/01/programmers-twoNumberSum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-03-01/ajax.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-03-01/facebook_passport_callback.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-03-01/firebase_fcm_work.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-04-08/algoInput.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-04-11/authenticationAnd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-04-11/dependency_Add.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-04-11/intercept.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2018-06-11/multisig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/backpressure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/flowable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/netflux-example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/observer-design-pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/reactive-pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/total-users-of-the-internet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-01-28/webflux.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post_assets/2019-04-01/elb-flow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/apple-touch-icon-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/css/main.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/img/we_will_be_giants_by_yalestewart.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/springboot/2020/12/18/Spring_Security_Study_01.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/springboot/2021/01/12/sprinboot_response_comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/springboot/2021/01/16/JPA-Persistence-Context.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/springboot/2021/01/19/java_long_null_error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/categories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/tags.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-03-01/ajax.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-03-01/facebook_passport_callback.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-03-01/firebase_fcm_work.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-04-08/algoInput.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-04-11/authenticationAnd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-04-11/dependency_Add.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-04-11/intercept.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2018-06-11/multisig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/backpressure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/flowable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/netflux-example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/observer-design-pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/reactive-pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/total-users-of-the-internet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-01-28/webflux.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_assets/2019-04-01/elb-flow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/apple-touch-icon-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/we_will_be_giants_by_yalestewart.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,6 +32,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\assets" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -314,5 +47,16 @@
       <updated>1612429109874</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
