@@ -1,295 +1,335 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
   <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!-- begin _includes/seo.html --><title>HELLO FFTL!!</title>
+<meta name="description" content="My Amazing Blog.">
 
-  <title>
-    
-       &middot; 
-    
-  </title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/main.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <meta name="author" content="fftl">
+  
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/public/favicon.ico">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="HELLO FFTL!!">
+<meta property="og:title" content="HELLO FFTL!!">
+<meta property="og:url" content="https://fftl.github.io/">
+
+
+  <meta property="og:description" content="My Amazing Blog.">
+
+
+
+
+
+
+
+
+
+
 
   
-</head>
+
+  
 
 
-  <body>
+<link rel="canonical" href="https://fftl.github.io/">
 
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <div class="sidebar-personal-info">
-      <div class="sidebar-personal-info-section">
-        <!-- <a href="http://gravatar.com/"> -->
-          <a href="http://gravatar.com/"></a>
-          <!-- <img src="http://www.gravatar.com/avatar/?s=350" title="View on Gravatar" alt="View on Gravatar" /> -->
-          <!-- <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" /> -->
-<!--          <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" />-->
-          
 
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "FFTL",
+      "url": "https://fftl.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="HELLO FFTL!! Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          HELLO FFTL!!
           
         </a>
-      </div>
-      <div class="sidebar-personal-info-section" >
-        <p>JAVA 개발자!!</p>
-      </div>
-      
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
     </div>
-  </div>
-
-  <nav class="sidebar-nav">
-    
-      
-      
-      
-
-      
-
-      <span class="">
-        <a class="sidebar-nav-item " href="/blog/categories/">
-          Home
-        </a>
-
-        
-      </span>
-
-    
-      
-      
-      
-
-      
-
-      <span class="">
-        <a class="sidebar-nav-item " href="/blog/categories/">
-          Categories
-        </a>
-
-        
-      </span>
-
-    
-      
-      
-      
-
-      
-
-      <span class="">
-        <a class="sidebar-nav-item " href="/blog/tags/">
-          Tags
-        </a>
-
-        
-      </span>
-
-    
-      
-      
-      
-
-      
-
-      <span class="">
-        <a class="sidebar-nav-item " href="/about/">
-          About
-        </a>
-
-        
-      </span>
-
-    
-
-<!--    <span class="sidebar-nav-item">Currently v</span>-->
-  </nav>
-
-  <div class="sidebar-item">
-    <p>
-    &copy; 2021 . This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
-    </p>
-  </div>
-
-  <div class="sidebar-item">
-    <p>
-    Powered by <a href="http://jekyllrb.com">jekyll</a>
-    </p>
   </div>
 </div>
 
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home" title="">
-              <img class="masthead-logo" src=""/>
-              기록하기
-            </a>
-          </h3>
-        </div>
-      </div>
+    <div class="initial-content">
+      
 
-      <div class="container content">
-        <div class="home">
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Feb 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/02/01/programmers-twoNumberSum.html">
-            [programmers]두 정수 사이의 합 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/02/01/programmers-sameNumberNo.html">
-            [programmers]같은 숫자는 싫어 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/02/01/programmers-phonenumberlist.html">
-            [programmers]전화번호 목록 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/02/01/programmers-jusicAccount.html">
-            [programmers]주식가격 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/02/01/programmers-centerStringget.html">
-            [programmers]가운데 글자 가져오기 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 22, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/01/22/programmers-knumbersu.html">
-            [programmers]K번째수 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 22, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/01/22/programmers-ceucbok.html">
-            [programmers]체육복 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 22, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/01/22/programmers-2016year.html">
-            [programmers]2016년 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 19, 2021</span>
-        <h3>
-          <a class="post-link" href="/springboot/2021/01/19/java_long_null_error.html">
-            java @RequestParam Long 값 null, 비었는지 확인
-          </a>
-        </h3></li><li><span class="post-meta">Jan 17, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/01/17/programmers-crain.html">
-            [programmers]크레인 인형뽑기 게임 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 17, 2021</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2021/01/17/programmers-Practicetest.html">
-            [programmers]모의고사 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 16, 2021</span>
-        <h3>
-          <a class="post-link" href="/springboot/2021/01/16/JPA-Persistence-Context.html">
-            JPA 영속성 컨텍스트란?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 12, 2021</span>
-        <h3>
-          <a class="post-link" href="/springboot/2021/01/12/sprinboot_response_comment.html">
-            Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)
-          </a>
-        </h3></li><li><span class="post-meta">Jan 9, 2021</span>
-        <h3>
-          <a class="post-link" href="/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">
-            Spring Boot thymeleaf form post error..?
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/18/baekjoon-_3052_(java).html">
-            [baekjoon]3052_나머지 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/18/baekjoon-_1546_(java).html">
-            [baekjoon]1546_평균 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2020</span>
-        <h3>
-          <a class="post-link" href="/springboot/2020/12/18/Spring_Security_Study_01.html">
-            Spring Security 기본 따라해보기
-          </a>
-        </h3></li><li><span class="post-meta">Dec 17, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/17/baekjoon-_10817_(java).html">
-            [baekjoon]10817_세 수 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 16, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/16/baekjoon-_1110_(java).html">
-            [baekjoon]1110_더하기 사이클 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/14/baekjoon-_4344_(java).html">
-            [baekjoon]4344_평균은 넘겠지 (java)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2020</span>
-        <h3>
-          <a class="post-link" href="/java_ps/2020/12/14/baekjoon-_2577_(java).html">
-            [baekjoon]2577_숫자의 개수 (java)
-          </a>
-        </h3></li></ul>
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">fftl</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
 
       </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title"></h1>
+    
+    
+
+<h3 class="archive__subtitle">Recent posts</h3>
+
+
+
+
+<div class="entries-list">
+  
+</div>
+
+
+
+
+  </div>
+</div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if (target === toggle) {
-            checkbox.checked = !checkbox.checked;
-            e.preventDefault();
-          } else if (checkbox.checked && !sidebar.contains(target)) {
-            /* click outside the sidebar when sidebar is open */
-            checkbox.checked = false;
-          }
-        }, false);
-      })(document);
-    </script>
     
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 FFTL. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
   </body>
-  
 </html>
