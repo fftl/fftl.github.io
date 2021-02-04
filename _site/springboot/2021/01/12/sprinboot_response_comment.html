@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용) &middot; 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <!-- <a href="http://gravatar.com/"> -->
+          <a href="http://gravatar.com/"></a>
+          <!-- <img src="http://www.gravatar.com/avatar/?s=350" title="View on Gravatar" alt="View on Gravatar" /> -->
+          <!-- <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" /> -->
+<!--          <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" />-->
+          
+
+          
+        </a>
+      </div>
+      <div class="sidebar-personal-info-section" >
+        <p>JAVA 개발자!!</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/categories/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/categories/">
+          Categories
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/tags/">
+          Tags
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+
+<!--    <span class="sidebar-nav-item">Currently v</span>-->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+    &copy; 2021 . This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    </p>
+  </div>
+
+  <div class="sidebar-item">
+    <p>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" title="">
+              <img class="masthead-logo" src=""/>
+              기록하기
+            </a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)</h1>
+  <span class="post-date">12 Jan 2021</span>
+   | 
+  
+  
+  <article>
+    <p>요즘 친구들과 미니 프로젝트를 진행중 입니다. 저는 SpringBoot, SpringSecurity, Jwt를 이용한 rest api를 만들고 있습니다.</p>
+
+<p>많은 기능을 가지고 있는 것은 아니지만 Spring Security와 Jwt를 이용한 인증을 사용해보기위해 꽤 많은 시간을 삽질하였던 것 같습니다. 물론 그렇다고 완벽하게
+이해한 것도 아닙니다. (아직은 아래 블로그의 소스 가져다가 조금씩 변형해서 사용하는 정도)</p>
+
+<p>(정말 많이 참고하고 공부가 된 블로그, 너무 감사하구있습니다.)
+<a href="https://daddyprogrammer.org/post/636/springboot2-springsecurity-authentication-authorization/">https://daddyprogrammer.org/post/636/springboot2-springsecurity-authentication-authorization/</a></p>
+
+<p>암튼 어찌저찌 회원가입, 로그인, 인증되는 부분을 만들었는데, 문제가 생기는 부분이 어떠한 방식으로 Exception 처리와 return(결과) 을 할 것인가 였습니다.</p>
+
+<p>위의 자료에서는 ResponseService를 만들어 단순 성공,실패일 경우, 단일건 조회일 경우, 다중건 조회 일 경우의 메소드를 각각 만들어 놓고 사용하고 있었습니다.
+그래서 객체 조회가 있을 시에 (T data) 보여줄 데이터를 일괄적으로 관리하여 편하게 사용할 수 있도록 되어 있습니다.</p>
+<center><img src="https://user-images.githubusercontent.com/69035612/104259519-ece9ca80-54c4-11eb-8ff6-40257b5c3b3c.png" width="80%" /></center>
+
+<p>결과를 보면 data에 담겨서 한번에 나타납니다.</p>
+<center><img src="https://user-images.githubusercontent.com/69035612/104261591-39370980-54c9-11eb-91f0-ec40f2e9d2a4.png" /></center>
+
+<p>조금의 시간을 들여 이해를 하는데 성공하였으나, 저와 client 작업을 하는 친구와 맞춰놓은 방식은 아래 결과처럼 한번에? 쭉 나오는 방식 이었습니다.</p>
+<center><img src="https://user-images.githubusercontent.com/69035612/104261970-f6c1fc80-54c9-11eb-9c11-0981b12c4dc1.png" /></center>
+
+<p>물론 위의 방식이 더 입력 방식도 효율적이고 받을 때도 편할 수 있겠지만, 일단 협의 해놓은 대로 구현을 해보고 싶었습니다. 공부도 되고 나중에 다시 바꿔도 되니까요.</p>
+
+<p>그래서 검색을 통해 ResponseEntity 라는 기능을 찾았습니다. 이 ResponseEntity는 반환타입이 다양한 restapi에서 상태코드와 응답메시지 등을 간편하게 담아 전달할 수 있는 기능정도로 알면 될 것 같습니다.
+ResponseEntity도 조금만 더 코딩을 잘한다면 위의 방법 못지않게 편하고 효율적으로 할 수 있겠지만, 일단 맞춰놓은 회의 날짜까지 완성해야 하기에 원초적으로 사용해 보았습니다.</p>
+<center><img src="https://user-images.githubusercontent.com/69035612/104262368-d181be00-54ca-11eb-8757-5e2a56194f60.png" /></center>
+<center><img src="https://user-images.githubusercontent.com/69035612/104262166-6932dc80-54ca-11eb-959f-0f63d74cfdcd.png" /></center>
+
+<p>이렇게 사용하여 조금전의 이미지 처럼 한번에 쭉? 나오는 형식으로 결과를 보낼 수 있었습니다.</p>
+
+<p>혼자서 공부할 때와는 다르게 함께 미니 프로젝트를 진행하니 책임감을 가지고 더 많이 공부를 하게 되는 것 같아 긍정적인 기분입니다.</p>
+
+
+  </article>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-twoNumberSum.html">
+            [programmers]두 정수 사이의 합 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-sameNumberNo.html">
+            [programmers]같은 숫자는 싫어 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-phonenumberlist.html">
+            [programmers]전화번호 목록 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+  </body>
+  
+</html>

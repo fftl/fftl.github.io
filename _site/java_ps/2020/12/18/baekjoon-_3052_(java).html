@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      [baekjoon]3052_나머지 (java) &middot; 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <!-- <a href="http://gravatar.com/"> -->
+          <a href="http://gravatar.com/"></a>
+          <!-- <img src="http://www.gravatar.com/avatar/?s=350" title="View on Gravatar" alt="View on Gravatar" /> -->
+          <!-- <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" /> -->
+<!--          <img src="https://s.gravatar.com/avatar/fedd0cb9bf32323502b502a383136608?s=80" title="View on Gravatar" alt="View on Gravatar" style="margin:auto;" />-->
+          
+
+          
+        </a>
+      </div>
+      <div class="sidebar-personal-info-section" >
+        <p>JAVA 개발자!!</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/categories/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/categories/">
+          Categories
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/blog/tags/">
+          Tags
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+
+<!--    <span class="sidebar-nav-item">Currently v</span>-->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+    &copy; 2021 . This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    </p>
+  </div>
+
+  <div class="sidebar-item">
+    <p>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" title="">
+              <img class="masthead-logo" src=""/>
+              기록하기
+            </a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">[baekjoon]3052_나머지 (java)</h1>
+  <span class="post-date">18 Dec 2020</span>
+   | 
+  
+  
+  <article>
+    <p>=&gt; <a href="https://www.acmicpc.net/problem/3052" target="_blank">3052_나머지 (java)</a></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="c1">//숫자를 입력받기위한 scanner 객체 생성</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>    
+        
+        <span class="c1">//숫자가 10개라고 주어졌기 때문에 크기가 10인 배열 생성</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>                        
+        <span class="c1">//add 기능을 사용하기 위해 ArrayList 생성</span>
+        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">numberList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>  
+        
+        <span class="c1">//10번의 입력을 받기위한 for문</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>                 
+            <span class="c1">//입력을 받음</span>
+            <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>                
+            <span class="c1">//문제에서 주어진 수은 42로 나눈 나머지를 구해 numbers 배열에 입력</span>
+            <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="mi">42</span><span class="o">;</span>                   
+        <span class="o">}</span>
+        <span class="c1">//scanner를 사용할일이 없기에 종료</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>                              
+        
+        <span class="c1">//완성된 numbers배열을 반복함</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbers</span><span class="o">){</span>                  
+            <span class="c1">//numberList 에 존재하는 수인지 판별</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">numberList</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">num</span><span class="o">))</span>        
+                <span class="c1">//없는 수일경우 추가해줍니다.</span>
+                <span class="n">numberList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>             
+        <span class="o">}</span>
+        
+        <span class="c1">//중복이 제거된 numberList가 완성 그 갯수를 출력</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">numberList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>   
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+  </article>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-twoNumberSum.html">
+            [programmers]두 정수 사이의 합 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-sameNumberNo.html">
+            [programmers]같은 숫자는 싫어 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java_ps/2021/02/01/programmers-phonenumberlist.html">
+            [programmers]전화번호 목록 (java)
+            <small>01 Feb 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+  </body>
+  
+</html>
