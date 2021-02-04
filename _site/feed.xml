@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://fftl.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://fftl.github.io/" rel="alternate" type="text/html" /><updated>2021-01-29T23:39:09+09:00</updated><id>https://fftl.github.io/feed.xml</id><subtitle></subtitle><entry><title type="html">[programmers]2016년 (java)</title><link href="https://fftl.github.io/java_ps/2021/01/22/programmers-2016year.html" rel="alternate" type="text/html" title="[programmers]2016년 (java)" /><published>2021-01-22T00:00:00+09:00</published><updated>2021-01-22T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/01/22/programmers-2016year</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/01/22/programmers-2016year.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12901&quot; target=&quot;_blank&quot;&gt;2016년&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://fftl.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://fftl.github.io/" rel="alternate" type="text/html" /><updated>2021-02-04T17:11:42+09:00</updated><id>https://fftl.github.io/feed.xml</id><subtitle></subtitle><entry><title type="html">[programmers]두 정수 사이의 합 (java)</title><link href="https://fftl.github.io/java_ps/2021/02/01/programmers-twoNumberSum.html" rel="alternate" type="text/html" title="[programmers]두 정수 사이의 합 (java)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/02/01/programmers-twoNumberSum</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/02/01/programmers-twoNumberSum.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12912&quot; target=&quot;_blank&quot;&gt;두 정수 사이의 합&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;level1 의 문제 입니다. 두 수를 주고 작은수부터 큰수까지의 모든 정수를 더하는 문제입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;big&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//작은수 큰수를 담아줄 big small 입니다.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//a와 b중 큰수를 big에 작은수를 small에 담아줍니다.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;big&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;big&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//작은수 부터 큰수까지 증가하는? for문을 반복합니다.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;big&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//해당 수들을 answer에 담아줍니다.&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//끝!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 두 정수 사이의 합</summary></entry><entry><title type="html">[programmers]같은 숫자는 싫어 (java)</title><link href="https://fftl.github.io/java_ps/2021/02/01/programmers-sameNumberNo.html" rel="alternate" type="text/html" title="[programmers]같은 숫자는 싫어 (java)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/02/01/programmers-sameNumberNo</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/02/01/programmers-sameNumberNo.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12906&quot; target=&quot;_blank&quot;&gt;같은 숫자는 싫어&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;level1 의 문제 입니다. 첫번째 수를 arrayList에 넣어주고 그수와 다음 들어갈 수를 계속해서 비교하여 답 List를 찾아내었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//기본으로 있엇는데 사용하지 않았다.. 지울걸..&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//답을 담아줄 arrayList를 선언하였습니다.&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;();&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//arr 배열만큼 반복해주는 for문입니다.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//첫번째 수는 무조건 넣어줘야 하므로 if를 통해 넣었습니다.&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;    
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//만약 arrayList의 가장 마지막 인덱스에 있는 수와&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//다음에 들어갈 수가 같다면 넣지않고 넘어갑니다. &lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]){&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//같은수가 아니라면 넣어줍니다.&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//끝!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 같은 숫자는 싫어</summary></entry><entry><title type="html">[programmers]전화번호 목록 (java)</title><link href="https://fftl.github.io/java_ps/2021/02/01/programmers-phonenumberlist.html" rel="alternate" type="text/html" title="[programmers]전화번호 목록 (java)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/02/01/programmers-phonenumberlist</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/02/01/programmers-phonenumberlist.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/42577&quot; target=&quot;_blank&quot;&gt;전화번호 목록&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;level2 의 문제 입니다. 조금 어려워서 검색을 하였습니다. startsWith라는 기능이 있다는 것을 알게 되었고 이를 사용하면 쉽게 풀 수 있는 문제였습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//정답의 형태인 boolean 값 입니다.&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//phone_book의 길이를 담아주었습니다.&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//phone_book만큼 반복하는 for문 입니다.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//리스트의 모든 값을 서로 비교하기 위해 다시 반복해줍니다.&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//phone_book의 인덱스가 같다면 값이 같으므로 비교 의미가 없으니 &lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//그냥 넘어가 줍니다.&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//만약 비교 기준의 숫자의 길이가 더 작다면 &lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// 이번 숫자의 앞부분과 비교를 해봅니다.&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//startsWith를 이용해 phone_book[j]의 &lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//시작부분이 phone_book[i]로 시작한다면(접두어라면)&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//true를 아니라면 false를 리턴합니다.&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])){&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;//접두어 이므로 false리턴&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//접두어가 되는 경우가 없다면 true리턴&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 전화번호 목록</summary></entry><entry><title type="html">[programmers]주식가격 (java)</title><link href="https://fftl.github.io/java_ps/2021/02/01/programmers-jusicAccount.html" rel="alternate" type="text/html" title="[programmers]주식가격 (java)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/02/01/programmers-jusicAccount</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/02/01/programmers-jusicAccount.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/42584&quot; target=&quot;_blank&quot;&gt;주식가격&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;level2 의 문제 입니다. 설명에 있는 그대로를 구현하면 되는 문제였던 것 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//정답은 prices의 크기와 같은 값을 가지니&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//같은 크기의 배열을 생성해줍니다.&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//prices만큼 반복하는 for문입니다.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//각가격이 떨어지지 않은 시간을 담을 times &lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//가장 마지막 주식은 무조건 0이 들어오므로 &lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//if를 통해 미리 확인을하여 아래 수식이 실행되지 않도록 해줍니다.&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//마지막 index에 0 값을 넣어줌&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            
+            &lt;span class=&quot;c1&quot;&gt;//j=i+1은 어차피 i는 뒤의 수들과만 비교를 하면 되기 때문에 &lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//i+1부터 시작합니다&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//다음시간에 주식이 같거나 크다면 떨어지지 않았으므로 1초 더해줌&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]){&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//다음시간에 주식이 떨어졌어도 1초는 지난것 이므로 1초&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//더해준 뒤 이번 가격은 탐색을 멈춰주고 answer에 담아줍니다.&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//주식이 끝까지 내리지 않았을 경우에는 여기에서 answer에 &lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//담아줍니다.&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//끝!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 주식가격</summary></entry><entry><title type="html">[programmers]가운데 글자 가져오기 (java)</title><link href="https://fftl.github.io/java_ps/2021/02/01/programmers-centerStringget.html" rel="alternate" type="text/html" title="[programmers]가운데 글자 가져오기 (java)" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/02/01/programmers-centerStringget</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/02/01/programmers-centerStringget.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12903&quot; target=&quot;_blank&quot;&gt;가운데 글자 가져오기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;level1 의 문제 입니다. 홀수일 경우, 짝수인 경우 각각에 맞는 숫자들을 가져오면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//String의 길이를 확인합니다.&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;harf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//길이의 절반을 구해 중간 값을 찾습니다.&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//홀수인지 짝수인지를 판별하여 가져옵니다.&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;harf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;harf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//홀수라면 가운데 한글자&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;harf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;harf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//짝수라면 가운데 두글자 &lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//끝!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 가운데 글자 가져오기</summary></entry><entry><title type="html">[programmers]2016년 (java)</title><link href="https://fftl.github.io/java_ps/2021/01/22/programmers-2016year.html" rel="alternate" type="text/html" title="[programmers]2016년 (java)" /><published>2021-01-22T00:00:00+09:00</published><updated>2021-01-22T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/01/22/programmers-2016year</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/01/22/programmers-2016year.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12901&quot; target=&quot;_blank&quot;&gt;2016년&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -139,96 +297,7 @@ userId == 0 으로 확인을 했습니다.&lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104945774-869d0480-59fc-11eb-9493-883afed2e8b7.png&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;그 결과 아래처럼 CSignUpEmptyValueException 이 발생하여 예상에 맞는 결과가 나타나게 되었습니다.&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104945777-88ff5e80-59fc-11eb-8f20-8fb7285f4e43.png&quot; /&gt;&lt;/center&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">요즘 restful api를 만들고 있습니다. 작업을 하는 중에 테스트를 진행하는데 빈 값을 걸러내는 테스트 중 문제가 발생하였습니다. 나머지 String 값들은 password.isEmpty() 요런 식으로 빈 값을 확인하고 있는데 하나 받는 Long 값이 문제였습니다.</summary></entry><entry><title type="html">[programmers]모의고사 (java)</title><link href="https://fftl.github.io/java_ps/2021/01/17/programmers-Practicetest.html" rel="alternate" type="text/html" title="[programmers]모의고사 (java)" /><published>2021-01-17T00:00:00+09:00</published><updated>2021-01-17T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/01/17/programmers-Practicetest</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/01/17/programmers-Practicetest.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/42840&quot; target=&quot;_blank&quot;&gt;모의고사&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;프로그래머스 level1의 모의고사 문제입니다. 생각보다 쉬울줄 알았는데, 조금 해맸습니다. 각각 정답의 갯수를 구했는데, 비교해서 1, 2, 3을 넣는거에서 왜 그리 해맸는지.. 굉장히 단순무식하게 풀었습니다.&lt;/p&gt;
-
-&lt;p&gt;다른 분들의 풀이를 보니 개선할 점이 많이 보여 참고하여 다시 풀어봐야할 것 같습니다.&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//각 학생의 찍기 방식을 만들어 줍니다.&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//문제의 index 역할을 해줄 num1 입니다.&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//정답의 갯수를 담아줄 numT1 입니다.&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//index 가 answer의 개수를 넘으면 종료 라고 했으나 거의 밑의 break가 실행되어 멈춥니다. &lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//학생 1의 찍기방식을 반복해줍니다.&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//학생의 찍기와 문제의 답을 비교해서 정답일 경우 numT1을 증가시킵니다.&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]){&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;numT1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//문제의 인덱스는 무조건 증가합니다.&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//위의 while 에서 조건을 걸어 놓았으나 for문이 끝나기 전까지 num1 이 계속 증가하기 때문에&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//여기서도 num1의 값을 체크해주어 적절히 멈춰줍니다.&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//num1 ~ 와 내용 동일&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]){&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;numT2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//num1 ~ 와 내용 동일&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;student3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]){&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;numT3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//----------------------------------------------각각 채점이 끝났습니다.&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//점수중의 최댓값을 구해 max에 담아줍니다.&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numT2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numT3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numT3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//입력?을 쉽게 하기위해 ArrayList를 생성했습니다.&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;();&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;//각 점수들과 최대값을 비교해 학생의 번호를 answer에 담아주었습니다.&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numT1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numT2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numT3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);}&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//끝!&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 모의고사</summary></entry><entry><title type="html">[programmers]크레인 인형뽑기 게임 (java)</title><link href="https://fftl.github.io/java_ps/2021/01/17/programmers-crain.html" rel="alternate" type="text/html" title="[programmers]크레인 인형뽑기 게임 (java)" /><published>2021-01-17T00:00:00+09:00</published><updated>2021-01-17T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/01/17/programmers-crain</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/01/17/programmers-crain.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/64061&quot; target=&quot;_blank&quot;&gt;크레인 인형뽑기 게임&lt;/a&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104945777-88ff5e80-59fc-11eb-8f20-8fb7285f4e43.png&quot; /&gt;&lt;/center&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">요즘 restful api를 만들고 있습니다. 작업을 하는 중에 테스트를 진행하는데 빈 값을 걸러내는 테스트 중 문제가 발생하였습니다. 나머지 String 값들은 password.isEmpty() 요런 식으로 빈 값을 확인하고 있는데 하나 받는 Long 값이 문제였습니다.</summary></entry><entry><title type="html">[programmers]크레인 인형뽑기 게임 (java)</title><link href="https://fftl.github.io/java_ps/2021/01/17/programmers-crain.html" rel="alternate" type="text/html" title="[programmers]크레인 인형뽑기 게임 (java)" /><published>2021-01-17T00:00:00+09:00</published><updated>2021-01-17T00:00:00+09:00</updated><id>https://fftl.github.io/java_ps/2021/01/17/programmers-crain</id><content type="html" xml:base="https://fftl.github.io/java_ps/2021/01/17/programmers-crain.html">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/64061&quot; target=&quot;_blank&quot;&gt;크레인 인형뽑기 게임&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;문제를 처음 읽어볼 때 문제가 길기도 하고 막 그림까지 있으니까 어려워 보이긴 했지만 천천히 읽어보니 생각보다 쉬워서 왜 level1에 있는 문제인지 알 수 있었다.&lt;/p&gt;
 
@@ -283,443 +352,4 @@ userId == 0 으로 확인을 했습니다.&lt;/p&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 크레인 인형뽑기 게임</summary></entry><entry><title type="html">JPA 영속성 컨텍스트란?</title><link href="https://fftl.github.io/springboot/2021/01/16/JPA-Persistence-Context.html" rel="alternate" type="text/html" title="JPA 영속성 컨텍스트란?" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://fftl.github.io/springboot/2021/01/16/JPA%20Persistence%20Context</id><content type="html" xml:base="https://fftl.github.io/springboot/2021/01/16/JPA-Persistence-Context.html">&lt;h1 id=&quot;영속성-컨텍스트&quot;&gt;영속성 컨텍스트&lt;/h1&gt;
-
-&lt;h3 id=&quot;엔티티-매니저-팩토리와-엔티티-매니저&quot;&gt;엔티티 매니저 팩토리와 엔티티 매니저&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;엔티티 매니저 팩토리는 고객의 요청이 올때마다 엔티티매니저를 생성한다. 그러면 이 엔티티매니저는 내부적으로 데이터베이스 커넥션을 사용하여 디비를 사용하게 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;영속성-컨텍스트는-무엇인가&quot;&gt;영속성 컨텍스트는 무엇인가?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JPA를 이해하는데 가장 중요한 용어, 엔티티를 영구 저장하는 환경 이라는 뜻&lt;/li&gt;
-  &lt;li&gt;EntityManager.persist(entity); 는 DB에 저장하는 것이 아니라 entity를 영속화 한다는 뜻. 영속성 컨텍스트에 넣는다.&lt;/li&gt;
-  &lt;li&gt;영속성 컨텍스트는 논리적인 개념, 눈에 보이지 않는다. 엔티티 매니저를 통해서 영속성 컨텍스트에 접근한다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EntityManager 를 생성하면 영속성 컨텍스트(PersistenceContext)가 생성이 된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;엔티티의 생명주기&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;비영속, 영속성 컨텍스트와 전혀 관계가 없는 새로운 상태&lt;/li&gt;
-      &lt;li&gt;영속, 영속성 컨텍스트에 관리되는 상태&lt;/li&gt;
-      &lt;li&gt;준영속, 영속성 컨텍스트에 저장되었다가 분리된 상태&lt;/li&gt;
-      &lt;li&gt;삭제, 삭제된 상태&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;비영속&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Member member = new Member(); 를 이용한 영속성과 관계 없음.&lt;/li&gt;
-      &lt;li&gt;em.persist(member); 가 실행될 경우 영속상태가 됩니다. em의 영속성 컨텍스트에 의해 관리가 됩니다. 이 상태가 DB에 저장된 상태는 아님. ⇒ 이후 commit(); 이 실행되면 그때 영속성 컨텍스트에 있는 애가 디비에 날라가게 됩니다.&lt;/li&gt;
-      &lt;li&gt;em.detach(member); ⇒ (준영속) 영속성 컨텍스트에 관리되던 member를 지우는 것&lt;/li&gt;
-      &lt;li&gt;em.remove(member); ⇒ 실제 DB삭제를 요청하는 상태&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;영속성 컨텍스트의 이점&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;1차 캐시, 동일성(identity)보장&lt;/li&gt;
-      &lt;li&gt;트랜잭션을 지원하는 쓰기 지연(transactional write-behind)&lt;/li&gt;
-      &lt;li&gt;변경 감지(Dirty Checking), 지연로딩(Lazy Loding)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;엔티티 조회, 1차 캐시&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;영속성 컨텍스트는 내부에 1차 캐시를 가지고 있다. 이 1차 캐시를 영속성 컨텍스트라고 생각해도 됨&lt;/li&gt;
-      &lt;li&gt;em.find(Member.class, 100L) 을 실행 했을 때, 만약 1차 캐시에 이 정보가 이미 들어 있다면 select 문이 실행이 되지 않아도 내용을 출력할 수 있다. 만약 1차 캐시에 정보가 없을 때에 DB에 select문을 실행하게 된다.&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Member member1 = em.find(Member.class, 100L)&lt;/p&gt;
-
-        &lt;p&gt;Member member2 = em.find(Member.class, 100L)&lt;/p&gt;
-
-        &lt;p&gt;member1 == member2 는 true 값이 나온다. java collection 처럼 영속 엔티티의 동일성을 보장해줍니다. 1차 캐시에서 같은 값을 가져오는 것 이기 때문에 . 같은 트랜잭션 안에서 실행된다고 보면 됨&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;트랜잭션을 지원하는 쓰기 지연&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;EntityManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createEntityManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;EntityTransaction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transaction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTransaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//엔티티 매니저는 데이터 변경시 트랜잭션을 시작해야 하낟.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;transaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memberA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memberB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//여기까지는 Insert sql이 디비에 보내지지 않는다.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;⇒ em.persist(memberA); 가 실행되면 1차캐시에 memberA가 입력되게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;⇒ 동시에 Insert sql을 생성해서 쓰기지연 sql 저장소에 쌓이게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;⇒ 그리고 em.persist(memberB); 가 실행돼도 동일하게 1차 캐시에 memberB 에 입력되며 Insert sql이 생성되어 쓰기지연 sql 저장소에 쌓입니다.&lt;/p&gt;
-
-&lt;p&gt;⇒ 이것은 commit이 되는 순간 쌓여있던 sql이 db에 저장이 되게 됩니다. 이런 방식으로 한번에 모았다가 보낼 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;엔티티 수정( 변경 감지, update )&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;105L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;leedongmin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//여기까지만 해도 update sql이 실행이 됩니다. ( 엔티티를 가져와서 값을 변경해준다. )&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//em.persist(member); 수정을 하기 위함이라면 persist를 실행하지 않아도 된다( 사용하지 말라고 한다. )&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;⇒ 이렇게 동작하는 이유는 commit이 실행되면 flush()가 실행됨,&lt;/p&gt;
-
-&lt;p&gt;⇒ 엔티티와 스냅샷 비교 ( 최초로 1차 캐시에 그 값이 들어온 상태를 저장해서(스냅샷) 그 뒤에 커밋할 때의 시점의 상태와 비교를 시작합니다. )&lt;/p&gt;
-
-&lt;p&gt;⇒ 만약 비교 후 변경이 되었을 때 쓰기지연 SQL저장소에 update sql도 저장되어 실행되게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;⇒ em.remove(memberA) //삭제 이것도 commit 시점에 실행이 되게 됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;플러시&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;영속성 컨텍스트의 변경 내용을 데이터베이스에 반영( 쌓여있던 sql 을 실제 DB에 보내줌 )&lt;/strong&gt;&lt;/p&gt;
-
-        &lt;p&gt;⇒ 변경감지 발생&lt;/p&gt;
-
-        &lt;p&gt;⇒ 수정된 엔티티 쓰기지연 SQL저장소에 등록 ( update문 등록 )&lt;/p&gt;
-
-        &lt;p&gt;⇒ 쓰기지연 sql저장소의 쿼리를 데이터베이스에 전송&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;영속성 컨텍스트를 플러시하는 방법 ( 직접 작성하는 일이 많지는 않을 것, 하지만 알아는 놓자, 테스트에 필요할지도 )&lt;/strong&gt;&lt;/p&gt;
-
-        &lt;p&gt;⇒ em.flush() - 직접호출&lt;/p&gt;
-
-        &lt;p&gt;⇒ 트랜잭션 커밋 - 플러시 자동 호출&lt;/p&gt;
-
-        &lt;p&gt;⇒ JPQL 쿼리 실행 - 플러시 자동 호출&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;member200&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//여기서 먼저 insert sql이 실행이 됩니다. 강제로 DB에 저장을 해버림&lt;/span&gt;
-  						&lt;span class=&quot;c1&quot;&gt;//flush를 한다고 1차캐시의 데이터가 지워지는 것이 아닙니다. 쓰기지연 SQL저장소에 있던 쌓여있던 sql들만 DB에 날리게 됨&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;tx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;JPQL 쿼리 실행시 플러시가 자동으로 호출되는 이유&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memberA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memberB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memberC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//중간에 JPQL 실행&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;select m from Member m&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;//JPQL이 실행되면 그동안 쌓여있던 SQL저장소 sql들이 DB에 날아간뒤 실행 &lt;/span&gt;
-  &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;members&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResultList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;FlushModeType.AUTO - 커밋이나 쿼리를 실행할 때 플러시 (기본값)&lt;/li&gt;
-      &lt;li&gt;FlushModeType.COMMIT - 커밋할 때만 플러시 ( 가끔 유용하게 사용될 수도 있다. 가급적 손대지 않아도 됨 )&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;플러시는!&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;영속성 컨텍스트를 비우지 않음&lt;/li&gt;
-  &lt;li&gt;영속성 컨텍스트의 변경내용을 데이터베이스에 동기화&lt;/li&gt;
-  &lt;li&gt;트랜잭션이라는 작업 단위가 중요 → 커밋 직전에만 동기화 하면 됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;준영속 상태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;영속 → 준영속&lt;/li&gt;
-  &lt;li&gt;영속 상태의 엔티티가 영속성 컨텍스트에서 분리(detached)&lt;/li&gt;
-  &lt;li&gt;영속성 컨텍스트가 제공하는 기능을 사용 못함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;( 여기서 영속성 상태는 persist나 find 등을 통해 1차 캐시에 들어와있는 엔티티의 상태 )&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;준영속 상태로 만드는 방법
-  ⇒ em.detach(entity) - 특정 엔티티만 준영속 상태로 전환
-  ⇒ em.clear() - 영속성 컨텍스트를 완전히 초기화
-  ⇒ em.close() - 영속성 컨텍스트를 종료 (당연히 완전 종료)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//이렇게 가져온 member는 상태는 영속상태가 됨&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AAAA&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;detach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//이렇게 하면 member만 준영속 상태가 됨 (특정할 수 있다)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//이걸 실행하면 영속성 컨텍스트의 모든 내용을 지워버림&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;tx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//이걸 실행해도 setName을 해서 준비중이던 update가 무효화가 됩니다.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;이 글은 inflearn에서 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 공부하며 기록한 내용입니다.&lt;/p&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">영속성 컨텍스트</summary></entry><entry><title type="html">Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)</title><link href="https://fftl.github.io/springboot/2021/01/12/sprinboot_response_comment.html" rel="alternate" type="text/html" title="Spring Boot RestApi response 방식에 대한 고민 (ResponseEntity 간단사용)" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-12T00:00:00+09:00</updated><id>https://fftl.github.io/springboot/2021/01/12/sprinboot_response_comment</id><content type="html" xml:base="https://fftl.github.io/springboot/2021/01/12/sprinboot_response_comment.html">&lt;p&gt;요즘 친구들과 미니 프로젝트를 진행중 입니다. 저는 SpringBoot, SpringSecurity, Jwt를 이용한 rest api를 만들고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;많은 기능을 가지고 있는 것은 아니지만 Spring Security와 Jwt를 이용한 인증을 사용해보기위해 꽤 많은 시간을 삽질하였던 것 같습니다. 물론 그렇다고 완벽하게
-이해한 것도 아닙니다. (아직은 아래 블로그의 소스 가져다가 조금씩 변형해서 사용하는 정도)&lt;/p&gt;
-
-&lt;p&gt;(정말 많이 참고하고 공부가 된 블로그, 너무 감사하구있습니다.)
-&lt;a href=&quot;https://daddyprogrammer.org/post/636/springboot2-springsecurity-authentication-authorization/&quot;&gt;https://daddyprogrammer.org/post/636/springboot2-springsecurity-authentication-authorization/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;암튼 어찌저찌 회원가입, 로그인, 인증되는 부분을 만들었는데, 문제가 생기는 부분이 어떠한 방식으로 Exception 처리와 return(결과) 을 할 것인가 였습니다.&lt;/p&gt;
-
-&lt;p&gt;위의 자료에서는 ResponseService를 만들어 단순 성공,실패일 경우, 단일건 조회일 경우, 다중건 조회 일 경우의 메소드를 각각 만들어 놓고 사용하고 있었습니다.
-그래서 객체 조회가 있을 시에 (T data) 보여줄 데이터를 일괄적으로 관리하여 편하게 사용할 수 있도록 되어 있습니다.&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104259519-ece9ca80-54c4-11eb-8ff6-40257b5c3b3c.png&quot; width=&quot;80%&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;결과를 보면 data에 담겨서 한번에 나타납니다.&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104261591-39370980-54c9-11eb-91f0-ec40f2e9d2a4.png&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;조금의 시간을 들여 이해를 하는데 성공하였으나, 저와 client 작업을 하는 친구와 맞춰놓은 방식은 아래 결과처럼 한번에? 쭉 나오는 방식 이었습니다.&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104261970-f6c1fc80-54c9-11eb-9c11-0981b12c4dc1.png&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;물론 위의 방식이 더 입력 방식도 효율적이고 받을 때도 편할 수 있겠지만, 일단 협의 해놓은 대로 구현을 해보고 싶었습니다. 공부도 되고 나중에 다시 바꿔도 되니까요.&lt;/p&gt;
-
-&lt;p&gt;그래서 검색을 통해 ResponseEntity 라는 기능을 찾았습니다. 이 ResponseEntity는 반환타입이 다양한 restapi에서 상태코드와 응답메시지 등을 간편하게 담아 전달할 수 있는 기능정도로 알면 될 것 같습니다.
-ResponseEntity도 조금만 더 코딩을 잘한다면 위의 방법 못지않게 편하고 효율적으로 할 수 있겠지만, 일단 맞춰놓은 회의 날짜까지 완성해야 하기에 원초적으로 사용해 보았습니다.&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104262368-d181be00-54ca-11eb-8757-5e2a56194f60.png&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/104262166-6932dc80-54ca-11eb-959f-0f63d74cfdcd.png&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;이렇게 사용하여 조금전의 이미지 처럼 한번에 쭉? 나오는 형식으로 결과를 보낼 수 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;혼자서 공부할 때와는 다르게 함께 미니 프로젝트를 진행하니 책임감을 가지고 더 많이 공부를 하게 되는 것 같아 긍정적인 기분입니다.&lt;/p&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">요즘 친구들과 미니 프로젝트를 진행중 입니다. 저는 SpringBoot, SpringSecurity, Jwt를 이용한 rest api를 만들고 있습니다.</summary></entry><entry><title type="html">Spring Boot thymeleaf form post error..?</title><link href="https://fftl.github.io/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html" rel="alternate" type="text/html" title="Spring Boot thymeleaf form post error..?" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-09T00:00:00+09:00</updated><id>https://fftl.github.io/springboot/2021/01/09/springboot%20thymeleaf%20form%20post%20error</id><content type="html" xml:base="https://fftl.github.io/springboot/2021/01/09/springboot-thymeleaf-form-post-error.html">&lt;p&gt;springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;그래서 저는 Dto를 생성했고, Dto 에서 @Builder 를 이용해 Dto로 받은 객체를 Entity로 변환하는 작업을 사용하고 있었습니다. 그런데 아무리 작업을 해도 PostMapping 와 @ModelAttribute 를 이용해 Dto 로 입력을 받았는데 자꾸 null 값만 들어오고 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;나의 thymeleaf 문법이 잘못되었는지, Dto를 잘못 만들었는지 많은 고민과 테스트를 했으나 결론은 Dto에도 setter를 선언해 주지 않았더니 @ModelAttribute에서 setter를 이용해 Dto 객체에 값이 할당되어야 하는데 그것을 못하고 있었던 것입니다. 저 과정에서 setter를 이용해 할당을 하는 것을 이제야 깨달았습니다.&lt;/p&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.</summary></entry><entry><title type="html">Spring Security 기본 따라해보기</title><link href="https://fftl.github.io/springboot/2020/12/18/Spring_Security_Study_01.html" rel="alternate" type="text/html" title="Spring Security 기본 따라해보기" /><published>2020-12-18T00:00:00+09:00</published><updated>2020-12-18T00:00:00+09:00</updated><id>https://fftl.github.io/springboot/2020/12/18/Spring_Security_Study_01</id><content type="html" xml:base="https://fftl.github.io/springboot/2020/12/18/Spring_Security_Study_01.html">&lt;ul&gt;
-  &lt;li&gt;백기선님의 유튜브 영상 &lt;a href=&quot;https://www.youtube.com/watch?v=zANzxwy4y3k&quot;&gt;https://www.youtube.com/watch?v=zANzxwy4y3k&lt;/a&gt; 에 대한 메모입니다.&lt;/li&gt;
-  &lt;li&gt;해당 영상은 스프링 공식 가이드를 따라하며 설명을 해주는 강의 입니다. (&lt;a href=&quot;https://spring.io/guides/gs/securing-web/&quot;&gt;https://spring.io/guides/gs/securing-web/&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;springboot를 이용하여 프로젝트를 생성 후 maven, gradle 중 각각 선택한 빌드 자동화 도구를 통해 빌드를 합니다. ( 이 글은 gradle )&lt;/p&gt;
-
-&lt;p&gt;일단은 기본적으로 필요한 thymleaf, springboot web, test 만 사용,&lt;/p&gt;
-
-&lt;p&gt;build.gradle&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plugins {
-	id 'org.springframework.boot' version '2.3.2.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-	id 'java'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-}
-
-test {
-	useJUnitPlatform()
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;그리고 필요한 템플릿 들을 추가해줍니다.&lt;/p&gt;
-
-&lt;p&gt;src/main/resources/templates/home.html&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/xhtml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:th=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:sec=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org/thymeleaf-extras-springsecurity3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Spring Security Example&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Welcome!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Click &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{/hello}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; to see a greeting.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;src/main/resources/templates/hello.html&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/xhtml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:th=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;xmlns:sec=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org/thymeleaf-extras-springsecurity3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Hello World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;그리고 각 페이지들을 연결해주기 위한 MvcConfig를 추가해줍니다.&lt;/p&gt;
-
-&lt;p&gt;src/main/java/com/example/securingweb/MvcConfig.java&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.securingweb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.web.servlet.config.annotation.ViewControllerRegistry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.web.servlet.config.annotation.WebMvcConfigurer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MvcConfig&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WebMvcConfigurer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addViewControllers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ViewControllerRegistry&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/home&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;home&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;home&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기까지만 진행한 뒤 실행을 하면 home, hello 페이지만 조회 할 수 있는 프로젝트가 실행됩니다.&lt;/p&gt;
-
-&lt;p&gt;이어서 처음에 만들었던 build.gradle에 security를 추가합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plugins {
-	id 'org.springframework.boot' version '2.3.2.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-	id 'java'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// 추가됨
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.security:spring-security-test'
-	//
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-}
-
-test {
-	useJUnitPlatform()
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;⇒ 이렇게 security 만 추가한 뒤 다시 프로젝트를 실행해보면 아까 접속할 수 있었던 home, hello에 접근이 불가능 해집니다.&lt;/p&gt;
-
-&lt;p&gt;(login page로 이동 됨)&lt;/p&gt;
-
-&lt;p&gt;⇒ 인증 관련 설정을 해주어야 함&lt;/p&gt;
-
-&lt;p&gt;여기의 인증 관련 설정은 아래의 WebSecurityConfig 입니다.&lt;/p&gt;
-
-&lt;p&gt;src/main/java/com/example/securingweb/WebSecurityConfig.java&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.securingweb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.context.annotation.Bean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.config.annotation.web.builders.HttpSecurity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.config.annotation.web.configuration.EnableWebSecurity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.core.userdetails.User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.core.userdetails.UserDetails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.core.userdetails.UserDetailsService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.security.provisioning.InMemoryUserDetailsManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@EnableWebSecurity&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WebSecurityConfig&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WebSecurityConfigurerAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpSecurity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authorizeRequests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;antMatchers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permitAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//권한이 없더라도 접근이 허용된 페이지&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;anyRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authenticated&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;//그 외의 페이지는 권한이 필요함&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formLogin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loginPage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;//login폼은 만들어 놓은 페이지로 이동됩니다.&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permitAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;logout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permitAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;nd&quot;&gt;@Bean&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserDetailsService&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;userDetailsService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;UserDetails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-			 &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;withDefaultPasswordEncoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//login id&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//login password&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;USER&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;//로그인한 유저의 등급 이라고 보면 될 것 같다.&lt;/span&gt;
-				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;InMemoryUserDetailsManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;그 후 이동 되어야 할 템플릿 페이지도 추가, 수정 해줍니다.&lt;/p&gt;
-
-&lt;p&gt;src/main/resources/templates/login.html&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/xhtml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:th=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;xmlns:sec=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org/thymeleaf-extras-springsecurity3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Spring Security Example &lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:if=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;${param.error}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            Invalid username and password.
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:if=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;${param.logout}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            You have been logged out.
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{/login}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;label&amp;gt;&lt;/span&gt; User Name : &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;label&amp;gt;&lt;/span&gt; Password: &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Sign In&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;src/main/resources/templates/hello.html&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/xhtml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:th=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;xmlns:sec=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.thymeleaf.org/thymeleaf-extras-springsecurity3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Hello World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:inline=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hello [[${#httpServletRequest.remoteUser}]]!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;th:action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{/logout}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Sign Out&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이후 실행을 하면 권한이 필요 없는 페이지, 권한이 필요한 페이지가 나뉘어 접근하게 됩니다.&lt;/p&gt;</content><author><name></name></author><category term="SpringBoot" /><summary type="html">백기선님의 유튜브 영상 https://www.youtube.com/watch?v=zANzxwy4y3k 에 대한 메모입니다. 해당 영상은 스프링 공식 가이드를 따라하며 설명을 해주는 강의 입니다. (https://spring.io/guides/gs/securing-web/)</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA_PS" /><summary type="html">=&amp;gt; 크레인 인형뽑기 게임</summary></entry></feed>

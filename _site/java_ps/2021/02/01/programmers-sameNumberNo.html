@@ -11,7 +11,7 @@
 
   <title>
     
-      Spring Boot thymeleaf form post error..? &middot; 
+      [programmers]같은 숫자는 싫어 (java) &middot; 
     
   </title>
 
@@ -155,17 +155,46 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Spring Boot thymeleaf form post error..?</h1>
-  <span class="post-date">09 Jan 2021</span>
+  <h1 class="post-title">[programmers]같은 숫자는 싫어 (java)</h1>
+  <span class="post-date">01 Feb 2021</span>
    | 
   
   
   <article>
-    <p>springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.</p>
+    <p>=&gt; <a href="https://programmers.co.kr/learn/courses/30/lessons/12906" target="_blank">같은 숫자는 싫어</a></p>
 
-<p>그래서 저는 Dto를 생성했고, Dto 에서 @Builder 를 이용해 Dto로 받은 객체를 Entity로 변환하는 작업을 사용하고 있었습니다. 그런데 아무리 작업을 해도 PostMapping 와 @ModelAttribute 를 이용해 Dto 로 입력을 받았는데 자꾸 null 값만 들어오고 있었습니다.</p>
+<p>level1 의 문제 입니다. 첫번째 수를 arrayList에 넣어주고 그수와 다음 들어갈 수를 계속해서 비교하여 답 List를 찾아내었습니다.</p>
 
-<p>나의 thymeleaf 문법이 잘못되었는지, Dto를 잘못 만들었는지 많은 고민과 테스트를 했으나 결론은 Dto에도 setter를 선언해 주지 않았더니 @ModelAttribute에서 setter를 이용해 Dto 객체에 값이 할당되어야 하는데 그것을 못하고 있었던 것입니다. 저 과정에서 setter를 이용해 할당을 하는 것을 이제야 깨달았습니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span><span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">answer</span> <span class="o">=</span> <span class="o">{};</span> <span class="c1">//기본으로 있엇는데 사용하지 않았다.. 지울걸..</span>
+        <span class="c1">//답을 담아줄 arrayList를 선언하였습니다.</span>
+        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">dab</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
+        
+        <span class="c1">//arr 배열만큼 반복해주는 for문입니다.</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="c1">//첫번째 수는 무조건 넣어줘야 하므로 if를 통해 넣었습니다.</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">){</span>
+                <span class="n">dab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>    
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="c1">//만약 arrayList의 가장 마지막 인덱스에 있는 수와</span>
+                <span class="c1">//다음에 들어갈 수가 같다면 넣지않고 넘어갑니다. </span>
+                <span class="k">if</span><span class="o">(</span><span class="n">dab</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">dab</span><span class="o">.</span><span class="na">size</span><span class="o">()-</span><span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]){</span>
+                    <span class="k">continue</span><span class="o">;</span> 
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="c1">//같은수가 아니라면 넣어줍니다.</span>
+                    <span class="n">dab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        
+        <span class="c1">//끝!</span>
+        <span class="k">return</span> <span class="n">dab</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
   </article>
 </div>
@@ -185,8 +214,8 @@
     
       <li>
         <h3>
-          <a href="/java_ps/2021/02/01/programmers-sameNumberNo.html">
-            [programmers]같은 숫자는 싫어 (java)
+          <a href="/java_ps/2021/02/01/programmers-phonenumberlist.html">
+            [programmers]전화번호 목록 (java)
             <small>01 Feb 2021</small>
           </a>
         </h3>
@@ -194,8 +223,8 @@
     
       <li>
         <h3>
-          <a href="/java_ps/2021/02/01/programmers-phonenumberlist.html">
-            [programmers]전화번호 목록 (java)
+          <a href="/java_ps/2021/02/01/programmers-jusicAccount.html">
+            [programmers]주식가격 (java)
             <small>01 Feb 2021</small>
           </a>
         </h3>

@@ -11,7 +11,7 @@
 
   <title>
     
-      Spring Boot thymeleaf form post error..? &middot; 
+      [programmers]가운데 글자 가져오기 (java) &middot; 
     
   </title>
 
@@ -155,17 +155,33 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Spring Boot thymeleaf form post error..?</h1>
-  <span class="post-date">09 Jan 2021</span>
+  <h1 class="post-title">[programmers]가운데 글자 가져오기 (java)</h1>
+  <span class="post-date">01 Feb 2021</span>
    | 
   
   
   <article>
-    <p>springboot jpa 를 사용하는데 구글에서의 많은 자료들이 Entity 에서는 setter 를 사용하지 않는 것이 좋다는 의견을 많이 내고 있습니다. jpa 사용시에 Entity는 DB와 직결되는 만큼 예상치 못한 값이 들어가게 될 경우 큰 문제가 발생할 수도 있기 때문입니다. 따라서 Entity class와 유사한 Dto class를 만들어 Dto를 거친 데이터의 이동을 하도록 권장하고 있습니다.</p>
+    <p>=&gt; <a href="https://programmers.co.kr/learn/courses/30/lessons/12903" target="_blank">가운데 글자 가져오기</a></p>
 
-<p>그래서 저는 Dto를 생성했고, Dto 에서 @Builder 를 이용해 Dto로 받은 객체를 Entity로 변환하는 작업을 사용하고 있었습니다. 그런데 아무리 작업을 해도 PostMapping 와 @ModelAttribute 를 이용해 Dto 로 입력을 받았는데 자꾸 null 값만 들어오고 있었습니다.</p>
+<p>level1 의 문제 입니다. 홀수일 경우, 짝수인 경우 각각에 맞는 숫자들을 가져오면 됩니다.</p>
 
-<p>나의 thymeleaf 문법이 잘못되었는지, Dto를 잘못 만들었는지 많은 고민과 테스트를 했으나 결론은 Dto에도 setter를 선언해 주지 않았더니 @ModelAttribute에서 setter를 이용해 Dto 객체에 값이 할당되어야 하는데 그것을 못하고 있었던 것입니다. 저 과정에서 setter를 이용해 할당을 하는 것을 이제야 깨달았습니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">answer</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="c1">//String의 길이를 확인합니다.</span>
+        <span class="kt">int</span> <span class="n">harf</span> <span class="o">=</span> <span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="o">;</span>     <span class="c1">//길이의 절반을 구해 중간 값을 찾습니다.</span>
+        
+        <span class="k">if</span><span class="o">(</span><span class="n">size</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">){</span> <span class="c1">//홀수인지 짝수인지를 판별하여 가져옵니다.</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">harf</span><span class="o">,</span> <span class="n">harf</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//홀수라면 가운데 한글자</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">harf</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">harf</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//짝수라면 가운데 두글자 </span>
+        <span class="o">}</span>
+        
+        <span class="c1">//끝!</span>
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
   </article>
 </div>
