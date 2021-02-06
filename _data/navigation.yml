@@ -1,9 +1,11 @@
 # main links
 main:
-  - title: "Algorithm"
-    url: "/categories/algorithm"
-  - title: "Spring Boot"
-    url: "/categories/Spring Boot"
+  - title: "Home"
+    url: /index.html
+  - title: "Category"
+    url: /categories/
+#  - title: "Spring Boot"
+#    url: /page-archive/
 #  - title: "Quick-Start Guide"
 #    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"

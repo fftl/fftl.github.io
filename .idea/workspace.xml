@@ -2,15 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
+      <change afterPath="$PROJECT_DIR$/_includes/archive-single2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/navigation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/navigation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-14-[baekjoon]_2577_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_2577_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-14-[baekjoon]_4344_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_4344_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-16-[baekjoon]_1110_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-16-[baekjoon]_1110_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-17-[baekjoon]_10817_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-17-[baekjoon]_10817_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-Spring_Security_Study_01.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/SpringBoot/2020-12-18-Spring_Security_Study_01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-[baekjoon]_1546_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-18-[baekjoon]_1546_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-18-[baekjoon]_3052_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-18-[baekjoon]_3052_(java).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-09-springboot thymeleaf form post error.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/SpringBoot/2021-01-09-springboot thymeleaf form post error.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-12-sprinboot_response_comment.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/SpringBoot/2021-01-12-sprinboot_response_comment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-16-JPA Persistence Context.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/SpringBoot/2021-01-16-JPA Persistence Context.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-17-programmers-Practicetest.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-01-17-programmers-Practicetest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-17-programmers-crain.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-01-17-programmers-crain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-19-java_long_null_error.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/SpringBoot/2021-01-19-java_long_null_error.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-2016year.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-01-22-programmers-2016year.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-ceucbok.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-01-22-programmers-ceucbok.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-22-programmers-knumbersu.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-01-22-programmers-knumbersu.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-centerStringget.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-01-programmers-centerStringget.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-jusicAccount.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-01-programmers-jusicAccount.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-phonenumberlist.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-01-programmers-phonenumberlist.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-sameNumberNo.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-01-programmers-sameNumberNo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-02-01-programmers-twoNumberSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-01-programmers-twoNumberSum.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/algorithm.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/category.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/springboot.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,13 +57,19 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\SpringBoot" />
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Algorithm" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\assets" />
     </key>
   </component>
@@ -41,6 +82,14 @@
       <option name="presentableId" value="Default" />
       <updated>1612429109874</updated>
     </task>
+    <task id="LOCAL-00001" summary="fix: my info update">
+      <created>1612622807299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612622807299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -54,5 +103,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: my info update" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: my info update" />
   </component>
 </project>
