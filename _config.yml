@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "FFTL"
   avatar           : "/assets/fftl.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "안녕하세요!<br> JAVA 백엔드 공부를 하고<br>있습니다!<br>새로운 기술을 배우는 것도<br>좋아합니다!<br>계속 정진하겠습니다!<br>**감사합니다!**"
+  bio              : "안녕하세요!<br> 백엔드 개발 공부를 하고<br>있습니다!<br>새로운 기술을 배우는 것도<br>좋아합니다!<br>계속 정진하겠습니다!<br>**감사합니다!**"
   location         : "Bucheon, Gyeonggi-do"
 #  email            : "fftl.0710@gmail.com"
   links:
