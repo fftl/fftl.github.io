@@ -44,15 +44,18 @@ figure.highlight {
     &.code,
     &.rouge-code {
       padding-left: 1em;
+      font-family: 'D2 coding', "Consolas", monospace; /* DM_custom code-font-family */
     }
   }
 
   pre {
     margin: 0;
+
   }
 }
 
-.highlight pre {
+.highlight pre { /* DM_custom code-font-size */
+  font-size: 0.8em;
   width: 100%;
 }
 
