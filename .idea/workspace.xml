@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-07-programmers-function_develop.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-07-programmers-hashad_number.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-07-programmers-printer.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head/custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_2577_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_2577_(java).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_4344_(java).md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/Algorithm/2020-12-14-[baekjoon]_4344_(java).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/minimal-mistakes/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/minimal-mistakes/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/minimal-mistakes/_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/minimal-mistakes/_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/minimal-mistakes/_syntax.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/minimal-mistakes/_syntax.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +31,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts/Algorithm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
