@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-15-[baekjoon]_10872_(java).md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-15-programmers-kapet.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/Algorithm/2021-02-15-programmers-new_id_recommend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/NodeJs/2021-02-15-nodejs_study2.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
@@ -35,11 +33,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts/Algorithm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts/NodeJs" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\NodeJs" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Algorithm" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io" />
     </key>
