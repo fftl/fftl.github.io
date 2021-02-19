@@ -105,7 +105,11 @@ body {
 		}
 	}
 
-  p,
+  p{/* DM_custom p-font-size */
+
+    font-size: 1em;
+  }
+
   li,/* DM_custom li-font-size */
   dl {
     font-size: 0.7em;
