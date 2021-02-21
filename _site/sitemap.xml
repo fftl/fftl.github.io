@@ -1,214 +1,29 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_2577_(java)/</loc>
-<lastmod>2020-12-14T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_4344_(java)/</loc>
-<lastmod>2020-12-14T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_1110_(java)/</loc>
-<lastmod>2020-12-16T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_10817_(java)/</loc>
-<lastmod>2020-12-17T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_1546_(java)/</loc>
-<lastmod>2020-12-18T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_3052_(java)/</loc>
-<lastmod>2020-12-18T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/springboot/Spring_Security_Study_01/</loc>
-<lastmod>2020-12-18T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/springboot/springboot-thymeleaf-form-post-error/</loc>
-<lastmod>2021-01-09T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/springboot/sprinboot_response_comment/</loc>
-<lastmod>2021-01-12T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/springboot/JPA-Persistence-Context/</loc>
-<lastmod>2021-01-16T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-Practicetest/</loc>
-<lastmod>2021-01-17T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-crain/</loc>
-<lastmod>2021-01-17T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/springboot/java_long_null_error/</loc>
-<lastmod>2021-01-19T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-2016year/</loc>
-<lastmod>2021-01-22T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-ceucbok/</loc>
-<lastmod>2021-01-22T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-knumbersu/</loc>
-<lastmod>2021-01-22T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-centerStringget/</loc>
-<lastmod>2021-02-01T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-jusicAccount/</loc>
-<lastmod>2021-02-01T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-phonenumberlist/</loc>
-<lastmod>2021-02-01T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-sameNumberNo/</loc>
-<lastmod>2021-02-01T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-twoNumberSum/</loc>
-<lastmod>2021-02-01T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-function_develop/</loc>
-<lastmod>2021-02-07T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-hashad_number/</loc>
-<lastmod>2021-02-07T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-printer/</loc>
-<lastmod>2021-02-07T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/aws/AWS_study1/</loc>
-<lastmod>2021-02-09T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/nodejs/nodejs_study1/</loc>
-<lastmod>2021-02-09T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/baekjoon-_10872_(java)/</loc>
-<lastmod>2021-02-15T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-kapet/</loc>
-<lastmod>2021-02-15T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/algorithm/programmers-new_id_recommend/</loc>
-<lastmod>2021-02-07T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/nodejs/nodejs_study2/</loc>
-<lastmod>2021-02-15T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/nestjs/nestjs_study_01/</loc>
-<lastmod>2021-02-18T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/nestjs/nestjs_study_02/</loc>
-<lastmod>2021-02-18T13:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/about/</loc>
-<lastmod>2020-10-29T03:51:23+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/archive-layout-with-content/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/categories/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/collection-archive/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/categories/edge-case/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/lorem-ipsum/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/tags/markup/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page-a/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page-archive/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page-b/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/pets/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/portfolio/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/post-archive-feature-rows/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/recipes/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/sample-page/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/sitemap/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/splash-page/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/tags/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/terms/</loc>
-<lastmod>2017-10-21T01:42:38+09:00</lastmod>
-</url>
-<url>
-<loc>https://fftl.github.io/year-archive/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page2/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page3/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page4/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page5/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page6/</loc>
-</url>
-<url>
-<loc>https://fftl.github.io/page7/</loc>
-</url>
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+
+      {% if post.sitemap.changefreq == null %}
+        <changefreq>weekly</changefreq>
+      {% else %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% endif %}
+
+      {% if post.sitemap.priority == null %}
+          <priority>0.5</priority>
+      {% else %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% endif %}
+
+    </url>
+  {% endfor %}
 </urlset>
