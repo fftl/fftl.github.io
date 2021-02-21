@@ -2,7 +2,7 @@
 title: "[프로그래머스]신규 아이디 추천 (java)"
 categories:
   - Algorithm
-last_modified_at: 2021-02-07T13:00:00+09:00
+last_modified_at: 2021-02-15T13:00:00+09:00
 ---
 => [신규 아이디 추천](https://programmers.co.kr/learn/courses/30/lessons/72410){: target="_blank"}
 
