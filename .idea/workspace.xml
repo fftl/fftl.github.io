@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/NodeJs/2021-02-15-nodejs_study2.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/NodeJs/2021-02-15-nodejs_study2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613917888749</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update: sitemap">
+      <created>1613918924799</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613918924799</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +96,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: my info update" />
     <MESSAGE value="new: posts update" />
-    <option name="LAST_COMMIT_MESSAGE" value="new: posts update" />
+    <MESSAGE value="update: sitemap" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: sitemap" />
   </component>
 </project>

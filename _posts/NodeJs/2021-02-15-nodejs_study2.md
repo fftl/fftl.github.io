@@ -152,6 +152,6 @@ app.post('/email_post', function(req,res){
   ⇒ 현재 까지 배운 지식으로는 router를 사용하기 위해서는 require 를 이용해 일일이 연결을 해줘야 했습니다. 이를 간편하게 하기 위해서 라우팅을 도와주는 미들웨어를 만들어 사용할 수 있습니다.
   
 - database crud
-  ⇒ insert 를 한 뒤에 rows 를 이용하면 결과 값을 가져올 수 있습니다.
+  ⇒ insert 를 한 뒤에 rows 를 이용하면 결과 값을 가져올 수 있습니다.  
   
 - passport? 세션을 통한 로그인 하기
