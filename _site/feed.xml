@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://fftl.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://fftl.github.io/" rel="alternate" type="text/html" /><updated>2021-02-25T14:26:41+09:00</updated><id>https://fftl.github.io/feed.xml</id><title type="html">HELLO FFTL WORLD!!</title><subtitle>My Amazing Blog.</subtitle><author><name>FFTL</name></author><entry><title type="html">Nest.js mysql db 연결하기</title><link href="https://fftl.github.io/nestjs/nestjs_db_connection/" rel="alternate" type="text/html" title="Nest.js mysql db 연결하기" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T13:00:00+09:00</updated><id>https://fftl.github.io/nestjs/nestjs_db_connection</id><content type="html" xml:base="https://fftl.github.io/nestjs/nestjs_db_connection/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://fftl.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://fftl.github.io/" rel="alternate" type="text/html" /><updated>2021-02-25T14:56:29+09:00</updated><id>https://fftl.github.io/feed.xml</id><title type="html">HELLO FFTL WORLD!!</title><subtitle>My Amazing Blog.</subtitle><author><name>FFTL</name></author><entry><title type="html">Nest.js mysql db 연결하기</title><link href="https://fftl.github.io/nestjs/nestjs_db_connection/" rel="alternate" type="text/html" title="Nest.js mysql db 연결하기" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T13:00:00+09:00</updated><id>https://fftl.github.io/nestjs/nestjs_db_connection</id><content type="html" xml:base="https://fftl.github.io/nestjs/nestjs_db_connection/">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;첫 번째로 MySQL 에 연결하기 위한 패키지를 설치합니다.&lt;/p&gt;
 
@@ -60,7 +60,36 @@
 
 &lt;p&gt;&lt;a href=&quot;https://docs.nestjs.com/techniques/database#example&quot;&gt;https://docs.nestjs.com/techniques/database#example&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Nest.js 공식 홈페이지를 참고 하였습니다.&lt;/p&gt;</content><author><name>FFTL</name></author><category term="NestJS" /><summary type="html">첫 번째로 MySQL 에 연결하기 위한 패키지를 설치합니다.</summary></entry><entry><title type="html">[프로그래머스]문자열 내 p와 y의 개수 (java)</title><link href="https://fftl.github.io/algorithm/programmers-p,ycount/" rel="alternate" type="text/html" title="[프로그래머스]문자열 내 p와 y의 개수 (java)" /><published>2021-02-21T00:00:00+09:00</published><updated>2021-02-21T13:00:00+09:00</updated><id>https://fftl.github.io/algorithm/programmers-p,ycount</id><content type="html" xml:base="https://fftl.github.io/algorithm/programmers-p,ycount/">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12916&quot; target=&quot;_blank&quot;&gt;문자열 내 p와 y의 개수&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nest.js 공식 홈페이지를 참고 하였습니다.&lt;/p&gt;</content><author><name>FFTL</name></author><category term="NestJS" /><summary type="html">첫 번째로 MySQL 에 연결하기 위한 패키지를 설치합니다.</summary></entry><entry><title type="html">Jekyll blog 이미지 복사금지하기</title><link href="https://fftl.github.io/others/my_image_protect/" rel="alternate" type="text/html" title="Jekyll blog 이미지 복사금지하기" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T13:00:00+09:00</updated><id>https://fftl.github.io/others/my_image_protect</id><content type="html" xml:base="https://fftl.github.io/others/my_image_protect/">&lt;p&gt;Jekyll blog 새내기인데, 블로그 작업 중 문득 sidebar에 있는 제 사진이 걱정이 되었습니다. 제 얼굴이기도 하고 괜히 누가 복사해서 마음대로 사용하지 않을까 하는 걱정이었습니다.&lt;/p&gt;
+
+&lt;p&gt;물론 캡쳐를 하는 것 까지는 어쩔 수 없겠지만 다른이름으로 저장하는 등 접근하는 것은 막아보고자 생각을 했습니다. 그래서 구글링을 조금 해 보았고 금방 답을 찾았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://muksteem.tistory.com/18&quot;&gt;https://muksteem.tistory.com/18&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 블로그에서 방법을 찾아 내었습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;크롬 개발자도구를 이용하여 제 블로그의 sidebar의 이미지를 탐색 해보면 아래와 같이 나옵니다.
+(개발자 도구에서 나타나는 저 “/assets/fftl.jpg” 링크는 막을 방법이 없을까?)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/109108972-e31bde00-7777-11eb-97fe-19474e802d6e.png&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위의 과정을 통해 이미지는 author__avatar class 를 이용?한 다는 것을 알았습니다. 이제 제 github.io 프로젝트내에서 이 class를 검색했습니다. ( 저는 Intellij를 사용하는데 ctrl + alt + F를 이용하면 프로젝트 전체에서 검색할 수 있습니다. )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/109109505-c9c76180-7778-11eb-8296-eedf42030e38.png&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;그렇게 찾아낸 파일에 들어가서 img 부분에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pointer-events: none;&lt;/code&gt; 를 추가해 주면 끝입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/109109783-4bb78a80-7779-11eb-8d1e-393aa4539b3e.png&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;그럼 현재 블로그의 왼쪽 제 프로필 이미지와 같이 ‘이미지를 다른이름으로 저장’ 같은 것이 불가능해 지는 것을 확인 할 수 있을 것 입니다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>FFTL</name></author><category term="Others" /><summary type="html">Jekyll blog 새내기인데, 블로그 작업 중 문득 sidebar에 있는 제 사진이 걱정이 되었습니다. 제 얼굴이기도 하고 괜히 누가 복사해서 마음대로 사용하지 않을까 하는 걱정이었습니다.</summary></entry><entry><title type="html">[프로그래머스]문자열 내 p와 y의 개수 (java)</title><link href="https://fftl.github.io/algorithm/programmers-p,ycount/" rel="alternate" type="text/html" title="[프로그래머스]문자열 내 p와 y의 개수 (java)" /><published>2021-02-21T00:00:00+09:00</published><updated>2021-02-21T13:00:00+09:00</updated><id>https://fftl.github.io/algorithm/programmers-p,ycount</id><content type="html" xml:base="https://fftl.github.io/algorithm/programmers-p,ycount/">&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12916&quot; target=&quot;_blank&quot;&gt;문자열 내 p와 y의 개수&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;레벨 1의 간단한 문제입니다.&lt;/li&gt;
@@ -637,224 +666,4 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>FFTL</name></author><category term="Algorithm" /><summary type="html">=&amp;gt; 10872_팩토리얼 (java)</summary></entry><entry><title type="html">AWS 학습 메모 .01</title><link href="https://fftl.github.io/aws/AWS_study1/" rel="alternate" type="text/html" title="AWS 학습 메모 .01" /><published>2021-02-09T00:00:00+09:00</published><updated>2021-02-09T13:00:00+09:00</updated><id>https://fftl.github.io/aws/AWS_study1</id><content type="html" xml:base="https://fftl.github.io/aws/AWS_study1/">&lt;ul&gt;
-  &lt;li&gt;EC2 fftl 인스턴스 생성&lt;/li&gt;
-  &lt;li&gt;EIP(Elastic IP, 탄력적 IP) 생성하기&lt;/li&gt;
-  &lt;li&gt;fftl 인스턴스에 연결.&lt;/li&gt;
-  &lt;li&gt;EIP는 생성해 놓고 아무곳에도 연결시키지 않으면 과금이 발생! 주의&lt;/li&gt;
-  &lt;li&gt;putty를 이용한 EC2에 접속하기&lt;/li&gt;
-  &lt;li&gt;puttygen 을 이용해 pem 파일을 ppk로 변환.&lt;/li&gt;
-  &lt;li&gt;putty를 실행하여 auth 메뉴에서 ppk파일 찾기&lt;/li&gt;
-  &lt;li&gt;연결 성공!!&lt;/li&gt;
-  &lt;li&gt;아마존 리눅스1 서버 필요한 설정들&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;java8 설치, 타임존 변경, 호스트네임 변경&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;- java8&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo yum install -y java-1.8.0-openjdk-devel.x86_64&lt;/code&gt; #1.8.0 자바 설치&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo /user/sbin/alternatives --config java&lt;/code&gt; #설치한 1.8 버전으로 변경&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java -version&lt;/code&gt; #버전 변경된 것 확인&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;- 타임존 변경&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo rm /etc/localtime&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;호스트네임 변경&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo hostnamectl set-hostname &quot;fftl.webservice&quot;&lt;/code&gt; #정규화된 모양으로 입력해야 반영이 됩니다. fftl 만 썻다가 error뜸..&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/hosts&lt;/code&gt; 에 hostname 등록&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo vim /etc/hosts&lt;/code&gt; #등록을 안 했을 때 발생한 장애 확인 한 번 해볼 것&lt;/p&gt;
-
-&lt;p&gt;⇒ vim 에 127.0.0.1   fftl.webservice 한 줄을 새로 추가해 줍니다.&lt;/p&gt;
-
-&lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curl fftl.webservice&lt;/code&gt; 를 입력해 확인 (7) failed to connect ~~ 오류가 뜨면 잘 등록 된 것&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;RDS 인스턴스 생성하기&lt;/p&gt;
-
-    &lt;p&gt;⇒ 생성완료&lt;/p&gt;
-
-    &lt;p&gt;⇒ 파라미터 그룹 설정, 타임존, character set, max connection 설정&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;time_zone 검색 Asia/Seoul, charactter 검색 charactter&lt;em&gt;는 전부 utf8mb4, collation 검색 collation&lt;/em&gt;는 전부 utf8mb4_general_ci&lt;/li&gt;
-      &lt;li&gt;max_connections 검색 150,&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;⇒ 파라미터 그룹 데이터베이스에 연결 (DB - 수정 - DB파라미터그룹 에서 선택)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;내 PC에서 RDS 접속&lt;/p&gt;
-
-    &lt;p&gt;⇒ 내 db인스턴스 보안그룹의 인바운드 규칙에, myIP와 보안그룹 ID 를 추가해줍니다.&lt;/p&gt;
-
-    &lt;p&gt;⇒ Intellij 좌측 메뉴중 DB Browser 의 녹색 + 버튼, mysql 생성, db 정보 입력 후 확인&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EC2에 mysql 설치하여 RDS접근 확인&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo yum install mysql&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mysql -u 계정 -h 호스트 주소&lt;/code&gt;  #DB에 접근&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;show databases;&lt;/code&gt; #DB연결 확인&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;a href=&quot;http://application.properties&quot;&gt;application.properties&lt;/a&gt; 에 mariadb 정보 입력해서 연결 성공.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EC2에 코드 연동하기&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo yum install git&lt;/code&gt;       #EC2 에 git 설치&lt;/p&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git  --version&lt;/code&gt;                  #git 설치 확인&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir ~/app &amp;amp;&amp;amp; mkdir ~/app/sb_crud2&lt;/code&gt;  #git 프로젝트를 담을 디렉토리 생성&lt;/strong&gt;
-  =&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir ~/app&lt;/code&gt; #~/app 디렉토리를 생성한다는 뜻&lt;/p&gt;
-
-    &lt;p&gt;⇒ 생성한 디렉토리로 이동한 뒤에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone {links}&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ clone 받은 뒤 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./gradlew test&lt;/code&gt;로 빌드 테스트 실행&lt;/p&gt;
-
-    &lt;p&gt;⇒ permission 오류시, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod +x ./gradlew&lt;/code&gt; 로 권한을 풀어줍니다. 그리고 다시시도&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;배포 스크립트 만들기&lt;/p&gt;
-
-    &lt;p&gt;⇒deploy.sh 생성, 생성 후 위와 같이 권한을 풀어줘야 합니다.&lt;/p&gt;
-
-    &lt;p&gt;⇒실행 하기 전 프로젝트의 &lt;a href=&quot;http://application.properties&quot;&gt;application.properties&lt;/a&gt; 를 같은 위치에 생성해주고 마지막 부분에 연결해주었습니다. (주로 ignore 파일이기 때문에 서버에 놓아줌)&lt;/p&gt;
-
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-
-  &lt;span class=&quot;nv&quot;&gt;REPOSITORY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/ec2-user/app/sb_crud2
-  &lt;span class=&quot;nv&quot;&gt;PROJECT_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SpringbootCRUD2
-
-  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT_NAME&lt;/span&gt;/
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; Git Pull&quot;&lt;/span&gt;
-
-  git pull
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; 프로젝트 Build 시작&quot;&lt;/span&gt;
-
-  ./gradlew build
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; sb_crud2 디렉토리로 이동&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; Build 파일 복사&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT_NAME&lt;/span&gt;/build/libs/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.jar &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;/
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; 현재 구동중인 애플리케이션 pid 확인&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;nv&quot;&gt;CURRENT_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;pgrep &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PROJECT_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.jar&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;현재 구동중인 애플리케이션 pid: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CURRENT_PID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CURRENT_PID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-          &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; 현재 구동 중인 애플리케이션이 없으므로 종료하지 않습니다.&quot;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;else
-          &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; kill -15 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CURREMT_PID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-          &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-15&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$CURRENT_PID&lt;/span&gt;
-          &lt;span class=&quot;nb&quot;&gt;sleep &lt;/span&gt;5
-  &lt;span class=&quot;k&quot;&gt;fi
-
-  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; 새 애플리케이션 배포&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;nv&quot;&gt;JAR_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-tr&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;/ | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;jar | &lt;span class=&quot;nb&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt; JAR Name: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAR_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;nb&quot;&gt;nohup &lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-          &lt;span class=&quot;nt&quot;&gt;-Dspring&lt;/span&gt;.config.location&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;classpath:/application.properties,/home/ec2-user/app/application.properties &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-          &lt;span class=&quot;nv&quot;&gt;$REPOSITORY&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$JAR_NAME&lt;/span&gt; 2&amp;gt;&amp;amp;1 &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./deploy.sh&lt;/code&gt; 를 통해 실행한 뒤&lt;/p&gt;
-
-    &lt;p&gt;⇒&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vim nuhup.out&lt;/code&gt; 을 들어가 마지막 부분에 8080 어쩌고 성공이 떳으면 성공!&lt;/p&gt;
-
-    &lt;p&gt;⇒&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curl [localhost:8080](http://localhost:8080)&lt;/code&gt; 을 실행시켜 html 코드가 나타나도 성공!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EC2의 8080에 배포가 되어있으니, 8080를 보안그룹에 열려있는지 확인해봐야함.&lt;/p&gt;
-
-    &lt;p&gt;⇒ EC2의 내 프로젝트의 보안그룹에서 8080이 있는지 확인, 현재 있음..&lt;/p&gt;
-
-    &lt;p&gt;⇒ 배포 성공!!&lt;/p&gt;
-
-    &lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/69035612/107246631-c68f5e80-6a73-11eb-980b-00bcabb7d59b.png&quot; /&gt;&lt;/center&gt;
-
-    &lt;p&gt;⇒ 카카오, 네이버 로그인은 구현하지 않았으므로 도메인 등록은 생략하겠습니다!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Travis CI 배포 자동화!&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;⇒ CI, CD&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;CI(Continuous Intergration) : 버전관리시스템(git, svn) 등에서 푸시가 되면 자동으로 테스트와 빌드가 수행되어 안정적인 배포 파일을 만드는 과정 이며 이 빌드 결과를 자동으로 운영 서버에 무중단 배포까지 진행되는 과정을 CD(Continuous Deployment) 라고 합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;⇒ Travis CI 를 통한 CI&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;로그인 - setting 메뉴 - 내가 원하는 프로젝트 상태바 활성화 - 프로젝트 이름 클릭 후 확인 #Travis 웹에서의 설정은 끝&lt;/li&gt;
-      &lt;li&gt;프로젝트의 ‘build.gradle’과 같은 위치에 ‘.travis.yml’ 생성 후 only의 브랜치에 commit push&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;java&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;jdk&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;openjdk8&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;#Travis CI 서버의 Home&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;directories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;$HOME/.m2/repository'&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;$HOME/.gradle'&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./gradlew&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# CI 실행 완료 시 메일로 알림&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;notifications&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;recipients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fftl.0710@gmail.com'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;⇒ 자동 배포를 위한 jar파일을 저장하기 위해 Travis와 S3을 연동&lt;/p&gt;
-
-    &lt;p&gt;⇒ AWS 권한 관리를 위한 IAM 사용자 추가&lt;/p&gt;
-
-    &lt;p&gt;⇒ CodeDeployFullAccess, S3FullAccess 권한을 추가합니다.&lt;/p&gt;
-
-    &lt;p&gt;⇒ 액세스 키 ID와 비밀 엑세스 키를 이용하여 Travis에 등록.&lt;/p&gt;
-
-    &lt;p&gt;⇒ Travis에 IAM 키 등록하기&lt;/p&gt;
-
-    &lt;p&gt;⇒ 프로젝트 우 상단 More options/setting - Environment Variables - AWS_ACCESS_KEY, AWS_SECRET_KEY 변수로 각각의 키를 추가해줍니다.&lt;/p&gt;
-
-    &lt;p&gt;⇒ 이렇게 하여 .travis.yml 에서 $AWS_ACCESS_KEY, $AWS_SECRET_KEY로 사용할 수 있게 되었습니다.&lt;/p&gt;
-
-    &lt;p&gt;⇒ S3 버킷 생성&lt;/p&gt;
-
-    &lt;p&gt;⇒fftl-s3 으로 생성 IAM을 이용해 접근할 것이기 때문에 퍼블릭 엑세스는 모두 차단해 줍니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>FFTL</name></author><category term="AWS" /><summary type="html">EC2 fftl 인스턴스 생성 EIP(Elastic IP, 탄력적 IP) 생성하기 fftl 인스턴스에 연결. EIP는 생성해 놓고 아무곳에도 연결시키지 않으면 과금이 발생! 주의 putty를 이용한 EC2에 접속하기 puttygen 을 이용해 pem 파일을 ppk로 변환. putty를 실행하여 auth 메뉴에서 ppk파일 찾기 연결 성공!! 아마존 리눅스1 서버 필요한 설정들 java8 설치, 타임존 변경, 호스트네임 변경</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>FFTL</name></author><category term="Algorithm" /><summary type="html">=&amp;gt; 10872_팩토리얼 (java)</summary></entry></feed>
