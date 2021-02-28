@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/Others/2021-02-25-my_image_protect.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/NestJS/2021-02-28-nestjs_authentication_01.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fftl-logo_basic.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/minimal-mistakes/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/minimal-mistakes/_sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/minimal-mistakes/_masthead.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/minimal-mistakes/_masthead.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
@@ -34,23 +36,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts/Others" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts/NestJS" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Others" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\NestJS" />
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\assets" />
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Others" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Algorithm" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\NodeJs" />
-      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\assets" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\AWS" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\NodeJs" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\SpringBoot" />
       <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\_posts\Algorithm" />
-      <recent name="C:\Users\lee\Desktop\Folder\Project\fftl.github.io\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
