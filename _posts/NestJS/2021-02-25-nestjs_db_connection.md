@@ -1,5 +1,5 @@
 ---
-title: "Nest.js mysql db 연결하기"
+title: "NestJS mysql db 연결하기"
 categories: 
   - NestJS
 last_modified_at: 2021-02-25T13:00:00+09:00

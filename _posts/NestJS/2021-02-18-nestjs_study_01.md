@@ -1,5 +1,5 @@
 ---
-title: "Nest.js 백엔드 학습 메모 .01"
+title: "NestJS 백엔드 학습 메모 .01"
 categories: 
   - NestJS
 last_modified_at: 2021-02-18T13:00:00+09:00
