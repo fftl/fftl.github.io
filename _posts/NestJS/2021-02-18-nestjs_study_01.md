@@ -11,7 +11,7 @@ node.js 를 이용한 express 기반의 framework. 굉장히 자유로운 expres
 
 ⇒ 공부를 하다보니 springboot와 굉장히 비슷한 점이 많다고 느끼고 있습니다!?
 
-- nestjs 는 전체가 typescript를 이용하고 있다
+- nestjs 는 전체가 typescript를 이용하고 있다.
 - restapi를 만들 것이기 때문에 insomnia 라는 restapi 를 사용할 것이다.
 
 - 시작하기
