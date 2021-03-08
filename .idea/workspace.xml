@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8a30a0-54a3-460c-801b-5efb28bb5feb" name="디폴트 변경 목록" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/NestJS/2021-02-18-nestjs_study_01.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/NestJS/2021-02-18-nestjs_study_01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614176983409</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update: posts update">
+      <created>1614574756701</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614574756701</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +112,7 @@
     <MESSAGE value="new: posts update" />
     <MESSAGE value="update: sitemap" />
     <MESSAGE value="posts updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="posts updates" />
+    <MESSAGE value="update: posts update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: posts update" />
   </component>
 </project>
