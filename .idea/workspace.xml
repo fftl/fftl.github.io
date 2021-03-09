@@ -92,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614574756701</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update : config update">
+      <created>1615213626942</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615213626942</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +120,7 @@
     <MESSAGE value="update: sitemap" />
     <MESSAGE value="posts updates" />
     <MESSAGE value="update: posts update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: posts update" />
+    <MESSAGE value="update : config update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update : config update" />
   </component>
 </project>
