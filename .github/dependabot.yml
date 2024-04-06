@@ -1,21 +1,26 @@
 version: 2
-
 updates:
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    target-branch: "develop"
-    versioning-strategy: "lockfile-only"
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    target-branch: "develop"
-    versioning-strategy: "increase"
   - package-ecosystem: "bundler"
     directory: "/"
+    versioning-strategy: increase
+    groups:
+      bundler:
+        dependency-type: "production"
     schedule:
-      interval: "daily"
-    target-branch: "develop"
-    versioning-strategy: "increase"
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/"
+    versioning-strategy: increase
+    groups:
+      npm:
+        dependency-type: "development"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      gh-actions:
+        update-types:
+          - "major"
+    schedule:
+      interval: "weekly"
