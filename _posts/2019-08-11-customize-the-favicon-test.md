@@ -1,5 +1,5 @@
 ---
-title: Customize the Favicon
+title: Customize the Favicon Test
 author: fftl
 date: 2024-11-27 12:12:29 +0900
 categories: [Blogging, Tutorial]
