@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 title: fftl # the main title
 
-tagline: 안녕하세요. # it will display as the sub-title
+tagline: 안녕하세요.\n 기록하는 개발자 fftl 입니다.# it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -78,7 +78,7 @@ pageviews:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark
+theme_mode: light
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
