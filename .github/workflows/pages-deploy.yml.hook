@@ -46,9 +46,15 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: "production"
+        run: |
+          bundle exec jekyll b -d "_site"
+          bundle exec htmlproofer _site \
+            --disable-external \
+            --check-html \
+            --allow_hash_href \
+            --ignore-urls "/app.min.js" \
+            --ignore-missing-alt true \
+            --ignore-empty-links true
 
       - name: Test site
         run: |
