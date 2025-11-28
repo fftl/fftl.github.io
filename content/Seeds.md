@@ -8,5 +8,8 @@
 		- 시그모이드 함수
 		- 렐루 함수
 - Transformer 구조
+	-  transformer attention
 - 유전 알고리즘
 - 복잡성 과학
+- 지도학습
+- 강화학습
