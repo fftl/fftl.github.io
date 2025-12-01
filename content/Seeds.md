@@ -1,3 +1,5 @@
+
+### keyword
 - 기호주의, 연결주의
 - 배커스-나우르 표기법
 - NP-완전
@@ -13,3 +15,8 @@
 - 복잡성 과학
 - 지도학습
 - 강화학습
+
+### Tools
+- portainer
+- Dropwizard
+- Karyon
