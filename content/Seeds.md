@@ -15,8 +15,17 @@
 - 복잡성 과학
 - 지도학습
 - 강화학습
+- ubuntu 패키지 설치할 때, sudo apt update 하는 이유
+- install 할 때 -y의 의미
 
 ### Tools
 - portainer
+	- Portainer 데이터 저장용 볼륨 생성 `docker volume create portainer_data`
+- nginx
+	- sites-available와 sites-enabled의 차이
 - Dropwizard
 - Karyon
+- 사이드카 서비스
+	- Prana
+- 카산드라
+- Ollama
