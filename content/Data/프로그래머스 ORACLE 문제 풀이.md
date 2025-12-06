@@ -35,7 +35,20 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 	- 다중 기준 정렬
 		- ORDER BY COUNT(*), 진료과코드;
 	- 별칭에 '(작은따옴표)는 사용 불가
-
+- https://school.programmers.co.kr/learn/courses/30/lessons/59412
+	- 날짜 비교하기
+	- EXTRACT(HOUR FROM DATETIME)을 통해 날짜 요소 숫자로 추출
+	- BETWEEN 9 AND 19을 통해 9시~19시만 골라내기
+- https://school.programmers.co.kr/learn/courses/30/lessons/144854
+	- [[JOIN]] 문제
+	- ```
+	  FROM BOOK B, AUTHOR A
+	  WHERE B.AUTHOR_ID = A.AUTHOR_ID
+	  ```
+  - https://school.programmers.co.kr/learn/courses/30/lessons/133026
+	  - GROUP BY를 여러개, 즉 여러 단계 GROUP BY할 때에는 SELECT에도 동일한 개수의 COLUMN이 있어야 함
+  - 
+	
 ---
 
 ## Oracle 문자열 함수 정리

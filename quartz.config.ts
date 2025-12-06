@@ -85,6 +85,7 @@ const config: QuartzConfig = {
             limit: 5,  // 표시할 글 개수
             showTags: true,  // 태그 표시 여부
           }),
+          Component.Giscus(),
         ],
       }),
       Plugin.FolderPage(),
