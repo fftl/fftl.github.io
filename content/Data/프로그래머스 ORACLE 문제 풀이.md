@@ -45,9 +45,20 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 	  FROM BOOK B, AUTHOR A
 	  WHERE B.AUTHOR_ID = A.AUTHOR_ID
 	  ```
-  - https://school.programmers.co.kr/learn/courses/30/lessons/133026
-	  - GROUP BY를 여러개, 즉 여러 단계 GROUP BY할 때에는 SELECT에도 동일한 개수의 COLUMN이 있어야 함
-  - 
+- https://school.programmers.co.kr/learn/courses/30/lessons/133026
+  - GROUP BY를 여러개, 즉 여러 단계 GROUP BY할 때에는 SELECT에도 동일한 개수의 COLUMN이 있어야 함
+- https://school.programmers.co.kr/learn/courses/30/lessons/59044
+	- 정렬 후 상위 N개 구하기
+	- ORACLE 실행 순서는 FROM - WHERE - ORDER BY
+	- 하나의 쿼리에서 FETCH FIRST를 하지 않는 이상 정렬되지 않은 상태에서 WHERE조건을 찾게 됨 -> 서브쿼리 사용
+	- 상위 N개 구하기 ROWNUM <= 3;
+- https://school.programmers.co.kr/learn/courses/30/lessons/164668
+	- WHERE은 GROUP 짓기 전의 필터
+	- GROUP을 이루고 난 뒤의 필터는 HAVING - 집계 함수 사용 가능
+- https://school.programmers.co.kr/learn/courses/30/lessons/131116
+	- 서브쿼리 활용
+	- 여러 조건으로 값 찾기 WHERE(CATEGORY, PRICE) IN ( SUB QUARY ... )
+- 
 	
 ---
 
@@ -161,21 +172,8 @@ SELECT RPAD('123', 5, '0') FROM DUAL;   -- 12300 (오른쪽에 0 채우기)
 SELECT LPAD(ANIMAL_ID, 10, '0') FROM ANIMAL_INS;  -- ID를 10자리로
 ```
 
-## 이 문제의 Oracle 정답
+## Oracle 날짜 함수 정리
 
-sql
-
-```sql
-SELECT SUBSTR(PRODUCT_CODE, 1, 2) AS CATEGORY,
-       COUNT(*) AS PRODUCTS
-FROM PRODUCT
-GROUP BY SUBSTR(PRODUCT_CODE, 1, 2)
-ORDER BY CATEGORY;
-```
-
-## Oracle 날짜 함수도 정리
-
-앞으로 날짜 문제도 Oracle 기준으로만 설명할게요!
 
 **TO_CHAR - 날짜를 문자로**
 
