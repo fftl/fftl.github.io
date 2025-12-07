@@ -3,19 +3,33 @@
 // put your custom CSS here!
 
 // 최근 글 날짜를 오른쪽에 배치
-.recent-notes li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+.recent-notes .section {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 1rem !important;
+}
+
+.recent-notes .desc {
+  flex: 1;
+  min-width: 0;
+}
+
+.recent-notes .desc h3 {
+  margin: 0;
 }
 
 .recent-notes .meta {
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-left: auto;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
 }
 
+.recent-notes .tags {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+// Giscus 스타일
 .giscus {
   margin-top: 3rem;
   padding-top: 2rem;
