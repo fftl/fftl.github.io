@@ -14,7 +14,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "google",
+      tagId: "G-L1XQEN5JDS",  // 측정 ID
     },
     locale: "ko-KR",
     baseUrl: "quartz.jzhao.xyz",

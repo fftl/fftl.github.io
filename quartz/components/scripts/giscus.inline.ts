@@ -18,7 +18,12 @@ function setGiscusTheme(theme) {
 
 function initGiscusTheme() {
   console.log('🚀 초기화');
-  const theme = document.documentElement.getAttribute('saved-theme') || 'light';
+  
+  // localStorage도 확인
+  const savedTheme = document.documentElement.getAttribute('saved-theme')
+  const localTheme = localStorage.getItem('theme')
+  const theme = savedTheme || localTheme || 'light'
+  
   console.log('📌 현재 테마:', theme);
   
   let attempts = 0;

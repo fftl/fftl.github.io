@@ -24,7 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import Giscus from "./Giscus"
-
+import PageViews from "./PageViews"
 
 export {
   ArticleTitle,
@@ -52,5 +52,6 @@ export {
   Comments,
   Flex,
   ConditionalRender,
-  Giscus
+  Giscus,
+  PageViews,
 }
