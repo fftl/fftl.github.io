@@ -6,7 +6,7 @@ export default (() => {
       <div class={`page-views ${displayClass ?? ""}`}>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <span id="busuanzi_container_page_pv">
-          👁️ <span id="busuanzi_value_page_pv"></span>
+          views <span id="busuanzi_value_page_pv"></span>
         </span>
       </div>
     )
