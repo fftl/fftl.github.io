@@ -18,7 +18,7 @@ const config: QuartzConfig = {
       tagId: "G-L1XQEN5JDS",  // 측정 ID
     },
     locale: "ko-KR",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "fftl.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
