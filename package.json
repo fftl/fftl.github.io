@@ -18,8 +18,7 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "dev": "npx quartz build && cd public && python3 -m http.server 8080"
-
+    "dev": "npx quartz build && npx serve public -p 3000"
   },
   "engines": {
     "npm": ">=10.9.2",

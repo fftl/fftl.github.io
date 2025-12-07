@@ -23,7 +23,10 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.PageViews(),
+    Component.ConditionalRender({
+      component: Component.PageViews(),
+      condition: (page) => page.fileData.slug !== "index",  // 추가!
+    }),
     Component.TagList(),
   ],
   left: [
