@@ -58,8 +58,24 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 - https://school.programmers.co.kr/learn/courses/30/lessons/131116
 	- 서브쿼리 활용
 	- 여러 조건으로 값 찾기 WHERE(CATEGORY, PRICE) IN ( SUB QUARY ... )
-- 
-	
+- https://school.programmers.co.kr/learn/courses/30/lessons/131530
+	- 문자열 자르기?
+	- TRUNC(PRICE, -4)
+- https://school.programmers.co.kr/learn/courses/30/lessons/164670
+	- 풀긴 했지만, 다시 보면 좋을 듯
+- https://school.programmers.co.kr/learn/courses/30/lessons/132204
+	- 3중 JOIN
+	- ``` SQL
+	  SELECT A.APNT_NO, P.PT_NAME, A.PT_NO, A.MCDP_CD, D.DR_NAME, A.APNT_YMD 
+	  FROM APPOINTMENT A, PATIENT P, DOCTOR D 
+	  WHERE A.PT_NO = P.PT_NO 
+		  AND A.MDDR_ID = D.DR_ID 
+		  AND TRUNC(A.APNT_YMD) = DATE '2022-04-13' 
+		  AND A.MCDP_CD = 'CS' 
+		  AND A.APNT_CNCL_YN = 'N' 
+	  ORDER BY A.APNT_YMD;
+	  ```
+	- YYYY-MM-DD 와 날짜를 비교할 때에는 날짜형을 TRUNC로 감싸면 깔끔
 ---
 
 ## Oracle 문자열 함수 정리
@@ -203,6 +219,27 @@ SELECT EXTRACT(MONTH FROM DATETIME) FROM ANIMAL_INS;  -- 월
 SELECT EXTRACT(DAY FROM DATETIME) FROM ANIMAL_INS;    -- 일
 ```
 
+## TRUNC
+
+날짜 초기화
+
+``` SQL 
+DATETIME -> 2018-12-13 22:10:59
+TRUNC(DATETIME, 'DD') -> 2018-12-13 00:00:00
+TRUNC(DATETIME, 'HH24') -> 2018-12-13 22:00:00
+TRUNC(DATETIME, 'MI') -> 2018-12-13 22:10:00
+-- 설정한 위치 뒤의 값들을 00으로 초기화 시킵니다.
+-- 월의 경우 01-01로 초기화 합니다.
+```
+
+숫자 자르기
+``` SQL
+NUM -> 1234.56
+TRUNC(NUM, 1) -> 1234.5
+TRUNC(NUM, 2) -> 1234.56
+TRUNC(NUM, -1) -> 1230
+TRUNC(NUM, -2) -> 1200
+```
 ## 실전 팁
 
 **1. SUBSTR vs SUBSTRING**
