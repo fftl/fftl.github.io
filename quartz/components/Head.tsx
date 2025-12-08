@@ -41,6 +41,7 @@ export default (() => {
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="google-site-verification" content="n8a_3HNQSyhfSL4psHBGbq5AJd1awWI0a2WwtrXTohY" />
+        <meta name="naver-site-verification" content="1c107464908ec2e7290e02cf0423622e9233e181" />
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
