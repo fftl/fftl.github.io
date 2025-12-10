@@ -2,16 +2,17 @@
 
 SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORACLE로 제공된다는 이야기를 들었고, ORACLE의 문법에 익숙해지기 위해 ORACLE을 이용한 문제 풀이를 진행하고 있습니다.
 
-### 풀지 못한 문제
-- https://school.programmers.co.kr/learn/courses/30/lessons/59041
+### 다시 풀어 볼 문제
+
+- [동명 동물 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59041)
 	- group by, having
 	- Count(\*) - 모든 행 세기
 	- Count(name) - name 컬럼이 null 아닌 컬럼의 개수만 세기
-- https://school.programmers.co.kr/learn/courses/30/lessons/59047
+- [이름에 el이 들어가는 동물 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59047)
 	- 와일드 카드 % 사용
 	- UPPER(name)을 통해 대문자로 변환 가능
 	- LOWER(name)을 통해 소문자로 변환 가능
-- https://school.programmers.co.kr/learn/courses/30/lessons/59414
+- [DATETIME에서 DATE로 형 변환](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
 	- 날짜 형태 변환
 	- TO_CHAR(DATETIME, 'YYYY-MM-DD') 를 통해 원하는 형식의 날짜로 변환 가능
 		```
@@ -24,46 +25,46 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 			MI   -- 분 (00-59)
 			SS   -- 초 (00-59)
 		```
-- https://school.programmers.co.kr/learn/courses/30/lessons/131529
+- [카테고리 별 상품 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131529)
 	- 문자열 자르기
 	- SUBSTRING(NAME, 1, 2)
-- https://school.programmers.co.kr/learn/courses/30/lessons/59409
+- [중성화 여부 파악하기](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
 	- CASE, THEN, ELSE, END
-- https://school.programmers.co.kr/learn/courses/30/lessons/132202
+- [진료과별 총 예약 횟수 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/132202)
 	- 날짜 비교하기
 		- WHERE TO_CHAR(APNT_YMD, 'YYYY-MM') = '2022-05'
 	- 다중 기준 정렬
 		- ORDER BY COUNT(*), 진료과코드;
 	- 별칭에 '(작은따옴표)는 사용 불가
-- https://school.programmers.co.kr/learn/courses/30/lessons/59412
+- [입양 시각 구하기(1)](https://school.programmers.co.kr/learn/courses/30/lessons/59412)
 	- 날짜 비교하기
 	- EXTRACT(HOUR FROM DATETIME)을 통해 날짜 요소 숫자로 추출
 	- BETWEEN 9 AND 19을 통해 9시~19시만 골라내기
-- https://school.programmers.co.kr/learn/courses/30/lessons/144854
-	- [[JOIN]] 문제
+- [조건에 맞는 도서와 저자 리스트 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/144854)
+	- [[SQL의 JOIN]] 문제
 	- ```
 	  FROM BOOK B, AUTHOR A
 	  WHERE B.AUTHOR_ID = A.AUTHOR_ID
 	  ```
-- https://school.programmers.co.kr/learn/courses/30/lessons/133026
+- [성분으로 구분한 아이스크림 총 주문량](https://school.programmers.co.kr/learn/courses/30/lessons/133026)
   - GROUP BY를 여러개, 즉 여러 단계 GROUP BY할 때에는 SELECT에도 동일한 개수의 COLUMN이 있어야 함
-- https://school.programmers.co.kr/learn/courses/30/lessons/59044
+- [오랜 기간 보호한 동물(1)](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
 	- 정렬 후 상위 N개 구하기
 	- ORACLE 실행 순서는 FROM - WHERE - ORDER BY
 	- 하나의 쿼리에서 FETCH FIRST를 하지 않는 이상 정렬되지 않은 상태에서 WHERE조건을 찾게 됨 -> 서브쿼리 사용
 	- 상위 N개 구하기 ROWNUM <= 3;
-- https://school.programmers.co.kr/learn/courses/30/lessons/164668
+- [조건에 맞는 사용자와 총 거래금액 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/164668)
 	- WHERE은 GROUP 짓기 전의 필터
 	- GROUP을 이루고 난 뒤의 필터는 HAVING - 집계 함수 사용 가능
-- https://school.programmers.co.kr/learn/courses/30/lessons/131116
+- [식품분류별 가장 비싼 식품의 정보 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/131116)
 	- 서브쿼리 활용
 	- 여러 조건으로 값 찾기 WHERE(CATEGORY, PRICE) IN ( SUB QUARY ... )
-- https://school.programmers.co.kr/learn/courses/30/lessons/131530
+- [가격대 별 상품 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131530)
 	- 문자열 자르기?
 	- TRUNC(PRICE, -4)
-- https://school.programmers.co.kr/learn/courses/30/lessons/164670
+- [조건에 맞는 사용자 정보 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/164670)
 	- 풀긴 했지만, 다시 보면 좋을 듯
-- https://school.programmers.co.kr/learn/courses/30/lessons/132204
+- [취소되지 않은 진료 예약 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/132204)
 	- 3중 JOIN
 	- ``` SQL
 	  SELECT A.APNT_NO, P.PT_NAME, A.PT_NO, A.MCDP_CD, D.DR_NAME, A.APNT_YMD 
@@ -76,6 +77,25 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 	  ORDER BY A.APNT_YMD;
 	  ```
 	- YYYY-MM-DD 와 날짜를 비교할 때에는 날짜형을 TRUNC로 감싸면 깔끔
+- [자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기](https://school.programmers.co.kr/learn/courses/30/lessons/157340)
+	- 풀긴했지만, 좀 더 좋은 방법 확인
+	- [[문제 풀이 피드백, 157340]]
+- [자동차 평균 대여 기간 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/157342)
+	- 대여 기간 계산하기
+	- 반올림 ROUND(NUM, 1), 버림 TRUNC(NUM, 1)
+	- 소수점 첫째 자리 만들기 TO_CHAR(ROUND(AVG(END_DATE - START_DATE + 1), 1), 'FM999990.0')
+- [조회수가 가장 많은 중고거래 게시판의 첨부파일 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/164671)
+	- [[문제 풀이 피드백, 164671]] 
+	- 서브쿼리 보다는 JOIN을 활용하기
+- [저자 별 카테고리 별 매출액 집계하기](https://school.programmers.co.kr/learn/courses/30/lessons/144856)
+	- 다중 조인, 다중 GROUP BY
+	- 얼레벌레 풀어낸 느낌 다시 풀어보자.
+- [서울에 위치한 식당 목록 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/131118)
+	- 서브쿼리를 이용해 풀어냄, 다른 풀이가 있을까?
+- [년, 월, 성별 별 상품 구매 회원 수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131532)
+	- DISTINCT 문제를 상세히 읽어야 할 것 같다.
+- [대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/151139)
+	- 문제 이해를 잘 해야 할 것 같다.
 ---
 
 ## Oracle 문자열 함수 정리
