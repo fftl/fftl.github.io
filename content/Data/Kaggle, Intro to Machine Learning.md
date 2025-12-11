@@ -1,5 +1,5 @@
 
-kaggle tutorial 진행 중
+kaggle Intro to Machine Learning 진행 중
 - https://www.kaggle.com/code/dansbecker/your-first-machine-learning-model
 
 ``` python 
@@ -65,7 +65,7 @@ for max_leaf_nodes in [5, 50, 500, 5000]:
 - **과소적합**: 관련 패턴을 포착하지 못하여 다시 정확도가 떨어지는 예측으로 이어집니다.  
 후보 모델의 정확도를 측정하기 위해 모델 학습에 사용되지 않는 검증 데이터를 사용합니다. 이를 통해 우리는 많은 후보 모델을 시도하고 가장 좋은 모델을 유지할 수 있습니다.
 
-## Random Forests
+## [[Random Forests]]
 데이터가 거의 없는 경우 학습을 시키더라도 성능이 좋기 힘듭니다. 그럴때 Random Forest를 이용합니다.
 
 RandomForestRegressor를 이용해 RandomForest 모델을 구축합니다.

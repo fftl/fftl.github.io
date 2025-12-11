@@ -96,6 +96,9 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 	- DISTINCT 문제를 상세히 읽어야 할 것 같다.
 - [대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/151139)
 	- 문제 이해를 잘 해야 할 것 같다.
+- [우유와 요거트가 담긴 장바구니](https://school.programmers.co.kr/learn/courses/30/lessons/62284)
+	- 서브쿼리를 이용한 풀이만 생각이 난다. 다른 방식의 풀이도 익혀보자.
+	- [[다른 방식 풀이, 62284]]
 ---
 
 ## Oracle 문자열 함수 정리
