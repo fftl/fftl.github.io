@@ -99,6 +99,12 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 - [우유와 요거트가 담긴 장바구니](https://school.programmers.co.kr/learn/courses/30/lessons/62284)
 	- 서브쿼리를 이용한 풀이만 생각이 난다. 다른 방식의 풀이도 익혀보자.
 	- [[다른 방식 풀이, 62284]]
+- [오프라인/온라인 판매 데이터 통합하기](https://school.programmers.co.kr/learn/courses/30/lessons/131537)
+	- UNION ALL 사용법 익히기
+- [입양 시각 구하기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/59413)
+	- WITH 사용법
+	- LEVEL이란?
+
 ---
 
 ## Oracle 문자열 함수 정리
@@ -241,7 +247,9 @@ SELECT EXTRACT(YEAR FROM DATETIME) FROM ANIMAL_INS;   -- 연도
 SELECT EXTRACT(MONTH FROM DATETIME) FROM ANIMAL_INS;  -- 월
 SELECT EXTRACT(DAY FROM DATETIME) FROM ANIMAL_INS;    -- 일
 ```
-
+```sql
+SELECT SYSDATE , EXTRACT(HOUR FROM CAST(SYSDATE AS TIMESTAMP)) AS hour_part , EXTRACT(MINUTE FROM CAST(SYSDATE AS TIMESTAMP)) AS minute_part , EXTRACT(SECOND FROM CAST(SYSDATE AS TIMESTAMP)) AS second_part FROM dual
+```
 ## TRUNC
 
 날짜 초기화

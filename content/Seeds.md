@@ -17,6 +17,7 @@
 - 강화학습
 - ubuntu 패키지 설치할 때, sudo apt update 하는 이유
 - install 할 때 -y의 의미
+- **ETL/ELT 작업**: 데이터를 추출(Extract), 변환(Transform), 적재(Load)하는 프로세스 개발
 
 ### Tools
 - portainer
