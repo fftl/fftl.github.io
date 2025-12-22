@@ -104,6 +104,9 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 - [입양 시각 구하기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/59413)
 	- WITH 사용법
 	- LEVEL이란?
+- [자동차 대여 기록 별 대여 금액 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/151141?language=oracle)
+	- CAST(REPLACE(DURATION_TYPE, '일 이상', '') AS NUMBER) 이런식으로 글자를 잘라낼 수 있음
+	- 다시 풀어볼 것
 
 ---
 

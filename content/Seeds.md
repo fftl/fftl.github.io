@@ -30,3 +30,11 @@
 	- Prana
 - 카산드라
 - Ollama
+- [[Airflow]]
+- DataHub
+- Google BigQuery
+- Dataplex
+- DBT
+>Getting numbers is easy; 
+>getting numbers you can trust is hard.
+- ![[Seeds-1766413333715.png]]
