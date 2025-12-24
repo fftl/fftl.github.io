@@ -107,7 +107,11 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 - [자동차 대여 기록 별 대여 금액 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/151141?language=oracle)
 	- CAST(REPLACE(DURATION_TYPE, '일 이상', '') AS NUMBER) 이런식으로 글자를 잘라낼 수 있음
 	- 다시 풀어볼 것
-
+	- 
+- [특정 기간동안 대여 가능한 자동차들의 대여비용 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/157339?language=mysql)
+	- not exists, round, 사용법을 다시 고민해보자.
+- [상품을 구매한 회원 비율 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131534)
+	- 구조를 잘 생각해봐야 할 것 같다.
 ---
 
 ## Oracle 문자열 함수 정리
