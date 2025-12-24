@@ -3,18 +3,20 @@
 SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORACLE로 제공된다는 이야기를 들었고, ORACLE의 문법에 익숙해지기 위해 ORACLE을 이용한 문제 풀이를 진행하고 있습니다.
 
 ### 다시 풀어 볼 문제
+2번 이상 풀어본 문제들은 앞에 숫자를 붙입니다.
 
-- [동명 동물 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59041)
+- 2_[동명 동물 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59041)
 	- group by, having
 	- Count(\*) - 모든 행 세기
 	- Count(name) - name 컬럼이 null 아닌 컬럼의 개수만 세기
-- [이름에 el이 들어가는 동물 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59047)
+- 2_[이름에 el이 들어가는 동물 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59047)
 	- 와일드 카드 % 사용
 	- UPPER(name)을 통해 대문자로 변환 가능
 	- LOWER(name)을 통해 소문자로 변환 가능
-- [DATETIME에서 DATE로 형 변환](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
+- 2_[DATETIME에서 DATE로 형 변환](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
 	- 날짜 형태 변환
 	- TO_CHAR(DATETIME, 'YYYY-MM-DD') 를 통해 원하는 형식의 날짜로 변환 가능
+	- mysql 에서는 date_format(datetime, '%Y-%m-%d') 를 사용합니다.
 		```
 			YYYY -- 4자리 연도 (2018)
 			YY   -- 2자리 연도 (18)
@@ -25,11 +27,16 @@ SQLP를 공부하는 과정에서 대부분의 교재나 실행 계획등이 ORA
 			MI   -- 분 (00-59)
 			SS   -- 초 (00-59)
 		```
-- [카테고리 별 상품 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131529)
+- 2_[카테고리 별 상품 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131529)
 	- 문자열 자르기
 	- SUBSTRING(NAME, 1, 2)
-- [중성화 여부 파악하기](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
+	- substr(name, 1, 2)
+- 2_[중성화 여부 파악하기](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
 	- CASE, THEN, ELSE, END
+	- WHEN LEFT(sex_upon_intake, 1) IN ('N', 'S') 
+        THEN 'O'
+        ELSE 'X'
+    - 위처럼 LEFT를 가지고 첫 글자만 비교할 수도 있음
 - [진료과별 총 예약 횟수 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/132202)
 	- 날짜 비교하기
 		- WHERE TO_CHAR(APNT_YMD, 'YYYY-MM') = '2022-05'
