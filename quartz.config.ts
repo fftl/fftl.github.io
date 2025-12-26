@@ -83,7 +83,7 @@ const config: QuartzConfig = {
         afterBody: [
           Component.RecentNotes({ 
             title: "최근 글",
-            limit: 5,  // 표시할 글 개수
+            limit: 10,  // 표시할 글 개수
             showTags: true,  // 태그 표시 여부
           }),
           Component.Giscus(),
