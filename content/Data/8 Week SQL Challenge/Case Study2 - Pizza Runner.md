@@ -19,7 +19,7 @@ url - https://8weeksqlchallenge.com/case-study-2/
 
 모든 데이터 세트는 `pizza_runner`데이터베이스 스키마 내에 존재합니다. 데이터 탐색 및 사례 연구 질문에 대한 답변을 시작할 때 SQL 스크립트에 해당 스키마를 반드시 포함하십시오.
 
-![[Case Study2 - Pizza Runner-1766758006476.png]]
+![[Case Study2 - Pizza Runner-1766758006476.png|543x270]]
 
 ##### 각 테이블에 대한 자세한 설명과 sql문은 해당 링크를 참조해주세요.
 https://8weeksqlchallenge.com/case-study-2/
@@ -100,3 +100,96 @@ https://8weeksqlchallenge.com/case-study-2/
 ### E. 보너스 문제
 
 대니가 피자 종류를 확장하고 싶다면 기존 데이터 설계에 어떤 영향을 미칠까요? 모든 토핑이 포함된 새로운 피자가 피자 러너 메뉴에 추가될 `INSERT`경우 어떤 변화가 발생하는지 설명하는 글을 작성하세요.`Supreme`
+
+## 풀이(진행중)
+
+```sql
+USE pizza_runner;
+show tables;
+
+-- 피자 측정 지표
+-- 
+-- 1. 피자는 몇 판 주문되었나요?
+-- 주문한 order의 수를 세었습니다.
+SELECT count(*)
+FROM customer_orders;
+
+-- 2. 총 몇 건의 고유 고객 주문이 발생했습니까?
+-- 각 고객이 주문한 order의 수를 세었습니다.
+SELECT customer_id, count(order_id)
+FROM customer_orders
+GROUP BY customer_id;
+
+-- 3. 각 배달원이 성공적으로 배송한 주문 건수는 몇 건입니까?
+-- runners_orders의 'cancellation'에 값이 있다면, 취소된 주문이라고 판단하였습니다.
+-- 참조 - [[MySQL, LIKE 비교에서 NULL]]
+SELECT runner_id, count(*)
+FROM runner_orders
+WHERE cancellation NOT LIKE '%Cancellation%' or cancellation is NULL
+GROUP BY runner_id;
+
+-- 4. 각 종류의 피자가 몇 개씩 배달되었나요?
+-- '배달되었나요?' 라는 질문이기 때문에 customer_orders의 기준이 아닌,
+-- 성공적으로 배달한 주문들에서 피자를 세어보겠습니다.
+WITH success AS (
+SELECT *
+FROM runner_orders
+WHERE cancellation NOT LIKE '%Cancellation%' or cancellation is NULL
+)
+SELECT pn.pizza_name, count(*) AS cnt
+FROM success s 
+JOIN customer_orders co ON s.order_id = co.order_id
+JOIN pizza_names pn ON co.pizza_id = pn.pizza_id
+GROUP BY pn.pizza_name
+ORDER BY cnt desc;
+
+-- 5. 각 고객이 주문한 채식 메뉴와 육식 메뉴는 각각 몇 개였습니까?
+-- 6. 한 번의 주문으로 배달된 피자의 최대 개수는 몇 개였나요?
+-- 7. 각 고객별로 배달된 피자 중 잔돈이 1개 이상인 피자는 몇 개이고, 잔돈이 전혀 없는 피자는 몇 개입니까?
+-- 8. 제외된 토핑과 추가 토핑이 모두 포함된 피자는 총 몇 판이었습니까?
+-- 9. 하루 동안 시간대별로 주문된 피자의 총량은 얼마였습니까?
+-- 10. 요일별 주문량은 얼마나 되었나요?
+
+-- 러너와 고객 경험
+--
+-- 1. 매주(주 시작일 기준 `2021-01-01`) 몇 명의 참가자가 등록했나요?
+-- 2. 피자 배달원이 주문을 픽업하기 위해 피자 배달원 본사에 도착하는 데 걸린 평균 시간은 몇 분이었습니까?
+-- 3. 피자 주문 개수와 주문 준비 시간 사이에 어떤 관계가 있나요?
+-- 4. 고객 한 명당 평균 이동 거리는 얼마였습니까?
+-- 5. 모든 주문에 대해 가장 긴 배송 시간과 가장 짧은 배송 시간의 차이는 얼마였습니까?
+-- 6. 각 투수별 투구 속도의 평균값은 얼마였으며, 이러한 값들에서 어떤 경향성을 발견하셨나요?
+-- 7. 각 배달원의 배송 성공률은 몇 퍼센트입니까?
+
+-- 원료 최적화
+-- 
+-- 1. 각 피자에 기본적으로 들어가는 재료는 무엇인가요?
+-- 2. 가장 흔하게 추가되는 옵션은 무엇이었나요?
+-- 3. 가장 흔한 제외 사항은 무엇이었습니까?
+-- 4. `customers_orders`테이블의 각 레코드에 대해 다음 형식 중 하나로 주문 항목을 생성합니다 .
+--     - `Meat Lovers`
+--     - `Meat Lovers - Exclude Beef`
+--     - `Meat Lovers - Extra Bacon`
+--     - `Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers`
+-- 5. 표 에 있는 각 피자 주문에 대해 알파벳순으로 정렬된 쉼표로 구분된 재료 목록을 생성하고 `customer_orders`, `2x`관련된 재료 앞에는 모두 'a'를 추가하세요.
+--     - 예를 들어:`"Meat Lovers: 2xBacon, Beef, ... , Salami"`
+-- 6. 배달된 모든 피자에 사용된 각 재료의 총량을 가장 많이 사용된 순서부터 정렬하면 얼마입니까?
+
+-- 가격 및 등급
+-- 
+-- 1. 만약 미트 러버스 피자가 12달러이고 베지테리언 피자가 10달러이며, 변경 수수료가 없다면 배달료가 없는 경우 피자 러너는 지금까지 총 얼마의 수익을 올렸을까요?
+-- 2. 피자에 추가 토핑을 넣을 때마다 1달러씩 추가 요금이 붙는다면 어떨까요?
+--     - 치즈 추가 시 1달러 추가됩니다.
+-- 3. 피자 배달팀은 이제 고객이 배달원을 평가할 수 있는 추가 평점 시스템을 도입하려고 합니다. 이 새로운 데이터 세트를 위한 추가 테이블을 어떻게 설계하시겠습니까? 새 테이블의 스키마를 생성하고, 각 고객 주문 건에 대한 1점에서 5점 사이의 평점 데이터를 삽입하세요.
+-- 4. 새로 생성된 표를 사용하여 모든 정보를 결합하여 성공적인 배송에 대한 다음 정보를 포함하는 표를 만들 수 있습니까?
+--     - `customer_id`
+--     - `order_id`
+--     - `runner_id`
+--     - `rating`
+--     - `order_time`
+--     - `pickup_time`
+--     - 주문과 픽업 사이의 시간
+--     - 배송 기간
+--     - 평균 속도
+--     - 피자 총 개수
+-- 5. 만약 미트 러버스 피자가 12달러, 베지테리언 피자가 10달러로 고정 가격이고 추가 요금은 없으며, 배달원 한 명당 이동 거리 1km당 0.30달러를 받는다면, 피자 배달원은 이 모든 배달을 마친 후 얼마의 돈이 남을까요?
+```
