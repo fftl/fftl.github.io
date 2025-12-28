@@ -106,3 +106,30 @@ and c.최종주문금액 >= 20000
 3. 스칼라 서브쿼리 - 한 레코드당 정확히 하나의 값을 반환하는 서브 쿼리 주로 SELECT-LIST에서 사용하지만 대부분의 위치에 사용할 수 있다.
 
 이들 서브쿼리를 참조하는 메인 쿼리도 하나의 쿼리 블록이며, 옵티마이저는 쿼리 블록 단위로 최적화를 수행합니다.
+
+```sql
+<원본 쿼리>
+select c.고객번호, c.고객명
+from 고객 c
+where c.가입일시 >= trunc(add_months(sysdate, -1), 'mm')
+and exists (
+	select 'x'
+	from 거래
+	where 고객번호 = c.고객번호
+	and 거래일시 >= trunc(sysdate, 'mm'))
+	
+<쿼리 블록1>
+select c.고객번호, c.고객명
+from 고객 c
+where c.가입일시 >= trunc(add_months(sysdate, -1), 'mm')
+
+<쿼리 블록2>
+select 'x'
+from 거래
+where 고객번호 = :cust_no -- 메인쿼리를 참조하는 조건절은 변수로 처리
+and 거래일시 >= trunc(sysdate, 'mm')
+```
+
+이렇게 서브쿼리별로 최적화한 쿼리가 전체적으로도 최적화 됐다고 말할 수는 없다.
+
+- unnesting, pushing
