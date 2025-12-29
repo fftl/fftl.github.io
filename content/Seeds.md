@@ -19,6 +19,8 @@
 - install 할 때 -y의 의미
 - **ETL/ELT 작업**: 데이터를 추출(Extract), 변환(Transform), 적재(Load)하는 프로세스 개발
 - 옵션조건, 필수조건
+- Funnel, AARRR, Cohort
+- AARRR, CTR, CVR, PV, UV
 ### Tools
 - portainer
 	- Portainer 데이터 저장용 볼륨 생성 `docker volume create portainer_data`
