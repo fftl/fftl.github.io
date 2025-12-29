@@ -128,7 +128,7 @@ FROM runner_orders
 WHERE cancellation NOT LIKE '%Cancellation%' or cancellation is NULL
 GROUP BY runner_id;
 
--- 4. 각 종류의 피자가 몇 개씩 배달되었나요?
+-- 4. 각 종류의 피자가 몇 개씩 배달되었나요? retry
 -- '배달되었나요?' 라는 질문이기 때문에 customer_orders의 기준이 아닌,
 -- 성공적으로 배달한 주문들에서 피자를 세어보겠습니다.
 WITH success AS (
@@ -143,12 +143,83 @@ JOIN pizza_names pn ON co.pizza_id = pn.pizza_id
 GROUP BY pn.pizza_name
 ORDER BY cnt desc;
 
--- 5. 각 고객이 주문한 채식 메뉴와 육식 메뉴는 각각 몇 개였습니까?
+-- 5. 각 고객이 주문한 채식 메뉴와 육식 메뉴는 각각 몇 개였습니까? retry
+-- 집계함수에 case when then 사용하기
+SELECT customer_id AS 고객, 
+	sum(CASE WHEN pizza_id = 1 THEN 1 ELSE 0 END) AS 육식,
+	sum(CASE WHEN pizza_id = 2 THEN 1 ELSE 0 END) AS 채식
+FROM customer_orders co
+GROUP BY customer_id
+ORDER BY customer_id;
+
 -- 6. 한 번의 주문으로 배달된 피자의 최대 개수는 몇 개였나요?
--- 7. 각 고객별로 배달된 피자 중 잔돈이 1개 이상인 피자는 몇 개이고, 잔돈이 전혀 없는 피자는 몇 개입니까?
+-- 배달된 피자이기 때문에 배달에 성공한 주문 중 한 주문에 가장 많은 피자가 있는 주문을 찾았습니다.
+SELECT co.order_id AS 주문, count(*) AS `최대 피자 개수`
+FROM customer_orders co JOIN runner_orders ro ON co.order_id = ro.order_id
+WHERE cancellation NOT LIKE "%Cancellation%" OR cancellation IS NULL
+GROUP BY co.order_id
+ORDER BY `최대 피자 개수` DESC
+LIMIT 1;
+
+-- 7. 각 고객에게 최소 한 번의 변경이 있는 배달 피자는 몇 개이고 변경이 없는 피자는 몇 개입니까? retry
+-- 배달 피자이기 때문에 성공적으로 배달된 피자이고, exclusions이나 extras에 값이 하나라도 있다면(공백, null 제외) 변경이 있는 피자, 아니라면 변경이 없는
+-- 피자라고 판단했습니다. 또한 주문 단위가 아닌 피자 단위이기 때문에, 같은 주문에 포함된 피자라도 각각으로 판단했습니다.
+-- in, not in 사용해보기
+SELECT customer_id, sum(CASE 
+	WHEN !(exclusions = 'null' OR exclusions = '' OR exclusions IS NULL) THEN 1 
+	WHEN !(extras = 'null' OR extras = '' OR extras IS NULL) THEN 1
+	ELSE 0
+END
+) AS 변경_있음,
+sum(CASE 
+	WHEN (exclusions = 'null' OR exclusions = '' OR exclusions IS NULL)
+	AND (extras = 'null' OR extras = '' OR extras IS NULL) THEN 1
+	ELSE 0
+END
+) AS 변경_없음
+FROM customer_orders co JOIN runner_orders ro ON co.order_id = ro.order_id
+WHERE (ro.cancellation NOT LIKE '%Cancellation%' OR cancellation IS NULL)
+GROUP BY co.customer_id
+ORDER BY co.customer_id;
+
 -- 8. 제외된 토핑과 추가 토핑이 모두 포함된 피자는 총 몇 판이었습니까?
--- 9. 하루 동안 시간대별로 주문된 피자의 총량은 얼마였습니까?
--- 10. 요일별 주문량은 얼마나 되었나요?
+-- 이번에는 배달된 이라는 키워드가 없기 때문에, 그냥 모든 order(모든 피자)에서의 경우를 확인해보도록 하겠습니다.
+SELECT count(*) AS `변경된 피자`
+FROM customer_orders
+WHERE (exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')) 
+	AND (extras IS NOT NULL AND extras NOT IN ('', 'null'));
+
+-- 9. 하루 동안 시간대별로 주문된 피자의 총량은 얼마였습니까? retry
+-- 시간대별로 라고 하여 0~23시 모두를 기준으로 각각의 주문 횟수를 세었습니다.
+-- RECURSIVE의 사용을 익히기
+WITH RECURSIVE hours AS(
+	SELECT 0 AS hours 
+	UNION ALL
+	SELECT hours+1
+	FROM hours 
+	WHERE hours<23
+)
+SELECT h.hours AS 시간, count(order_id) AS 주문횟수
+FROM hours h LEFT JOIN customer_orders co ON h.hours = hour(co.order_time)
+GROUP BY h.hours
+ORDER BY h.hours;
+
+-- 10. 요일별 주문량은 얼마나 되었나요? retry
+-- 모든 요일을 만들고, 각각의 요일별로 몇 건의 주문이 있는지 세어보았습니다.
+-- recursive를 이용해 요일을 만들고, ETL을 통해 각각의 요일을 표현해 주는 방식을 익혀야할 것 같습니다.
+WITH RECURSIVE days as(
+	SELECT 1 AS days
+	UNION ALL
+	SELECT days+1
+	FROM days
+	WHERE days<7
+)
+SELECT 
+	ELT(d.days, '일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일') AS 요일,
+	count(*) 주문량
+FROM days d LEFT JOIN customer_orders co ON d.days = dayofweek(co.order_time)
+GROUP BY d.days
+ORDER BY d.days;
 
 -- 러너와 고객 경험
 --
