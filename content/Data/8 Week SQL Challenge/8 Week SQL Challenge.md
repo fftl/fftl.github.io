@@ -7,5 +7,5 @@ https://8weeksqlchallenge.com/ - **챌린지**
 # 대시보드
 
 1. [[Case Study1 - 대니의 식당]]
-2. [[Case Study2 - Pizza Runner]]
+2. [[Case Study2 - Pizza Runner(진행중)]]
 

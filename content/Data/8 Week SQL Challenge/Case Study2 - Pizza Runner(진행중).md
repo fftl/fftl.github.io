@@ -223,13 +223,111 @@ ORDER BY d.days;
 
 -- 러너와 고객 경험
 --
--- 1. 매주(주 시작일 기준 `2021-01-01`) 몇 명의 참가자가 등록했나요?
--- 2. 피자 배달원이 주문을 픽업하기 위해 피자 배달원 본사에 도착하는 데 걸린 평균 시간은 몇 분이었습니까?
+-- 1. 매주(주 시작일 기준 `2021-01-01`) 몇 명의 참가자가 등록했나요? retry
+-- 주마다 데이터를 세는 방법, RECURSIVE와 날짜 더하기 DATE_ADD의 사용법에 대해 배웠습니다.
+WITH RECURSIVE weeks AS (
+  SELECT 
+    DATE('2021-01-01') AS week_start,
+    DATE('2021-01-07') AS week_end
+  UNION ALL
+  SELECT 
+    DATE_ADD(week_start, INTERVAL 7 DAY),
+    DATE_ADD(week_end, INTERVAL 7 DAY)
+  FROM weeks
+  WHERE week_start < (SELECT MAX(registration_date) FROM runners)
+)
+SELECT 
+  week_start AS 주차시작일,
+  COUNT(r.runner_id) AS 등록자수
+FROM weeks w
+LEFT JOIN runners r 
+  ON r.registration_date >= w.week_start 
+  AND r.registration_date < w.week_end
+GROUP BY w.week_start
+ORDER BY w.week_start;
+
+-- 2. 피자 배달원이 주문을 픽업하기 위해 피자 배달원 본사에 도착하는 데 걸린 평균 시간은 몇 분이었습니까? retry
+-- customer_order의 order_time과 runner_orders의 pickup_time의 차를 구하여 평균을 구해보았습니다.
+-- timestampdiff에 대해 배웠습니다!!
+SELECT avg(timestampdiff(MINUTE,order_time, pickup_time)) AS 평균소요시간
+FROM customer_orders co JOIN runner_orders ro ON co.order_id = ro.order_id
+WHERE pickup_time != 'null';
+
 -- 3. 피자 주문 개수와 주문 준비 시간 사이에 어떤 관계가 있나요?
--- 4. 고객 한 명당 평균 이동 거리는 얼마였습니까?
--- 5. 모든 주문에 대해 가장 긴 배송 시간과 가장 짧은 배송 시간의 차이는 얼마였습니까?
--- 6. 각 투수별 투구 속도의 평균값은 얼마였으며, 이러한 값들에서 어떤 경향성을 발견하셨나요?
--- 7. 각 배달원의 배송 성공률은 몇 퍼센트입니까?
+-- 피자 주문 개수와 pickup까지의 소요시간을 같이보여주어 상관관계를 보여주었습니다.
+-- 대체로 피자주문수가 높을수록 평균소요시간도 높다는 것을 볼 수 있습니다.
+SELECT co.order_id AS 주문번호, count(co.order_id) AS 피자주문수, avg(timestampdiff(MINUTE,order_time, pickup_time)) AS 평균소요시간
+FROM customer_orders co JOIN runner_orders ro ON co.order_id = ro.order_id
+WHERE pickup_time != 'null'
+GROUP BY co.order_id
+ORDER BY 피자주문수 DESC;
+
+-- 4. 고객 한 명당 평균 이동 거리는 얼마였습니까? retry
+-- runner가 아니라 고객이므로, runner_orders와 customer_orders를 join한 뒤 
+-- customer_id로 그룹을 짓고 distance를 합쳐 평균을 구해보았습니다.
+-- distance null은 제외(배달하지 않음) 제외하지 않으면 평균을 구하기 위해 나누는 횟수가 늘어남
+-- distinct를 통해 같은 주문의 경우 거리를 또 세지 않도록 만들어줌
+-- cast, replace, decimal의 사용법에 대해 익히자!!
+WITH uniq_orders AS (
+	SELECT DISTINCT order_id, customer_id
+	FROM customer_orders
+)
+SELECT uo.customer_id, avg(CAST(REPLACE(REPLACE(ro.distance, 'km', ''), ' ', '') AS decimal(5,2)))
+FROM uniq_orders uo JOIN runner_orders ro ON uo.order_id = ro.order_id
+WHERE ro.pickup_time != 'null'
+GROUP BY uo.customer_id;
+
+-- 5. 모든 주문에 대해 가장 긴 배송 시간과 가장 짧은 배송 시간의 차이는 얼마였습니까? retry
+-- 배송시간은 pickup 하는데 걸린 시간을 제외하고, duration 시간으로만 판단하도록 하겠습니다.
+-- 괄호를 잘 보자!, 정규표현식 사용법 알아두면 좋을지도, unsigned도 알아두자.
+SELECT max(CAST(REPLACE(REPLACE(REPLACE(REPLACE(duration, 'minutes', ''), 'minute', ''), 'mins', ''), ' ', '') AS UNSIGNED)) - min(CAST(REPLACE(REPLACE(REPLACE(REPLACE(duration, 'minutes', ''), 'minute', ''), 'mins', ''), ' ', '') AS unsigned))  AS 배송시간차이
+FROM runner_orders
+WHERE duration != 'null';
+
+-- 아래와 같이 정규표현식으로 깔끔하게 가능!!
+SELECT max(CAST(REGEXP_REPLACE(duration, '[^0-9]', '') AS UNSIGNED)) - min(CAST(REGEXP_REPLACE(duration, '[^0-9]', '') AS unsigned)) AS 배송시간차이
+FROM runner_orders
+WHERE duration != 'null';
+
+-- 6. 각 배달에 대한 각 주자의 평균 속도는 얼마였으며 이러한 값에 대한 추세를 발견했습니까? retry
+-- 그나마 발견할 수 있었던 추세는, 한번에 많은 피자를 실을수록 평균 속도가 낮아진다는 추세를 발견하였습니다.
+-- SELECT *
+-- FROM runner_orders;
+-- 
+-- SELECT *
+-- FROM customer_orders;
+
+WITH order_cnt AS(
+	SELECT order_id, count(order_id) AS order_cnt
+	FROM customer_orders
+	GROUP BY order_id
+)
+SELECT 
+  ro.runner_id, ro.order_id,
+  ROUND((CAST(REGEXP_REPLACE(ro.distance, '[^0-9.]', '') AS DECIMAL(6,2)) /  CAST(REGEXP_REPLACE(ro.duration, '[^0-9]', '') AS UNSIGNED) * 60), 2) AS 평균속도_kmph,
+  oc.order_cnt,
+  ro.distance,
+  ro.duration
+FROM order_cnt oc JOIN runner_orders ro ON oc.order_id = ro.order_id
+WHERE ro.distance IS NOT NULL 
+  AND ro.distance != 'null'
+  AND ro.duration IS NOT NULL
+  AND ro.duration != 'null'
+ORDER BY 평균속도_kmph desc;
+
+-- 7. 각 배달원의 배송 성공률은 몇 퍼센트입니까? 
+-- 배송 성공에 대한 기준을 정의하지 않으면 애매하긴 하지만, 캔슬되지 않고 배달이 완료되었다는 것이
+-- 배송 성공이라 가정하고 문제를 풀어보겠습니다.
+-- % 깔끔하게 만들기 
+WITH order_cnt AS (
+	SELECT runner_id, count(*) AS all_cnt
+	FROM runner_orders
+	GROUP BY runner_id
+)
+SELECT ro.runner_id, concat(round((count(order_id)*100/all_cnt), 2), '%') AS 배달성공률 
+FROM order_cnt AS oc JOIN runner_orders ro ON oc.runner_id = ro.runner_id
+WHERE cancellation IS NULL OR cancellation NOT LIKE '%Cancellation%'
+GROUP BY runner_id;
 
 -- 원료 최적화
 -- 
