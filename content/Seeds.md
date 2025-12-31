@@ -21,6 +21,11 @@
 - 옵션조건, 필수조건
 - Funnel, AARRR, Cohort
 - AARRR, CTR, CVR, PV, UV
+- DB 커넥션
+	- **Connection Leak**: 반환 안 하고 누수
+	- **Connection Timeout**: 대기 시간 초과
+	- **Idle Timeout**: 사용 안 하는 커넥션 정리
+	- **Pool Exhausted**: 모든 커넥션 사용 중
 ### Tools
 - portainer
 	- Portainer 데이터 저장용 볼륨 생성 `docker volume create portainer_data`
