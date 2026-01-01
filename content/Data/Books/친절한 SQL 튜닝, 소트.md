@@ -1,3 +1,7 @@
+---
+date: 2025-12-30
+---
+
 # 소트
 소트는 기본적으로 PGA에 할당한 Sort Area에서 이루어진다. 메모리 공간인 Sort Area가 다 차면, 디스크 Temp 테이블스페이스를 활용한다. Sort Area에서 작업을 완료할 수 있다면 메모리 소트(또는 Internal Sort) 디스크 공간까지 사용해야 하면 디스크 소트(또는 External Sort)라고 한다.
 

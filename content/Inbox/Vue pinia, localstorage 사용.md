@@ -1,3 +1,7 @@
+---
+date: 2025-11-28
+---
+
 ``` typescript
 import { defineStore } from 'pinia'
 

@@ -1,3 +1,7 @@
+---
+date: 2025-12-23
+---
+
 🥕 [당근과 함께 성장해온 데이터 가치화 팀의 여정 알아보기 (구글 데이터 웨비나)](https://docs.google.com/presentation/d/13GGQ8VekR17aQ7gyEuoq0xjLaYlEFOswlrBjtuXRi0w/edit)
 🥕 [당근 지표 플랫폼 KarrotMetrics 알아보기](https://medium.com/daangn/%EC%8B%A0%EB%A2%B0%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%A7%80%ED%91%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-bbf39dc4a6b3)
 🥕 [당근이 DBT와 Airflow를 도입하며 마주한 7가지 문제들](https://medium.com/daangn/dbt%EC%99%80-airflow-%EB%8F%84%EC%9E%85%ED%95%98%EB%A9%B0-%EB%A7%88%EC%A3%BC%ED%95%9C-7%EA%B0%80%EC%A7%80-%EB%AC%B8%EC%A0%9C%EB%93%A4-61250a9904ab)

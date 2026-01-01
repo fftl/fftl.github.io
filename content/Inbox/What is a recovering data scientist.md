@@ -1,3 +1,7 @@
+---
+date: 2025-12-30
+---
+
 “What is a recovering data scientist?” This question arrives in my LinkedIn messages at least once a week. It’s easy to see why, since my LinkedIn title says “recovering data scientist”. While “recovering data scientist” is admittedly a bit clickbaity, there’s also considerable truth to the moniker.
 
 The “recovering data scientist” schtick started several years ago as an inside joke with some data scientist friends. Working as data scientists, we’d grown tired of seeing data science projects (mostly machine learning related) fail over and over again. At the time, data science was touted as [“The Sexiest Job of the 21st Century”](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century). It seemed like every company wanted to “do data science”, and people were jumping head first into the field. Today, the field of data science has matured somewhat, but it’s much the same – lots of interest, and a white hot euphoria about how data’s going to change the world.

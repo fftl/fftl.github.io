@@ -1,3 +1,7 @@
+---
+date: 2025-12-23
+---
+
 머신러닝을 공부해볼겸 kaggle의 Playground Competitions에 있는 [Diabetes Prediction Challenge](https://www.kaggle.com/competitions/playground-series-s5e12)에 참여해보았다. 대회 썸네일이 귀여워서 맘에 들었다. 
 
 ![[Diabetes Prediction Challenge-1766469645163.png]]

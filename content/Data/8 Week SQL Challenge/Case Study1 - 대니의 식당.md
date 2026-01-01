@@ -1,3 +1,7 @@
+---
+date: 2025-12-24
+---
+
 ![[Case Study1 - 대니의 식당-1766537395680.png]]
 
 url - https://8weeksqlchallenge.com/case-study-1/

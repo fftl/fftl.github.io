@@ -1,3 +1,7 @@
+---
+date: 2025-12-30
+---
+
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 
 url - https://8weeksqlchallenge.com/case-study-2/
