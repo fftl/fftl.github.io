@@ -1,7 +1,7 @@
 ---
-date: 2025-12-30
+created: 2025-12-30T14:06:34
+modified: 2025-12-30T14:06:34
 ---
-
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 
 url - https://8weeksqlchallenge.com/case-study-2/

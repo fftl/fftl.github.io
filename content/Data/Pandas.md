@@ -1,7 +1,7 @@
 ---
-date: 2025-12-10
+created: 2025-12-10T19:44:59
+modified: 2025-12-10T19:44:59
 ---
-
 ## csv 데이터 추출
 
 ``` python
@@ -68,4 +68,3 @@ X_test = X_test.reindex(columns=X_train.columns, fill_value=0)
 머신러닝 모델은 **학습할 때 본 특징 개수와 순서**를 맞춰줘야 하기 때문에 train과 test 데이터를 맞춰주기 위해 알아두면 좋은 함수입니다.
 
 > X_train.columns이 X_test의 컬럼보다 적다면, 즉 **X_test에 만 존재하는 컬럼이 있다면** X_train.columns를 기준으로 맞추기 위해 **X_test의 컬럼을 제거**해버린다고합니다!
-

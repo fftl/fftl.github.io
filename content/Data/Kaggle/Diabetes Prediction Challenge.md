@@ -1,7 +1,7 @@
 ---
-date: 2025-12-23
+created: 2025-12-23T15:21:33
+modified: 2026-01-01T23:51:49+09:00
 ---
-
 머신러닝을 공부해볼겸 kaggle의 Playground Competitions에 있는 [Diabetes Prediction Challenge](https://www.kaggle.com/competitions/playground-series-s5e12)에 참여해보았다. 대회 썸네일이 귀여워서 맘에 들었다. 
 
 ![[Diabetes Prediction Challenge-1766469645163.png]]
@@ -128,4 +128,3 @@ ValueError: Length of values (700000) does not match length of index (300000)
 ![[Diabetes Prediction Challenge-1766470823726.png]]
 
 처음에 만든 test_X dataframe에 train의 데이터를 넣어 놓아서 생겼던 일이었다. 큰 오류는 아니어서 금방 고쳐내었지만, 조금 더 꼼꼼히 데이터를 확인하면서 진행해야 할 것 같다.
-

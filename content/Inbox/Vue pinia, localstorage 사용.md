@@ -1,6 +1,8 @@
 ---
-date: 2025-11-28
+created: 2025-11-28T02:28:46
+modified: 2025-11-28T02:28:46
 ---
+
 
 ``` typescript
 import { defineStore } from 'pinia'

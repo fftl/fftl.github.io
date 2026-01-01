@@ -1,8 +1,7 @@
 ---
-date: 2025-12-27
+created: 2025-12-27T11:45:26
+modified: 2025-12-27T11:45:26
 ---
-
-
 kaggle Intro to Machine Learning 진행 중
 - https://www.kaggle.com/code/dansbecker/your-first-machine-learning-model
 

@@ -1,7 +1,7 @@
 ---
-date: 2025-12-24
+created: 2025-12-24T13:40:57
+modified: 2026-01-01T23:51:39+09:00
 ---
-
 ![[Case Study1 - 대니의 식당-1766537395680.png]]
 
 url - https://8weeksqlchallenge.com/case-study-1/
@@ -240,5 +240,3 @@ ORDER BY s.customer_id;
 |C|2021-01-01|ramen|12|N|null|
 |C|2021-01-01|ramen|12|N|null|
 |C|2021-01-07|ramen|12|N|null|
-
-
