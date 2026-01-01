@@ -249,7 +249,7 @@ ORDER BY w.week_start;
 -- 2. 피자 배달원이 주문을 픽업하기 위해 피자 배달원 본사에 도착하는 데 걸린 평균 시간은 몇 분이었습니까? retry
 -- customer_order의 order_time과 runner_orders의 pickup_time의 차를 구하여 평균을 구해보았습니다.
 -- timestampdiff에 대해 배웠습니다!!
-SELECT avg(timestampdiff(MINUTE,order_time, pickup_time)) AS 평균소요시간
+SELECT avg(timestampdiff(MINUTE, order_time, pickup_time)) AS 평균소요시간
 FROM customer_orders co JOIN runner_orders ro ON co.order_id = ro.order_id
 WHERE pickup_time != 'null';
 
@@ -332,13 +332,180 @@ GROUP BY runner_id;
 -- 원료 최적화
 -- 
 -- 1. 각 피자에 기본적으로 들어가는 재료는 무엇인가요?
+-- 두 개의 피자에 공통적으로 들어가는 토핑을 찾았습니다.
+WITH RECURSIVE split_toppings AS (
+    SELECT 
+        pizza_id,
+        TRIM(SUBSTRING_INDEX(toppings, ',', 1)) AS topping_id,
+        toppings,
+        1 AS pos
+    FROM pizza_recipes
+    UNION ALL
+    SELECT 
+        pizza_id,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(toppings, ',', pos + 1), ',', -1)) AS topping_id,
+        toppings,
+        pos + 1
+    FROM split_toppings
+    WHERE pos < LENGTH(toppings) - LENGTH(REPLACE(toppings, ',', '')) + 1
+)
+SELECT st.topping_id, pt.topping_name, count(st.topping_id)
+FROM split_toppings st JOIN pizza_toppings pt ON st.topping_id = pt.topping_id 
+GROUP BY st.topping_id, pt.topping_name
+HAVING count(st.topping_id)>=2;
+
 -- 2. 가장 흔하게 추가되는 옵션은 무엇이었나요?
+-- 추가 옵션이므로 extras에 가장 자주 나온 옵션을 찾아냅니다.
+WITH RECURSIVE extra_toppings AS(
+	SELECT 
+		order_id,
+		TRIM(substring_Index(extras, ',', 1)) AS topping_id,
+		extras,
+		1 AS pos
+	FROM customer_orders
+	WHERE extras IS NOT NULL and extras NOT IN ('', 'null')
+	UNION ALL
+	SELECT 
+		order_id,
+		TRIM(substring_index(substring_Index(extras, ',', pos+1), ',', -1)) AS topping_id,
+		extras,
+		pos+1 AS pos
+	FROM extra_toppings
+	WHERE pos < length(extras) - length(REPLACE(extras, ',' , '')) + 1
+)
+SELECT et.topping_id, pt.topping_name, count(*) AS 추가횟수
+FROM extra_toppings et JOIN pizza_toppings pt ON et.topping_Id = pt.topping_id
+GROUP BY et.topping_id, pt.topping_name
+ORDER BY 추가횟수 DESC
+LIMIT 1;
+
 -- 3. 가장 흔한 제외 사항은 무엇이었습니까?
--- 4. `customers_orders`테이블의 각 레코드에 대해 다음 형식 중 하나로 주문 항목을 생성합니다 .
+-- 위와 마찬가지로 exclusions에서 가장 많이 등장한 토핑을 찾아보았습니다.
+-- 한 주문에 피자가 여러개 있는 경우에 같은 제거 요청이 있는 경우가 있엇습니다.
+-- 한 사람이 먹는 피자에서 제외한건, 흔하다기보다는 그 분의 취향일 수 있으니, 중복은 제외하도록 하겠습니다.
+WITH RECURSIVE exclusion_toppings AS(
+	SELECT 
+		order_id,
+		trim(substring_index(exclusions, ',', 1)) AS topping_id,
+		exclusions,
+		1 AS pos
+	FROM customer_orders
+	WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
+	UNION ALL
+	SELECT
+		order_id,
+		trim(substring_index(substring_index(exclusions, ',', 1+pos), ',', -1)) AS topping_id,
+		exclusions,
+		1+pos AS pos
+	FROM exclusion_toppings
+	WHERE pos < length(exclusions)-length(REPLACE(exclusions, ',', ''))+1
+),
+uniq_exclusions AS (
+	SELECT DISTINCT order_id, topping_id
+	FROM exclusion_toppings
+)
+SELECT ue.topping_id, pt.topping_name, count(*) AS 제외횟수
+FROM uniq_exclusions ue JOIN pizza_toppings pt ON ue.topping_id = pt.topping_id
+GROUP BY ue.topping_id, pt.topping_name
+ORDER BY 제외횟수 DESC
+LIMIT 1;
+
+-- 4. `customers_orders`테이블의 각 레코드에 대해 다음 형식 중 하나로 주문 항목을 생성합니다. retry
+-- 문제 이해부터 쉽지 않았고, 수 많은 with를 이용해 내가 원하는 방식대로 데이터를 정재해 나아가고, 이제 그 cte를 적절한 join으로 합쳐서
+-- 내가 원하는 결과물을 출력해내야 한다..
 --     - `Meat Lovers`
 --     - `Meat Lovers - Exclude Beef`
 --     - `Meat Lovers - Extra Bacon`
 --     - `Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers`
+WITH RECURSIVE exclude_topping AS
+(
+	SELECT 
+		order_id,
+		trim(substring_index(exclusions, ',', 1)) AS topping_id,
+		exclusions,
+		1 AS pos
+	FROM customer_orders
+	WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
+	UNION ALL
+	SELECT
+		order_id,
+		trim(substring_index(substring_index(exclusions, ',', pos+1), ',', -1)) AS topping_id,
+		exclusions,
+		1+pos AS pos
+	FROM exclude_topping
+	WHERE pos< LENGTH(exclusions) - LENGTH(REPLACE(exclusions, ',', ''))+1
+),
+extra_topping AS
+(
+	SELECT 
+		order_id,
+		trim(substring_index(extras, ',', 1)) AS topping_id,
+		extras,
+		1 AS pos
+	FROM customer_orders
+	WHERE extras IS NOT NULL AND extras NOT IN ('', 'null')
+	UNION ALL
+	SELECT
+		order_id,
+		trim(substring_index(substring_index(extras, ',', pos+1), ',', -1)) AS topping_id,
+		extras,
+		1+pos AS pos
+	FROM extra_topping
+	WHERE pos< LENGTH(extras) - LENGTH(REPLACE(extras, ',', ''))+1
+),
+uniq_exclude as(
+	SELECT DISTINCT order_id, topping_id
+	FROM exclude_topping
+	ORDER BY order_id
+),
+exclude_with_name AS(
+	SELECT ue.order_id, pt.topping_name
+	FROM uniq_exclude ue JOIN pizza_toppings pt ON ue.topping_id = pt.topping_id
+),
+uniq_extra as(
+	SELECT DISTINCT order_id, topping_id
+	FROM extra_topping g
+	ORDER BY order_id
+),
+extra_with_name AS(
+	SELECT ue.order_id, pt.topping_name
+	FROM uniq_extra ue JOIN pizza_toppings pt ON ue.topping_id = pt.topping_id
+),
+exclude_summary as(
+	SELECT order_id,
+		group_concat(topping_name ORDER BY topping_name SEPARATOR ', ') AS excluded_toppings
+	FROM exclude_with_name
+	group BY order_id
+),
+extra_summary as(
+	SELECT order_id,
+		group_concat(topping_name ORDER BY topping_name SEPARATOR ', ') AS extra_toppings
+	FROM extra_with_name
+	group BY order_id
+)
+SELECT 
+    co.order_id,
+    CASE 
+        WHEN es.excluded_toppings IS NULL AND exs.extra_toppings IS NULL 
+            THEN pn.pizza_name
+        WHEN es.excluded_toppings IS NOT NULL AND exs.extra_toppings IS NULL 
+            THEN CONCAT(pn.pizza_name, ' - Exclude ', es.excluded_toppings)
+        WHEN es.excluded_toppings IS NULL AND exs.extra_toppings IS NOT NULL 
+            THEN CONCAT(pn.pizza_name, ' - Extra ', exs.extra_toppings)
+        ELSE 
+            CONCAT(pn.pizza_name, ' - Exclude ', es.excluded_toppings, ' - Extra ', exs.extra_toppings)
+    END AS order_description
+FROM customer_orders co
+JOIN pizza_names pn ON co.pizza_id = pn.pizza_id
+LEFT JOIN exclude_summary es ON co.order_id = es.order_id
+LEFT JOIN extra_summary exs ON co.order_id = exs.order_id
+ORDER BY co.order_id;
+
+-- SELECT co.order_id, pn.pizza_name, ect.topping_id AS 제외토핑, ett.topping_id AS 추가토핑
+-- FROM customer_orders co JOIN pizza_names pn ON co.pizza_id = pn.pizza_id
+-- 	LEFT JOIN exclude_topping ect ON co.order_id = ect.order_id
+-- 	LEFT JOIN extra_topping ett ON co.order_id = ett.order_id
+-- WHERE ect.topping_id IS NOT NULL OR ett.topping_id IS NOT NULL;
 -- 5. 표 에 있는 각 피자 주문에 대해 알파벳순으로 정렬된 쉼표로 구분된 재료 목록을 생성하고 `customer_orders`, `2x`관련된 재료 앞에는 모두 'a'를 추가하세요.
 --     - 예를 들어:`"Meat Lovers: 2xBacon, Beef, ... , Salami"`
 -- 6. 배달된 모든 피자에 사용된 각 재료의 총량을 가장 많이 사용된 순서부터 정렬하면 얼마입니까?
