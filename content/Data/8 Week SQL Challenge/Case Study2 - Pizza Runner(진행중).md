@@ -505,15 +505,55 @@ LEFT JOIN exclude_summary es ON co.order_id = es.order_id
 LEFT JOIN extra_summary exs ON co.order_id = exs.order_id
 ORDER BY co.order_id;
 
--- SELECT co.order_id, pn.pizza_name, ect.topping_id AS 제외토핑, ett.topping_id AS 추가토핑
--- FROM customer_orders co JOIN pizza_names pn ON co.pizza_id = pn.pizza_id
--- 	LEFT JOIN exclude_topping ect ON co.order_id = ect.order_id
--- 	LEFT JOIN extra_topping ett ON co.order_id = ett.order_id
--- WHERE ect.topping_id IS NOT NULL OR ett.topping_id IS NOT NULL;
--- 5. 표 에 있는 각 피자 주문에 대해 알파벳순으로 정렬된 쉼표로 구분된 재료 목록을 생성하고 `customer_orders`, `2x`관련된 재료 앞에는 모두 'a'를 추가하세요.
+-- 5. 각 주문마다 "실제로 들어간 모든 재료"를 알파벳순으로 나열하되, 2개 이상 들어간 재료는 2x 표시를 붙여라
 --     - 예를 들어:`"Meat Lovers: 2xBacon, Beef, ... , Salami"`
--- 6. 배달된 모든 피자에 사용된 각 재료의 총량을 가장 많이 사용된 순서부터 정렬하면 얼마입니까?
+-- SELECT *
+-- FROM customer_orders;
 
+WITH RECURSIVE exclude_topping as(
+	SELECT 
+		order_id,
+		trim(substring_index(exclusions, ',', 1)) AS topping_id,
+		exclusions,
+		1 AS pos
+	FROM customer_orders
+	WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
+	UNION ALL
+	SELECT 
+		order_id,
+		trim(substring_index(substring_index(exclusions, ',', pos+1), ',', -1)) AS topping_id,
+		exclusions,
+		pos+1 AS pos
+	FROM exclude_topping
+	WHERE pos< length(exclusions) - length(REPLACE(exclusions, ',', ''))+1
+),
+extra_topping as(
+	SELECT 
+		order_id,
+		trim(substring_index(extras, ',', 1)) AS topping_id,
+		extras,
+		1 AS pos
+	FROM customer_orders
+	WHERE extras IS NOT NULL AND extras NOT IN ('', 'null')
+	UNION ALL
+	SELECT 
+		order_id,
+		trim(substring_index(substring_index(extras, ',', pos+1), ',', -1)) AS topping_id,
+		extras,
+		pos+1 AS pos
+	FROM extra_topping
+	WHERE pos< length(extras) - length(REPLACE(extras, ',', ''))+1
+),
+uniq_exclude AS(
+	SELECT DISTINCT ect.order_id, pt.topping_name
+	FROM exclude_topping ect JOIN pizza_toppings pt ON ect.topping_id = pt.topping_id
+)
+SELECT *
+FROM exclude_topping;
+
+-- 6. 배달된 모든 피자에 사용된 각 재료의 총량을 가장 많이 사용된 순서부터 정렬하면 얼마입니까?
+SELECT *
+FROM customer_orders;
 -- 가격 및 등급
 -- 
 -- 1. 만약 미트 러버스 피자가 12달러이고 베지테리언 피자가 10달러이며, 변경 수수료가 없다면 배달료가 없는 경우 피자 러너는 지금까지 총 얼마의 수익을 올렸을까요?
