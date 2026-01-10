@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     },
     locale: "ko-KR",
     baseUrl: "fftl.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
