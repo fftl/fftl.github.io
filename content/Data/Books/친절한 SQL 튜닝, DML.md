@@ -111,4 +111,49 @@ modified: 2026-01-11T16:14:17+09:00
 - 수정가능 조인 뷰
 	- PK 제약을 설정하면 키-보존 테이블(Key-Preserved Table) 하지 않는다면 비 키-보존 테이블(Non Key-Preserved Table)이 된다
 		- 키-보존 테이블이란 조인된 결과 집합을 통해서도 중복 값 없이 Unique하게 식별이 가능한 테이블을 말한다. Unique한 1쪽 집합과 조인되는 테이블이어야 조인된 결과집합을 통한 식별이 가능하다. 단적으로 말해 키 보존 테이블이란, 뷰에 rowid를 제공하는 테이블을 말한다.
-		- 
+	- ORA-01779 오류 회피
+		- 정리 필요.
+
+- MERGE문 활용
+	- DW(Data Warehouse)에서 가장 흔히 발생하는 오퍼레이션은 기간계 시스템에서 가져온 신규 트랜잭션 데이터를 반영함으로써 두 시스템 간 데이터를 동기화 하는 작업이다. 이 때 데이터 적재 작업을 효과적으로 지원하기 위해 오라클 9i에서 MERGE 문이 도입됐다.
+		1. 전일 발생한 변경 데이터를 시스템으로부터 추출
+			```sql
+			create table customer_delta
+			as
+			select * from customer
+			where mod_dt >= trunc(sysdate)-1
+			and mod_dt < trunc(sysdate);
+			```
+		2. CUSTOMER_DELTA 테이블을 DW 시스템으로 전송
+		3. DW 시스템으로 적재
+			```sql
+			merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
+			when matched then update
+				set t.cust_nm = s.cust_nm, t.email = s.email, ...
+			when not matched then insert
+				(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
+				(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt);
+			```
+		- MERGE문은 Customer_delta 테이블을 기준으로 Customer 테이블과 Left Outer 방식으로 조인해서 성공하면 UPDATE, 실패하면 UNSERT 한다. MERGE문을 UPSERT(UPDATE + INSERT)라고도 부르는 이유다.
+	- 여러 활용
+		- ON 절에 기술한 조인문 외에 아래와 같이 추가로 조건절을 기술할 수도 있다.
+			```sql
+				merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
+				when matched then update
+					set t.cust_nm = s.cust_nm, t.email = s.email, ...
+					where reg_dt >= to_date('20000101', 'yyyymmdd')
+				when not matched then insert
+					(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
+					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt)
+					where reg_dt < trunc(sysdate);
+				```
+		- 이미 저장된 데이터를 조건에 따라 지우는 기능도 제공한다.
+			```sql
+				merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
+				when matched then update
+					set t.cust_nm = s.cust_nm, t.email = s.email, ...
+					delete where t.withdraw_dt is not null -- 탈퇴일시가 null이 아닌 레코드 삭제
+				when not matched then insert
+					(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
+					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt);
+				```
