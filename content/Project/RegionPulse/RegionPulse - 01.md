@@ -36,7 +36,80 @@ modified: 2026-01-10T21:19:14+09:00
 
 데이터는 폐지되지 않은 현존 데이터만 수집할 예정이며, csv파일로 업데이트 되는 만큼 [코드변경안내](https://www.code.go.kr/bbsmng/dataBbsL.do)에 공지가 업데이트 될 경우, 새로운 csv파일을 받아 실행시키면 새로 업데이트되는 형식으로 구성해볼 예정입니다.
 
-- 공백을 이용해 글자들을 나누어, 나누어진 단어 갯수를 통해 level을 나누어 각각 시도, 시군구 읍면동을 나누어 볼 생각이었습니다. 하지만, 공백을 통해 분류를 진행할 경우 예외가 굉장히 많다는 것을 알게 되었습니다.
+### 법정동 데이터 입력
+- 처음에는 법정동코드의 개수를 기준으로 분류를 진행해보려 했습니다. 10자리를 기준으로 앞의 2개는 시도, 그 다음 2개는 시군구 ... 이런 방식을 생각했습니다. 하지만 테스트를 하는 과정에서 예외가 많다는 것을 발견하고 다른 방법을 찾아야 한다고 생각했습니다. 
+	-  처음 고려한 방식입니다. ![[RegionPulse - 01-1767944253541.png]] 
+	- 발견한 예외입니다.
 	- ![[RegionPulse - 01-1767943582099.png]] 세종특별자치시의 경우 level 2이지만 code의 유형이 달라져버립니다.
 	- ![[RegionPulse - 01-1767944091108.png]] 충청북도 증평군의 경우 level 2인데 혼자만 5번째 자리까지 코드를 사용하여 단위를 글자수로 나누는 방법도 사용하기 불안하게 만듭니다.
-	- ![[RegionPulse - 01-1767944253541.png]]                위와 같이 자리 수를 이용해 분류를 만드는 일은 쉽지 않을 것 같다고 생각했습니다.
+	- 위와 같이 자리 수를 이용해 분류를 만드는 일은 쉽지 않을 것 같다고 생각했습니다.
+
+
+- 다음으로는 공백의 개수를 기준으로 level을 나누고 dict에 현재 레벨의 법정동코드, 부모코드를 입력하며 받아내고, 해당 dict를 통해 다음 레벨별의 부모를 탐색하는 방식을 이용해 데이터를 만들어 입력하였습니다.
+	- ![[RegionPulse - 01-1768236201307.png]]
+
+### 가구평균 전력사용량 수집
+시도, 시군구까지의 데이터를 수집할 수 있는 **가구평균 전력사용량 API**를 통해 각 지역별, 기간별 전력 사용량을 수집해보겠습니다.
+
+api를 호출해보며 테스트를 해본 결과 가장 과거의 데이터는 2013년 5월부터 제공이 되는 것으로 확인했습니다. 
+![[RegionPulse - 01-1768289533696.png|300x300]]![[RegionPulse - 01-1768289714123.png|300x300]]![[RegionPulse - 01-1768289780112.png|300x300]]
+
+따라서 2013년 5월 이후의 지역별 전력 사용량 및 전기요금 데이터를 수집해보기로 했습니다. 해당 API에서 수집할 수 있는 정보는 다음과 같습니다.
+
+![[RegionPulse - 01-1768290323915.png]]
+
+얻을 수 있는 데이터를 확인해보니, **행정안전부_지역별(행정동) 성별 연령별 주민등록 인구수**를 통해 인구 데이터를 파악하지 않더라도, **가구수의 이동과 지역별 전력 사용량의 변화를 예측할 수 있다**는 사실을 알게 되었습니다. 그리고 파악해보니, **행정안전부_지역별(행정동) 성별 연령별 주민등록 인구수**의 경우 2022년 12월 부터 데이터를 제공해서 생각보다 많은 기간의 데이터를 파악하기에는 문제가 있었습니다.
+
+여러 데이터의 연관관계를 통해서 가치를 추출해내기 위해서는 시작단계에서 데이터의 정보를 확실히 확인해놓고 진행하는 것이 좋을 것 같다는 생각을 했습니다. 일단은 **가구평균 전력사용량 API**만을 이용해 **매 해 지역별 최고 전력 사용량의 지역을 찾아보는 작업**을 진행해보도록 하겠습니다.
+
+```python
+import time
+from requests.exceptions import Timeout, ConnectionError, RequestException
+
+all_data = []
+failed_requests = []
+success_count = 0
+
+for year in range(2013, 2026):
+    for month in range(1, 13):
+        if (year == 2013 and month < 5) or (year == 2025 and month > 10):
+            continue
+        
+        month_str = f'{month:02d}'
+        for r in region:
+            params = {
+                'year' : str(year),
+                'month' : str(month),
+                'metroCd' : r[:2],
+                'apiKey' : os.getenv('ELECTRIC_API_KEY')
+             }
+            
+            try:
+                response = requests.get(url, params=params, timeout=15)
+                print(f"{response.url}")
+                response.raise_for_status()
+                result = response.json()
+                if 'data' in result and result['data']:
+                    all_data.extend(result['data'])
+                    success_count += 1
+                    print(f"✓ {year}-{month_str} {r[:2]}: {len(result['data'])}건")
+                    
+            except (ConnectionError, Timeout):
+                # 연결 실패 - 조용히 기록만 하고 계속
+                failed_requests.append(f"{year}-{month_str}-{r[:2]}")
+                print(f"✗ {year}-{month_str} {r[:2]}: 연결 실패 (무시)")
+                
+            except Exception as e:
+                # 기타 예외
+                failed_requests.append(f"{year}-{month_str}-{r[:2]}")
+                print(f"✗ {year}-{month_str} {r[:2]}: {type(e).__name__}")
+            
+            time.sleep(5)  # 현재 설정 유지
+
+print(f"\n=== 수집 결과 ===")
+print(f"✓ 성공: {success_count}개 요청, {len(all_data)}건 데이터")
+print(f"✗ 실패: {len(failed_requests)}개 요청")
+print(f"성공률: {success_count/(success_count+len(failed_requests))*100:.1f}%")
+```
+
+- 현재 타임아웃 문제로 데이터 수집에 문제가 발생하고 있음. 일일 api 요청양의 문제일 수도 있기 때문에 조금 더 다듬어서 내일 이어서 시도 예정
