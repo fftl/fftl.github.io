@@ -79,7 +79,7 @@ for year in range(2013, 2026):
         for r in region:
             params = {
                 'year' : str(year),
-                'month' : str(month),
+                'month' : str(month_str),
                 'metroCd' : r[:2],
                 'apiKey' : os.getenv('ELECTRIC_API_KEY')
              }
@@ -112,4 +112,5 @@ print(f"✗ 실패: {len(failed_requests)}개 요청")
 print(f"성공률: {success_count/(success_count+len(failed_requests))*100:.1f}%")
 ```
 
-- 현재 타임아웃 문제로 데이터 수집에 문제가 발생하고 있음. 일일 api 요청양의 문제일 수도 있기 때문에 조금 더 다듬어서 내일 이어서 시도 예정
+시간을 들여 현재 제공되고 있는, 2013월 5월 ~ 2025년 10월 전국 데이터 수집 완료! 이제 해당 데이터를 DB에 넣고, 이것저것 해볼 수 있을 것 같다.
+![[RegionPulse - 01-1768322350660.png]]
