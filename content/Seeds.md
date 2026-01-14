@@ -1,6 +1,6 @@
 ---
 created: 2025-11-27T10:47:59
-modified: 2025-11-27T10:47:59
+modified: 2026-01-14T11:38:36+09:00
 ---
 
 
@@ -51,3 +51,7 @@ modified: 2025-11-27T10:47:59
 >Getting numbers is easy; 
 >getting numbers you can trust is hard.
 - ![[Seeds-1766413333715.png]]
+- AWS Athena, S3
+- MySQL
+- Airflow
+- Tableau, Redash

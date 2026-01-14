@@ -1,6 +1,6 @@
 ---
 created: 2026-01-08T16:43:14+09:00
-modified: 2026-01-11T16:14:17+09:00
+modified: 2026-01-14T23:26:18+09:00
 ---
 # DML 튜닝
 
@@ -146,7 +146,7 @@ modified: 2026-01-11T16:14:17+09:00
 					(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
 					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt)
 					where reg_dt < trunc(sysdate);
-				```
+			```
 		- 이미 저장된 데이터를 조건에 따라 지우는 기능도 제공한다.
 			```sql
 				merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
@@ -156,4 +156,49 @@ modified: 2026-01-11T16:14:17+09:00
 				when not matched then insert
 					(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
 					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt);
-				```
+			```
+
+- Direct Path I/O 활용
+	- 온라인 트랜잭션은 기준성 데이터, 특정 고객, 특정 상품 등을 반복적으로 읽기 때문에 버퍼캐시가 성능 향상에 도움을 준다. 반면 정보계 시스템이나 배치 프로그램에서 사용하는 SQL은 주로 대량 데이터를 처리하기 때문에 버퍼캐시를 경유하는 경우 I/O매커니즘이 오히려 성능을 떨어뜨릴 수 있다. 그래서 오라클은 버퍼캐시를 경유하지 않고 곧바로 데이터 블록을 읽고 쓸 수 있는 Direct Path I/O 기능을 제공한다.
+
+	- Direct Path I/O 기능이 작동하는 경우
+		- **병렬 쿼리로 Full Scan을 수행할 때**
+		- **병렬 DML을 수행할 때(Direct Path Read, Direct Path Insert)**
+		- **Direct Path Insert를 수행할 때**
+		- Temp 세그먼트 블록들을 읽고 쓸 때
+		- direct 옵션을 지정하고 export를 수행할 때
+		- nocache 옵션을 지정한 LOB 컬럼을 읽을 때
+	- 위 경우 중 1~3번이 가장 중요하고 활용도가 높다.
+
+	- 병렬 쿼리
+		- 쿼리문에 parallel 또는 parallel_index 힌트를 사용하면, 지정한 수치만큼 병렬 프로세스가 떠서 동시에 작업을 진행한다.
+		- ```sql
+			select /*+ full(t) parallel(t 4) */ * from big_table t;
+			  
+			select /*+ index_ffs(t big_table_x1)  parallel_index(t big_table_x1 4) */ count(*) from big_table t;
+		   ```
+		- 위처럼 병렬도를 4로 지정하면, 성능이 네 배 빨라지는 것이 아니라 수십 배 빨라진다. 바로 Direct Path I/O 때문인데, 버퍼캐시를 탐색하지 않고, 디스크로부터 버퍼캐시에 적재하는 부담도 없으니 빠른 것이다. 참고로 Order by, Group by, 해시 조인, 소트 머지 조인 등을 처리할 때는 힌트로 지정한 병렬도보다 두 배 많은 프로세스가 사용된다.
+	- Direct Path Insert
+		- 일반적인 INSERT가 느린 이유는 다음과 같이 많은 과정을 거쳐야 하기 때문이다.
+			1. 데이터를 입력할 수 있는 블록을 Freelist에서 찾는다. (테이블 [[HWM(High-Water-Mark)]] 아래쪽에 있는 블록 중 데이터 입력이 가능한(여유공간이 있는) 블록을 목록으로 관리하는데, 이를 'Freelist'라고 한다.)
+			2. Freelist에서 할당받은 블록을 버퍼캐시에서 찾는다.
+			3. 버퍼캐시에 없으면, 데이터파일에서 읽어 버퍼캐시에 적재한다.
+			4. INSERT 내용을 Undo 세그먼트에 기록한다.
+			5. INSERT 내용을 Redo 로그에 기록한다.
+		- Direct Path Insert 방식을 사용하면, 훨씬 더 빠르게 데이터를 입력할 수 있다. 그 방법은 다음과 같다.
+			- INSERT ... SELECT 문에 append 힌트 사용
+			- parallel 힌트를 이용해 병렬 모드로 INSERT
+			- direct 옵션을 지정하고 SQL*Loader(sqlldr)로 데이터 적재
+			- CTAS(create table ... as select)문 수행
+		- 위와 같은 방법들을 사용하면 Direct Path Insert 방식이 빠른 이유는 다음과 같습니다.
+			1. Freelist를 참조하지 않고 HWM 바깥 영역에 데이터를 순차적으로 입력한다.
+			2. 블록을 버퍼캐시에서 탐색하지 않는다.
+			3. 버퍼캐시에 적재하지 않고, 데이터파일에 직접 기록한다.
+			4. Undo 로깅을 안 한다.
+			5. Redo 로깅을 안 하게 할 수 있다. 테이블을 아래와 같이 nologging 모드로 전환한 상태에서 Direct Path Insert 하면 된다.
+				after table t NOLOGGING;
+		- 참고로 Direct Path Insert가 아닌 일반 INSERT 문을 로깅하지 않게 하는 방법은 없다.
+- Direct Path Insert 를 사용할 때 주의할 점
+	- 첫째, 이 방식을 사용하면 성능은 비교할 수 없이 빨라지지만, Exclusive 모드 TM Lock이 걸린다는 사실입니다. 따라서 커밋 하기 전까지 다른 트랜잭션은 해당 테이블에 DML을 수행하지 못합니다.
+	- 둘째, Freelist를 조회하지 않고 HWM 바깥 영역에 입력하므로 테이블에 여유 공간이 있어도 재활용하지 않는다는 사실입니다.
+
