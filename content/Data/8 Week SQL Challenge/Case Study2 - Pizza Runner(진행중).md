@@ -507,53 +507,151 @@ ORDER BY co.order_id;
 
 -- 5. 각 주문마다 "실제로 들어간 모든 재료"를 알파벳순으로 나열하되, 2개 이상 들어간 재료는 2x 표시를 붙여라
 --     - 예를 들어:`"Meat Lovers: 2xBacon, Beef, ... , Salami"`
--- SELECT *
--- FROM customer_orders;
+-- 각 주문마다 라는 키워드 때문에 한 주문에 여러개의 피자를 시켰어도, 각각의 피자를 판단하기로 했습니다.
+-- retry
 
-WITH RECURSIVE exclude_topping as(
-	SELECT 
-		order_id,
-		trim(substring_index(exclusions, ',', 1)) AS topping_id,
-		exclusions,
-		1 AS pos
-	FROM customer_orders
-	WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
-	UNION ALL
-	SELECT 
-		order_id,
-		trim(substring_index(substring_index(exclusions, ',', pos+1), ',', -1)) AS topping_id,
-		exclusions,
-		pos+1 AS pos
-	FROM exclude_topping
-	WHERE pos< length(exclusions) - length(REPLACE(exclusions, ',', ''))+1
+WITH RECURSIVE 
+numbered_orders AS (-- 1단계: 각 행에 고유 ID 부여 
+    SELECT 
+        ROW_NUMBER() OVER (ORDER BY order_id, pizza_id, order_time) AS row_num,
+        order_id,
+        customer_id,
+        pizza_id,
+        exclusions,
+        extras,
+        order_time
+    FROM customer_orders
 ),
-extra_topping as(
-	SELECT 
-		order_id,
-		trim(substring_index(extras, ',', 1)) AS topping_id,
-		extras,
-		1 AS pos
-	FROM customer_orders
-	WHERE extras IS NOT NULL AND extras NOT IN ('', 'null')
-	UNION ALL
-	SELECT 
-		order_id,
-		trim(substring_index(substring_index(extras, ',', pos+1), ',', -1)) AS topping_id,
-		extras,
-		pos+1 AS pos
-	FROM extra_topping
-	WHERE pos< length(extras) - length(REPLACE(extras, ',', ''))+1
+base_toppings_raw AS (-- 2단계: 기본 재료 분리 (pizza_recipes)
+    SELECT 
+        no.row_num,
+        no.pizza_id,
+        TRIM(SUBSTRING_INDEX(pr.toppings, ',', 1)) AS topping_id,
+        pr.toppings,
+        1 AS pos
+    FROM numbered_orders no
+    JOIN pizza_recipes pr ON no.pizza_id = pr.pizza_id
+    UNION ALL
+    SELECT 
+        row_num,
+        pizza_id,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(toppings, ',', pos + 1), ',', -1)),
+        toppings,
+        pos + 1
+    FROM base_toppings_raw
+    WHERE pos < LENGTH(toppings) - LENGTH(REPLACE(toppings, ',', '')) + 1
 ),
-uniq_exclude AS(
-	SELECT DISTINCT ect.order_id, pt.topping_name
-	FROM exclude_topping ect JOIN pizza_toppings pt ON ect.topping_id = pt.topping_id
+excluded_toppings_raw AS (-- 3단계: 제외 재료 분리 (exclusions)
+    SELECT 
+        row_num,
+        TRIM(SUBSTRING_INDEX(exclusions, ',', 1)) AS topping_id,
+        exclusions,
+        1 AS pos
+    FROM numbered_orders
+    WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
+    UNION ALL
+    SELECT 
+        row_num,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(exclusions, ',', pos + 1), ',', -1)),
+        exclusions,
+        pos + 1
+    FROM excluded_toppings_raw
+    WHERE pos < LENGTH(exclusions) - LENGTH(REPLACE(exclusions, ',', '')) + 1
+),
+extra_toppings_raw AS (-- 4단계: 추가 재료 분리 (extras)
+    SELECT 
+        row_num,
+        TRIM(SUBSTRING_INDEX(extras, ',', 1)) AS topping_id,
+        extras,
+        1 AS pos
+    FROM numbered_orders
+    WHERE extras IS NOT NULL AND extras NOT IN ('', 'null')
+    UNION ALL
+    SELECT 
+        row_num,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(extras, ',', pos + 1), ',', -1)),
+        extras,
+        pos + 1
+    FROM extra_toppings_raw
+    WHERE pos < LENGTH(extras) - LENGTH(REPLACE(extras, ',', '')) + 1
+),
+final_toppings AS (-- 5단계: 최종 재료 = (기본 - 제외) + 추가
+    SELECT  -- 기본 재료에서 제외 재료 빼기
+        bt.row_num,
+        bt.topping_id
+    FROM base_toppings_raw bt
+    LEFT JOIN excluded_toppings_raw et 
+        ON bt.row_num = et.row_num 
+        AND bt.topping_id = et.topping_id
+    WHERE et.topping_id IS NULL  -- 제외 목록에 없는 것만
+    UNION ALL
+    SELECT -- 추가 재료 더하기
+        row_num,
+        topping_id
+    FROM extra_toppings_raw
+),
+topping_counts AS (-- 6단계: 재료별 개수 세기
+    SELECT 
+        row_num,
+        topping_id,
+        COUNT(*) AS quantity
+    FROM final_toppings
+    GROUP BY row_num, topping_id
+),
+topping_with_names AS (-- 7단계: 재료 이름으로 변환 + 2x 표시
+    SELECT 
+        tc.row_num,
+        CASE 
+            WHEN tc.quantity > 1 
+            THEN CONCAT(tc.quantity, 'x', pt.topping_name)
+            ELSE pt.topping_name
+        END AS topping_display
+    FROM topping_counts tc
+    JOIN pizza_toppings pt ON tc.topping_id = pt.topping_id
+),
+ingredient_list AS (-- 8단계: 재료들을 문자열로 합치기
+    SELECT 
+        row_num,
+        GROUP_CONCAT(topping_display ORDER BY topping_display SEPARATOR ', ') AS ingredients
+    FROM topping_with_names
+    GROUP BY row_num
+)
+SELECT -- 9단계: 최종 결과 
+    no.order_id,
+    no.customer_id,
+    no.pizza_id,
+    CONCAT(pn.pizza_name, ': ', il.ingredients) AS order_description
+FROM numbered_orders no
+JOIN pizza_names pn ON no.pizza_id = pn.pizza_id
+JOIN ingredient_list il ON no.row_num = il.row_num
+ORDER BY no.order_id, no.row_num;
+-- 6. 배달 완료된 모든 피자에 사용된 각 재료의 총 개수를 구하고, 가장 많이 사용된 순서대로 정렬하라
+WITH RECURSIVE number_order as( -- 주문이 같은 피자를 구별하기 위해 row num 생성 목록
+	SELECT 
+		ROW_NUMBER() OVER (ORDER BY order_id, pizza_id, order_time) AS row_num,
+		order_id,
+		customer_id,
+		pizza_id,
+		exclusions,
+		extras,
+		order_time
+	FROM customer_orders
+),
+deliver_order AS( -- cancellation이 포함된 취소주문 제거한 목록 만들기
+	SELECT *
+	FROM runner_orders
+	WHERE cancellation NOT LIKE '%Cancellation%' or cancellation IS NULL
+),
+success_pizza AS( -- 배달에 성공한 피자만 가져오기
+	SELECT n.*
+	FROM number_order n JOIN deliver_order d ON n.order_id = d.order_id
 )
 SELECT *
-FROM exclude_topping;
+FROM success_pizza;
 
--- 6. 배달된 모든 피자에 사용된 각 재료의 총량을 가장 많이 사용된 순서부터 정렬하면 얼마입니까?
 SELECT *
-FROM customer_orders;
+FROM pizza_recipes;
+
 -- 가격 및 등급
 -- 
 -- 1. 만약 미트 러버스 피자가 12달러이고 베지테리언 피자가 10달러이며, 변경 수수료가 없다면 배달료가 없는 경우 피자 러너는 지금까지 총 얼마의 수익을 올렸을까요?
