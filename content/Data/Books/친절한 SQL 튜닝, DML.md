@@ -1,6 +1,6 @@
 ---
 created: 2026-01-08T16:43:14+09:00
-modified: 2026-01-14T23:26:18+09:00
+modified: 2026-01-15T16:52:08+09:00
 ---
 # DML 튜닝
 
@@ -117,16 +117,17 @@ modified: 2026-01-14T23:26:18+09:00
 - MERGE문 활용
 	- DW(Data Warehouse)에서 가장 흔히 발생하는 오퍼레이션은 기간계 시스템에서 가져온 신규 트랜잭션 데이터를 반영함으로써 두 시스템 간 데이터를 동기화 하는 작업이다. 이 때 데이터 적재 작업을 효과적으로 지원하기 위해 오라클 9i에서 MERGE 문이 도입됐다.
 		1. 전일 발생한 변경 데이터를 시스템으로부터 추출
-			```sql
+			1. ```sql
 			create table customer_delta
 			as
 			select * from customer
 			where mod_dt >= trunc(sysdate)-1
 			and mod_dt < trunc(sysdate);
 			```
+			
 		2. CUSTOMER_DELTA 테이블을 DW 시스템으로 전송
 		3. DW 시스템으로 적재
-			```sql
+			1. ```sql
 			merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
 			when matched then update
 				set t.cust_nm = s.cust_nm, t.email = s.email, ...
@@ -134,10 +135,11 @@ modified: 2026-01-14T23:26:18+09:00
 				(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
 				(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt);
 			```
+			
 		- MERGE문은 Customer_delta 테이블을 기준으로 Customer 테이블과 Left Outer 방식으로 조인해서 성공하면 UPDATE, 실패하면 UNSERT 한다. MERGE문을 UPSERT(UPDATE + INSERT)라고도 부르는 이유다.
 	- 여러 활용
 		- ON 절에 기술한 조인문 외에 아래와 같이 추가로 조건절을 기술할 수도 있다.
-			```sql
+			- ```sql
 				merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
 				when matched then update
 					set t.cust_nm = s.cust_nm, t.email = s.email, ...
@@ -147,8 +149,9 @@ modified: 2026-01-14T23:26:18+09:00
 					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt)
 					where reg_dt < trunc(sysdate);
 			```
+			
 		- 이미 저장된 데이터를 조건에 따라 지우는 기능도 제공한다.
-			```sql
+			- ```sql
 				merge into customer t using customer_delta s on(t.cust_id = s.cust_id)
 				when matched then update
 					set t.cust_nm = s.cust_nm, t.email = s.email, ...
@@ -157,48 +160,123 @@ modified: 2026-01-14T23:26:18+09:00
 					(cust_id, cust_nm, email, tel_no, region, addr, reg_dt) values
 					(s.cust_id, s.cust_nm, s.email, s.tel_no, s.region, s.addr, s.reg_dt);
 			```
+			
 
-- Direct Path I/O 활용
-	- 온라인 트랜잭션은 기준성 데이터, 특정 고객, 특정 상품 등을 반복적으로 읽기 때문에 버퍼캐시가 성능 향상에 도움을 준다. 반면 정보계 시스템이나 배치 프로그램에서 사용하는 SQL은 주로 대량 데이터를 처리하기 때문에 버퍼캐시를 경유하는 경우 I/O매커니즘이 오히려 성능을 떨어뜨릴 수 있다. 그래서 오라클은 버퍼캐시를 경유하지 않고 곧바로 데이터 블록을 읽고 쓸 수 있는 Direct Path I/O 기능을 제공한다.
+## Direct Path I/O 활용
+- 온라인 트랜잭션은 기준성 데이터, 특정 고객, 특정 상품 등을 반복적으로 읽기 때문에 버퍼캐시가 성능 향상에 도움을 준다. 반면 정보계 시스템이나 배치 프로그램에서 사용하는 SQL은 주로 대량 데이터를 처리하기 때문에 버퍼캐시를 경유하는 경우 I/O매커니즘이 오히려 성능을 떨어뜨릴 수 있다. 그래서 오라클은 버퍼캐시를 경유하지 않고 곧바로 데이터 블록을 읽고 쓸 수 있는 Direct Path I/O 기능을 제공한다.
 
-	- Direct Path I/O 기능이 작동하는 경우
-		- **병렬 쿼리로 Full Scan을 수행할 때**
-		- **병렬 DML을 수행할 때(Direct Path Read, Direct Path Insert)**
-		- **Direct Path Insert를 수행할 때**
-		- Temp 세그먼트 블록들을 읽고 쓸 때
-		- direct 옵션을 지정하고 export를 수행할 때
-		- nocache 옵션을 지정한 LOB 컬럼을 읽을 때
-	- 위 경우 중 1~3번이 가장 중요하고 활용도가 높다.
+- Direct Path I/O 기능이 작동하는 경우
+	- **병렬 쿼리로 Full Scan을 수행할 때**
+	- **병렬 DML을 수행할 때(Direct Path Read, Direct Path Insert)**
+	- **Direct Path Insert를 수행할 때**
+	- Temp 세그먼트 블록들을 읽고 쓸 때
+	- direct 옵션을 지정하고 export를 수행할 때
+	- nocache 옵션을 지정한 LOB 컬럼을 읽을 때
+- 위 경우 중 1~3번이 가장 중요하고 활용도가 높다.
 
-	- 병렬 쿼리
-		- 쿼리문에 parallel 또는 parallel_index 힌트를 사용하면, 지정한 수치만큼 병렬 프로세스가 떠서 동시에 작업을 진행한다.
+- 병렬 쿼리
+	- 쿼리문에 parallel 또는 parallel_index 힌트를 사용하면, 지정한 수치만큼 병렬 프로세스가 떠서 동시에 작업을 진행한다.
 		- ```sql
 			select /*+ full(t) parallel(t 4) */ * from big_table t;
 			  
 			select /*+ index_ffs(t big_table_x1)  parallel_index(t big_table_x1 4) */ count(*) from big_table t;
 		   ```
-		- 위처럼 병렬도를 4로 지정하면, 성능이 네 배 빨라지는 것이 아니라 수십 배 빨라진다. 바로 Direct Path I/O 때문인데, 버퍼캐시를 탐색하지 않고, 디스크로부터 버퍼캐시에 적재하는 부담도 없으니 빠른 것이다. 참고로 Order by, Group by, 해시 조인, 소트 머지 조인 등을 처리할 때는 힌트로 지정한 병렬도보다 두 배 많은 프로세스가 사용된다.
-	- Direct Path Insert
-		- 일반적인 INSERT가 느린 이유는 다음과 같이 많은 과정을 거쳐야 하기 때문이다.
-			1. 데이터를 입력할 수 있는 블록을 Freelist에서 찾는다. (테이블 [[HWM(High-Water-Mark)]] 아래쪽에 있는 블록 중 데이터 입력이 가능한(여유공간이 있는) 블록을 목록으로 관리하는데, 이를 'Freelist'라고 한다.)
-			2. Freelist에서 할당받은 블록을 버퍼캐시에서 찾는다.
-			3. 버퍼캐시에 없으면, 데이터파일에서 읽어 버퍼캐시에 적재한다.
-			4. INSERT 내용을 Undo 세그먼트에 기록한다.
-			5. INSERT 내용을 Redo 로그에 기록한다.
-		- Direct Path Insert 방식을 사용하면, 훨씬 더 빠르게 데이터를 입력할 수 있다. 그 방법은 다음과 같다.
-			- INSERT ... SELECT 문에 append 힌트 사용
-			- parallel 힌트를 이용해 병렬 모드로 INSERT
-			- direct 옵션을 지정하고 SQL*Loader(sqlldr)로 데이터 적재
-			- CTAS(create table ... as select)문 수행
-		- 위와 같은 방법들을 사용하면 Direct Path Insert 방식이 빠른 이유는 다음과 같습니다.
-			1. Freelist를 참조하지 않고 HWM 바깥 영역에 데이터를 순차적으로 입력한다.
-			2. 블록을 버퍼캐시에서 탐색하지 않는다.
-			3. 버퍼캐시에 적재하지 않고, 데이터파일에 직접 기록한다.
-			4. Undo 로깅을 안 한다.
-			5. Redo 로깅을 안 하게 할 수 있다. 테이블을 아래와 같이 nologging 모드로 전환한 상태에서 Direct Path Insert 하면 된다.
-				after table t NOLOGGING;
-		- 참고로 Direct Path Insert가 아닌 일반 INSERT 문을 로깅하지 않게 하는 방법은 없다.
+	- 위처럼 병렬도를 4로 지정하면, 성능이 네 배 빨라지는 것이 아니라 수십 배 빨라진다. 바로 Direct Path I/O 때문인데, 버퍼캐시를 탐색하지 않고, 디스크로부터 버퍼캐시에 적재하는 부담도 없으니 빠른 것이다. 참고로 Order by, Group by, 해시 조인, 소트 머지 조인 등을 처리할 때는 힌트로 지정한 병렬도보다 두 배 많은 프로세스가 사용된다.
+- Direct Path Insert
+	- 일반적인 INSERT가 느린 이유는 다음과 같이 많은 과정을 거쳐야 하기 때문이다.
+		1. 데이터를 입력할 수 있는 블록을 Freelist에서 찾는다. (테이블 [[HWM(High-Water-Mark)]] 아래쪽에 있는 블록 중 데이터 입력이 가능한(여유공간이 있는) 블록을 목록으로 관리하는데, 이를 'Freelist'라고 한다.)
+		2. Freelist에서 할당받은 블록을 버퍼캐시에서 찾는다.
+		3. 버퍼캐시에 없으면, 데이터파일에서 읽어 버퍼캐시에 적재한다.
+		4. INSERT 내용을 Undo 세그먼트에 기록한다.
+		5. INSERT 내용을 Redo 로그에 기록한다.
+	- Direct Path Insert 방식을 사용하면, 훨씬 더 빠르게 데이터를 입력할 수 있다. 그 방법은 다음과 같다.
+		- INSERT ... SELECT 문에 append 힌트 사용
+		- parallel 힌트를 이용해 병렬 모드로 INSERT
+		- direct 옵션을 지정하고 SQL*Loader(sqlldr)로 데이터 적재
+		- CTAS(create table ... as select)문 수행
+	- 위와 같은 방법들을 사용하면 Direct Path Insert 방식이 빠른 이유는 다음과 같습니다.
+		1. Freelist를 참조하지 않고 HWM 바깥 영역에 데이터를 순차적으로 입력한다.
+		2. 블록을 버퍼캐시에서 탐색하지 않는다.
+		3. 버퍼캐시에 적재하지 않고, 데이터파일에 직접 기록한다.
+		4. Undo 로깅을 안 한다.
+		5. Redo 로깅을 안 하게 할 수 있다. 테이블을 아래와 같이 nologging 모드로 전환한 상태에서 Direct Path Insert 하면 된다.
+			after table t NOLOGGING;
+	- 참고로 Direct Path Insert가 아닌 일반 INSERT 문을 로깅하지 않게 하는 방법은 없다.
 - Direct Path Insert 를 사용할 때 주의할 점
 	- 첫째, 이 방식을 사용하면 성능은 비교할 수 없이 빨라지지만, Exclusive 모드 TM Lock이 걸린다는 사실입니다. 따라서 커밋 하기 전까지 다른 트랜잭션은 해당 테이블에 DML을 수행하지 못합니다.
 	- 둘째, Freelist를 조회하지 않고 HWM 바깥 영역에 입력하므로 테이블에 여유 공간이 있어도 재활용하지 않는다는 사실입니다.
 
+- 병렬 DML
+	- 병렬 쿼리와 병렬 DDL은 기본적으로 활성화되어 있어 언제든 바로 병렬처리 가능하다. 반면 병렬 DML은 기본적으로 비활성화 되어있다. 따라서 DML을 병렬로 처리하려면 아래처럼 활성화해야 한다.
+		- ```sql
+			  alter session enable parallel dml;
+			```
+	- 그러고나서 아래와 같이 힌트를 사용하면 DML을 병렬로 사용이 가능하다.
+		- ```SQL
+			insert /*+ parallel(c 4) */ into 고객 c
+			select /*+ full(o) parallel(o 4) */ * from 외부가입 고객 o;
+			
+			update /*+ full(c) parallel(c 4) */ 고객 c set 고객상태코드 = 'WD'
+			where 최종거래일시 < '20100101';
+			
+			delete /*+ full(c) parallel(c 4) */ from 고객 c
+			where 탈퇴일시 < '20100101';
+			```
+	- 힌트를 제대로 기술했는데, 병렬 DML을 활성화 하지 않았으면, 대상 레코드를 찾는 작업 까지는 병렬로 진행하지만, 추가/변경/삭제는 QC가 혼자 담당하므로 병목이 생긴다.
+	- QC란 'Query Coordinator'의 줄임말이다. SQL을 병렬로 실행하면 병렬도로 지정한 만큼 또는 두 배로 병렬 프로세스를 띄워 동시에 작업을 진행하는데, 이때 최초 DB에 접속해서 SQL을 수행한 프로세스는 Query Coordinator 역할을 맡는다. 단 병렬로 처리할 수 없거나 병렬로 처리하도록 지정하지 않은 작업은 Query Coordinator가 직접 처리한다.
+	- 병렬 DML을 사용하면 테이블에 Exclusive 모드 TM Lock이 걸린다는 사실을 꼭 기억하자. 트랜잭션이 빈번한 주간에 이 옵션을 사용하는 것은 절대 금물이다.
+
+- 병렬 DML이 잘 동작하는지 확인하는 방법
+	- 다음과 같이 UPDATE가 PX COORDINATOR 아래쪽에 나타나기 시작하면 병렬 프로세스로 처리하고 있는 것이다. ![[친절한 SQL 튜닝, DML-1768514102819.jpg]]
+	- 반면 다음과 같이 UPDATE 아래 PX COORDINATOR가 나타나면 UPDATE를 QC가 처리한다고 파악할 수 있다. ![[친절한 SQL 튜닝, DML-1768514095353.jpg]]
+
+## 파티션을 활용한 DML 튜닝
+파티션을 이용하면 대량 추가/변경/삭제 작업을 빠르게 처리할 수 있다.
+
+### 테이블 파티션
+- 파티셔닝은 테이블 또는 인덱스 데이터를 특정 컬럼(파티션 키) 값에 따라 별도 세그먼트에 나눠서 저장하는 것을 말한다.
+- 파티션이 필요한 이유를 관리적 측면과 성능적 측면으로 나눠 짧게 요약하면 아래와 같다.
+	- 관리적 측면 : 파티션 단위 백업, 추가, 삭제, 변경 -> 가용성 향상
+	- 성능적 측면 : 파디션 단위 조회 및 DML, 경합 또는 부하 분산
+
+파티션에는 **Range, 해시, 리스트** 세 종류가 있다.
+
+
+- Range 파티션
+	- 오라클 8 버전부터 제공된 가장 기초적인 방식으로 주로 날짜 컬럼을 기준으로 파티셔닝한다. 아래는 주문 테이블을 주문 일자 기준으로 분기별 Range 파티셔닝 하는 방법을 예시하고 있다.
+		- ![[친절한 SQL 튜닝, DML-1768514556862.jpg]]
+	- 위와 같이 파티셔닝을 해놓으면, 저장할 때도, 파티션 키에 따른 분할 저장이 가능하고, 읽을 때도 검색 조건을 만족하는 파티션만 골라 읽을 수 있어. Full Scan 방식으로 조회할 때 성능이 크게 향상한다. 또한 보관 주기 정책이 있다면, 해당 정책에 따른 과거 데이터를 백업하게 삭제하는 등의 관리 작업도 효율적이고 빠르게 수행할 수 있다.
+	- 파티션 테이블에 대한 SQL 성능 향상 원리는 파티션 Pruning(=Elimination)에 있다. 파티션 Pruning은 SQL 하드 파싱이나 실행 시점에 조건절을 분석해서 읽지 않아도 되는 파티션 세그먼트를 액세스 대상에서 제외하는 기능이다.
+	- 파티션도 클러스터, IOT와 마찬가지로 관련 있는 데이터가 흩어지지 않고 물리적으로 인접하도록 저장하는 클러스터링 기술에 속한다. 클러스터와 다른 점은 세그먼트 단위로 모아서 저장한다는 것이다.
+
+> 클러스터는 데이터를 블록 단위로 모아 저장한다.
+> IOT는 데이터를 정렬된 순서로 저장하는 구조다.
+
+- 해시 파티션
+	- 해시 파티션은 Range 파티션에 이어 오라클 8i 버전부터 제공하기 시작했다. 파티션 키 값을 해시 함수에 입력해서 반환받은 값이 같은 데이터를 같은 세그먼트에 저장하는 방식이다. 파티션 개수만 사용자가 결정하고, 데이터를 분산하는 알고리즘은 오라클 내부 해시함수가 결정한다.
+	- 아래는 고객ID 기준으로 고객 테이블을 해시 파티셔닝 하는 방법을 예시한다.
+		- ```sql 
+			  create table 고객 (고객ID varchar2(5), 고객명 varchar2(10), ...)
+			  partition by hash(고객ID) partitions 4;
+		  ```
+	- 검색할 떄는 조건절 비교값에 똑같은 해시 함수를 적용함으로써 읽을 파티션을 결정한다.
+	- 해시 알고리즘 특성상 등치(=) 조건 또는 IN-List 조건으로 검색할 때만 파티션 Pruning이 작동한다.
+
+- 리스트 파티션
+	- 오라클 9i 버전부터 제공하기 시작한 리스트 파티션은, 사용자가 정의한 그루핑 기준에 따라 데이터를 분할하는 저장 방식이다. 아래는 지역 분류 기준으로 인터넷 매물 테이블을 리스트 파티셔닝 하는 방법을 예시한다.
+		- ![[친절한 SQL 튜닝, DML-1768515284654.jpg]]
+	- Range 파티션에선 값의 순서에 따라 저장할 파티션이 결정되지만, 리스트 파티션에서는 순서와 상관 없이 불연속적인 값의 목록에 의해 결정된다.
+
+### 인덱스 파티션
+테이블 파티션과 인덱스 파티션은 구분돼야 한다. 인덱스 파티션은 테이블 파티션과 맞물려 다양한 구성이 존재한다. 다양한 인덱스 파티션 구성을 이해하기 위해 우선 테이블 파티션을 다음과 같이 구분한다.
+
+- 비파티션 테이블(Non-Partitioned Table)
+- 파티션 테이블(Partitioned Table)
+
+인덱스도 테이블처럼 파티션 여부에 따라 파티션 인덱스와 비파티션 인덱스로 나뉘고, 파티션 인덱스는 각 파티션이 커버하는 테이블 파티션 범위에 따라 로컬과 글로벌로 나뉜다.
+
+- 로컬 파티션 인덱스(Local Partitioned Index)
+- 글로벌 파티션 인덱스(Global Partitioned Index)
+- 비파티션 인덱스(Non-Partitioned Index)
+
+로컬 파티션 인덱스는 각 테이블 파티션과 인덱스 파티션이 서로 1:1 대응 관계가 되도록 **오라클이 자동으로 관리하는 파티션 인덱스**를 말한다. 그 외의 파티션 인덱스는 '전부' 글로벌 파티션 인덱스이며, 테이블 파티션과 독립적인 구성(파티션 키, 파티션 기준값 정의)을 갖는다.
