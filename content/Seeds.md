@@ -1,6 +1,6 @@
 ---
 created: 2025-11-27T10:47:59
-modified: 2026-01-14T11:38:36+09:00
+modified: 2026-01-16T13:28:32+09:00
 ---
 
 
@@ -55,3 +55,4 @@ modified: 2026-01-14T11:38:36+09:00
 - MySQL
 - Airflow
 - Tableau, Redash
+- ![[Seeds-1768516222803.png]]

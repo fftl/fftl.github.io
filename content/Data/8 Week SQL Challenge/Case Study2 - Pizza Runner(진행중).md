@@ -1,6 +1,6 @@
 ---
 created: 2025-12-30T14:06:34
-modified: 2025-12-30T14:06:34
+modified: 2026-01-16T14:34:06+09:00
 ---
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 
@@ -509,7 +509,6 @@ ORDER BY co.order_id;
 --     - 예를 들어:`"Meat Lovers: 2xBacon, Beef, ... , Salami"`
 -- 각 주문마다 라는 키워드 때문에 한 주문에 여러개의 피자를 시켰어도, 각각의 피자를 판단하기로 했습니다.
 -- retry
-
 WITH RECURSIVE 
 numbered_orders AS (-- 1단계: 각 행에 고유 ID 부여 
     SELECT 
@@ -625,6 +624,7 @@ FROM numbered_orders no
 JOIN pizza_names pn ON no.pizza_id = pn.pizza_id
 JOIN ingredient_list il ON no.row_num = il.row_num
 ORDER BY no.order_id, no.row_num;
+
 -- 6. 배달 완료된 모든 피자에 사용된 각 재료의 총 개수를 구하고, 가장 많이 사용된 순서대로 정렬하라
 WITH RECURSIVE number_order as( -- 주문이 같은 피자를 구별하기 위해 row num 생성 목록
 	SELECT 
@@ -645,9 +645,39 @@ deliver_order AS( -- cancellation이 포함된 취소주문 제거한 목록 만
 success_pizza AS( -- 배달에 성공한 피자만 가져오기
 	SELECT n.*
 	FROM number_order n JOIN deliver_order d ON n.order_id = d.order_id
+),
+base_pizza_topping as( -- 각 피자마다 가지고 있는 기본 피자 토핑을 구해주었습니다.
+	SELECT 
+		sp.row_num, 
+		sp.pizza_id,
+		sp.order_id,
+		trim(substring_index(pr.toppings, ',', 1)) AS topping_id,
+		pr.toppings,
+		1 AS pos
+	FROM pizza_recipes pr JOIN success_pizza sp ON pr.pizza_id = sp.pizza_id
+	UNION ALL
+	SELECT
+		row_num,
+		pizza_id,
+		order_id,
+		trim(substring_index(substring_index(toppings, ',', pos+1), ',', -1)) AS topping_id,
+		toppings,
+		pos+1
+	FROM base_pizza_topping
+	WHERE pos < LENGTH(toppings) - LENGTH(REPLACE(toppings, ',', '')) + 1
+),
+extra_toppings AS(
+	SELECT 
+		
+	FROM success_pizza
 )
-SELECT *
+SELECT * 
 FROM success_pizza;
+
+
+SELECT *
+FROM base_pizza_topping
+ORDER BY row_num, topping_id;
 
 SELECT *
 FROM pizza_recipes;
