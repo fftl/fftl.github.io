@@ -24,11 +24,16 @@ export default (() => {
     const text = fileData.text
     
     if (text) {
+      // 디버깅용 콘솔 출력
+      console.log('File:', fileData.slug)
+      console.log('Created:', fileData.dates?.created)
+      console.log('Modified:', fileData.dates?.modified)
+      
       const segments: (string | JSX.Element)[] = []
       
       // 작성일 표시
       if (fileData.dates?.created) {
-        segments.push(`작성: ${formatDate(getDate(cfg, fileData)!, cfg.locale)}`)
+        segments.push(`작성: ${formatDate(fileData.dates.created, cfg.locale)}`)
       }
       
       // 수정일 표시
