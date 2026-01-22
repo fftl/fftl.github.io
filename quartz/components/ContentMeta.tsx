@@ -24,11 +24,6 @@ export default (() => {
     const text = fileData.text
     
     if (text) {
-      // 디버깅용 콘솔 출력
-      console.log('File:', fileData.slug)
-      console.log('Created:', fileData.dates?.created)
-      console.log('Modified:', fileData.dates?.modified)
-      
       const segments: (string | JSX.Element)[] = []
       
       // 작성일 표시
