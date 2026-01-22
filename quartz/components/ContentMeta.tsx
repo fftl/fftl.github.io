@@ -1,5 +1,5 @@
-import { Date, getDate } from "./Date"
-import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { formatDate, Date, getDate } from "./Date"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
@@ -19,32 +19,33 @@ const defaultOptions: ContentMetaOptions = {
   showComma: true,
 }
 
-export default ((opts?: Partial<ContentMetaOptions>) => {
-  // Merge options with defaults
-  const options: ContentMetaOptions = { ...defaultOptions, ...opts }
-
-  function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+export default (() => {
+  const ContentMetadata: QuartzComponent = ({ cfg, fileData, displayClass }: QuartzComponentProps) => {
     const text = fileData.text
-
+    
     if (text) {
       const segments: (string | JSX.Element)[] = []
-
-      if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+      
+      // 작성일 표시
+      if (fileData.dates?.created) {
+        segments.push(`작성: ${formatDate(getDate(cfg, fileData)!, cfg.locale)}`)
+      }
+      
+      // 수정일 표시
+      if (fileData.dates?.modified) {
+        segments.push(`수정: ${formatDate(fileData.dates.modified, cfg.locale)}`)
       }
 
-      // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
-        })
-        segments.push(<span>{displayedTime}</span>)
-      }
+      // 읽는 시간
+      const { minutes, words: _words } = readingTime(text)
+      const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
+        minutes: Math.ceil(minutes),
+      })
+      segments.push(displayedTime)
 
       return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segments}
+        <p class={classNames(displayClass, "content-meta")}>
+          {segments.join(" · ")}
         </p>
       )
     } else {
@@ -53,6 +54,5 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   }
 
   ContentMetadata.css = style
-
   return ContentMetadata
 }) satisfies QuartzComponentConstructor
