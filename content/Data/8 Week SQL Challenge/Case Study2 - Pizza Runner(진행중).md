@@ -647,40 +647,69 @@ success_pizza AS( -- 배달에 성공한 피자만 가져오기
 	FROM number_order n JOIN deliver_order d ON n.order_id = d.order_id
 ),
 base_pizza_topping as( -- 각 피자마다 가지고 있는 기본 피자 토핑을 구해주었습니다.
-	SELECT 
-		sp.row_num, 
-		sp.pizza_id,
-		sp.order_id,
-		trim(substring_index(pr.toppings, ',', 1)) AS topping_id,
-		pr.toppings,
+	SELECT  
+		pizza_id,
+		trim(substring_index(toppings, ',', 1)) AS topping_id,
+		toppings,
 		1 AS pos
-	FROM pizza_recipes pr JOIN success_pizza sp ON pr.pizza_id = sp.pizza_id
+	FROM pizza_recipes
 	UNION ALL
 	SELECT
-		row_num,
 		pizza_id,
-		order_id,
 		trim(substring_index(substring_index(toppings, ',', pos+1), ',', -1)) AS topping_id,
 		toppings,
 		pos+1
 	FROM base_pizza_topping
 	WHERE pos < LENGTH(toppings) - LENGTH(REPLACE(toppings, ',', '')) + 1
 ),
+exclusive_toppings AS(
+	SELECT 
+		row_num,
+		order_id,
+		customer_id,
+		pizza_id,
+		trim(substring_index(exclusions, ',', 1)) AS topping_id,
+		exclusions,
+		1 AS pos
+	FROM success_pizza
+	WHERE exclusions IS NOT NULL AND exclusions NOT IN ('', 'null')
+	UNION ALL
+	SELECT
+		row_num,
+		order_id,
+		customer_id,
+		pizza_id,
+		trim(substring_index(substring_index(exclusions, ',', pos+1), ',', -1)) AS topping_id,
+		exclusions,
+		pos+1 AS pos
+	FROM exclusive_toppings
+	WHERE pos < LENGTH(exclusions) - LENGTH(REPLACE(exclusions, ',', '')) + 1
+),
 extra_toppings AS(
 	SELECT 
-		
+		row_num,
+		order_id,
+		customer_id,
+		pizza_id,
+		trim(substring_index(extras, ',', 1)) AS topping_id,
+		extras,
+		1 AS pos
 	FROM success_pizza
+	WHERE extras IS NOT NULL AND extras NOT IN ('', 'null')
+	UNION ALL
+	SELECT 
+		row_num,
+		order_id,
+		customer_id,
+		pizza_id,
+		trim(substring_index(substring_index(extras, ',', pos+1), ',', -1)) AS topping_id,
+		extras,
+		pos+1 AS pos
+	FROM extra_toppings
+	WHERE pos < LENGTH(extras)-LENGTH(REPLACE(extras, ',', '')) +1	
 )
 SELECT * 
-FROM success_pizza;
-
-
-SELECT *
-FROM base_pizza_topping
-ORDER BY row_num, topping_id;
-
-SELECT *
-FROM pizza_recipes;
+FROM extra_toppings;
 
 -- 가격 및 등급
 -- 
