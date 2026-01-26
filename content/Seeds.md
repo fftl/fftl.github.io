@@ -43,7 +43,7 @@ modified: 2026-01-16T13:28:32+09:00
 	- Prana
 - 카산드라
 - Ollama
-- [[Airflow]]
+- [[Inbox/Airflow]]
 - DataHub
 - Google BigQuery
 - Dataplex
