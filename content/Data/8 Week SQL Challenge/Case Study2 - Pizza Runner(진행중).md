@@ -1,6 +1,6 @@
 ---
 created: 2025-12-30T14:06:34
-modified: 2026-01-16T14:34:06+09:00
+modified: 2026-01-26T00:42:02+09:00
 ---
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 
@@ -707,9 +707,44 @@ extra_toppings AS(
 		pos+1 AS pos
 	FROM extra_toppings
 	WHERE pos < LENGTH(extras)-LENGTH(REPLACE(extras, ',', '')) +1	
+),
+exclusive_cnt AS(
+	SELECT row_num, count(topping_id) AS exclusive_cnt
+	FROM exclusive_toppings
+	GROUP by row_num
+),
+extra_cnt AS(
+	SELECT row_num, count(topping_id) AS extra_cnt
+	FROM extra_toppings 
+	GROUP BY row_num
+),
+base_pizza_cnt AS(
+	SELECT pizza_id, count(*) AS base_cnt
+	FROM base_pizza_topping
+	GROUP BY pizza_id
 )
-SELECT * 
-FROM extra_toppings;
+SELECT
+    bpt.topping_id,
+    pn.topping_name,
+    COUNT(*) - COALESCE(SUM(CASE WHEN et.topping_id IS NOT NULL THEN 1 ELSE 0 END), 0) 
+            + COALESCE(SUM(CASE WHEN ext.topping_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS 총사용횟수
+FROM success_pizza sp
+    JOIN base_pizza_topping bpt ON sp.pizza_id = bpt.pizza_id
+    LEFT JOIN exclusive_toppings et ON sp.row_num = et.row_num AND bpt.topping_id = et.topping_id
+    LEFT JOIN extra_toppings ext ON sp.row_num = ext.row_num
+    LEFT JOIN pizza_toppings pn ON bpt.topping_id = pn.topping_id
+GROUP BY bpt.topping_id, pn.topping_name
+ORDER BY 총사용횟수 DESC
+
+-- SELECT 
+-- 	sp.order_id AS 주분번호,
+-- 	sp.row_num AS 피자번호,
+-- 	bc.base_cnt - coalesce(ecc.exclusive_cnt, 0) + coalesce(etc.extra_cnt, 0) AS 총재료개수
+-- FROM success_pizza sp
+-- 	LEFT JOIN base_pizza_cnt bc ON sp.pizza_id = bc.pizza_id
+-- 	LEFT JOIN exclusive_cnt ecc ON sp.row_num = ecc.row_num
+-- 	LEFT JOIN extra_cnt etc ON sp.row_num = etc.row_num
+-- ORDER BY 총재료개수 DESC;
 
 -- 가격 및 등급
 -- 
