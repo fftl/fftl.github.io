@@ -1,6 +1,6 @@
 ---
 created: 2025-12-23T23:58:52
-modified: 2026-01-26T15:35:15+09:00
+modified: 2026-01-27T22:22:09+09:00
 ---
 ## 시험 과목
 - 데이터 모델링의 이해
@@ -98,3 +98,4 @@ NO_PUSH_SUBQ - 서브쿼리를 가급적 늦게 필터링하도록 유도
 	- `"SELECT * FROM CUSTOMER WHERE LOGIN_ID = '" + login_id + "'";`
 	- `"SELECT * FROM CUSTOMER WHERE LOGIN_ID = ?";`
 	- 위 두 개의 쿼리는 전혀 다른 성능을 낼 수 있다. 쿼리 자체가 고유한 아이디를 가진다고 봐도 되는 오라클에서는, 첫번째의 경우 해당 쿼리문을 이용해 100명의 customer를 조회한다고 했을 때, 100개의 새로운 쿼리가 생성되어 라이브러리 캐시에 저장된다고 생각하면 된다. 하지만 하단의 바인드 변수를 사용할 경우 `SELECT * FROM CUSTOMER WHERE LOGIN_ID = :login_id` 와 같인 쿼리문 하나만이 있는 것을 알 수 있다.
+- 
