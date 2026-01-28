@@ -1,7 +1,10 @@
 ---
 created: 2026-01-28T15:45:21+09:00
-modified: 2026-01-28T16:50:53+09:00
+modified: 2026-01-28T23:15:45+09:00
 ---
+- 본 프로젝트는 개인 학습 및 구직 활동 목적입니다 
+- 데이터 재배포나 상업적 이용을 금지합니다 
+- robots.txt를 준수하며 과도한 요청을 자제합니다
 ---
 # 개요
 매번 잡코리아, 사람인 등 사이트에서 지원 공고를 탐색하는 작업이 번거로워 이를 자동화 하는 프로젝트를 해보는 것이 어떨까 하여 시작하게 되었습니다. 해당 사이트들은 조건에 대한 필터링이 무척 잘되어 있지만, 필터링을 통하더라도 실제 원하는 공고들이 아닌 공고도 굉장히 많이 나타나는 경우가 많습니다. 따라서 이를 최대한 더 필터링 해서 이 확인하는 시간을 줄여보자! 라는 취지의 프로젝트입니다.
@@ -36,16 +39,33 @@ modified: 2026-01-28T16:50:53+09:00
 - 시작일
 - 마감일
 - 근무지
-
-
-### todo
+### Todo
 - 데이터베이스, 테이블 생성
-- 사람인 api 정보 확인하기
+```sql
+CREATE DATABASE find_notice;
+
+USE find_notice;
+
+-- 테이블 생성
+CREATE TABLE notice (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    site VARCHAR(20) NOT NULL,
+    company_name VARCHAR(100) NOT NULL,
+    notice_title VARCHAR(200),
+    url VARCHAR(500) UNIQUE,
+    start_date DATE,
+    end_date DATE,
+    location VARCHAR(200),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    INDEX notice_x01 (company_name),
+    INDEX notice_x02 (start_date, end_date),
+    INDEX notice_x03 (location)
+);
+```
+- ~~사람인 api 정보 확인하기~~
+- 아직 사람인 api 인증이 나오지 않았으므로 잡코리아 크롤링부터 진행해보도록 하겠습니다.
+
+
 - selenium 사용법 되새기기
 
-
-
----
-- 본 프로젝트는 개인 학습 및 구직 활동 목적입니다 
-- 데이터 재배포나 상업적 이용을 금지합니다 
-- robots.txt를 준수하며 과도한 요청을 자제합니다
