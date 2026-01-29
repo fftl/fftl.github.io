@@ -1,6 +1,6 @@
 ---
 created: 2025-12-30T14:06:34
-modified: 2026-01-26T00:42:02+09:00
+modified: 2026-01-29T16:30:16+09:00
 ---
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 
@@ -626,6 +626,7 @@ JOIN ingredient_list il ON no.row_num = il.row_num
 ORDER BY no.order_id, no.row_num;
 
 -- 6. 배달 완료된 모든 피자에 사용된 각 재료의 총 개수를 구하고, 가장 많이 사용된 순서대로 정렬하라
+-- 문제에 대한 이해를 조금 더 잘해야할 것 같다.
 WITH RECURSIVE number_order as( -- 주문이 같은 피자를 구별하기 위해 row num 생성 목록
 	SELECT 
 		ROW_NUMBER() OVER (ORDER BY order_id, pizza_id, order_time) AS row_num,
@@ -748,11 +749,42 @@ ORDER BY 총사용횟수 DESC
 
 -- 가격 및 등급
 -- 
--- 1. 만약 미트 러버스 피자가 12달러이고 베지테리언 피자가 10달러이며, 변경 수수료가 없다면 배달료가 없는 경우 피자 러너는 지금까지 총 얼마의 수익을 올렸을까요?
--- 2. 피자에 추가 토핑을 넣을 때마다 1달러씩 추가 요금이 붙는다면 어떨까요?
---     - 치즈 추가 시 1달러 추가됩니다.
--- 3. 피자 배달팀은 이제 고객이 배달원을 평가할 수 있는 추가 평점 시스템을 도입하려고 합니다. 이 새로운 데이터 세트를 위한 추가 테이블을 어떻게 설계하시겠습니까? 새 테이블의 스키마를 생성하고, 각 고객 주문 건에 대한 1점에서 5점 사이의 평점 데이터를 삽입하세요.
--- 4. 새로 생성된 표를 사용하여 모든 정보를 결합하여 성공적인 배송에 대한 다음 정보를 포함하는 표를 만들 수 있습니까?
+-- 1. Meat Lovers 피자가 $12, Vegetarian 피자가 $10이고, 변경 사항(exclusions/extras)에 대한 추가 비용이 없다면, 현재까지 Pizza Runner가 벌어들인 총 금액은?
+-- 배달에 성공한 피자들을 구하고, 피자 개수 * 금액을 해주면 될 것 같다.
+
+-- 배달에 성공한 주문
+WITH success_deliver AS(
+	SELECT *
+	FROM runner_orders
+	WHERE cancellation IN ('', 'null') OR cancellation IS NULL
+),
+each_pizza_cost as(
+SELECT pizza_id,
+	CASE 
+		WHEN pizza_id = 1 THEN count(*)*12
+		ELSE count(*)*10
+	END  AS cost
+FROM customer_orders co JOIN success_deliver sd ON co.order_id = sd.order_id
+GROUP BY pizza_id
+)
+SELECT sum(cost) AS value
+FROM each_pizza_cost;
+
+-- 2. 피자에 추가되는 extras마다 $1씩 추가 비용이 발생한다면 총 매출은?
+--     - 특히 치즈 추가 또한 $1
+-- 배달 성공한 피자 리스트를 구하고, extras 가 존재하는 경우 각각 요소들을 나누어 줍니다.
+WITH success_deliver AS(
+	SELECT *
+	FROM runner_orders
+	WHERE cancellation IN ('', 'null') OR cancellation IS NULL
+)
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY co.order_id), co.order_id
+FROM customer_orders co JOIN success_deliver sd ON co.order_id = sd.order_id;
+
+-- extras의 count와 기존 피자 가격 
+-- 3. 고객이 배달 runner를 평가할 수 있는 ratings 시스템을 추가하려고 한다. 새로운 테이블의 스키마를 설계하고, 성공한 각 주문에 대해 1~5점 사이의 평점 데이터를 직접 생성해 삽입하라.
+-- 4. 3번에서 생성한 테이블을 활용해, 성공적인 배달에 대한 다음 정보를 모두 포함하는 결과 테이블을 만들어라:
 --     - `customer_id`
 --     - `order_id`
 --     - `runner_id`
@@ -763,5 +795,5 @@ ORDER BY 총사용횟수 DESC
 --     - 배송 기간
 --     - 평균 속도
 --     - 피자 총 개수
--- 5. 만약 미트 러버스 피자가 12달러, 베지테리언 피자가 10달러로 고정 가격이고 추가 요금은 없으며, 배달원 한 명당 이동 거리 1km당 0.30달러를 받는다면, 피자 배달원은 이 모든 배달을 마친 후 얼마의 돈이 남을까요?
+-- 5. Meat Lovers $12, Vegetarian $10 고정 가격(extras 비용 없음)이고, 각 runner에게 이동 거리 1km당 $0.30을 지급한다면, 배달 후 Pizza Runner에 남는 순이익은?
 ```
