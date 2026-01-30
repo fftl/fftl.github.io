@@ -1,6 +1,6 @@
 ---
 created: 2026-01-28T15:45:21+09:00
-modified: 2026-01-29T16:06:33+09:00
+modified: 2026-01-30T23:33:51+09:00
 ---
 - 본 프로젝트는 개인 학습 및 구직 활동 목적입니다 
 - 데이터 재배포나 상업적 이용을 금지합니다 
@@ -38,34 +38,17 @@ modified: 2026-01-29T16:06:33+09:00
 - 경력
 - 시작일
 - 마감일
-- 근무지
-### Todo
-- 데이터베이스, 테이블 생성
-```sql
-CREATE DATABASE find_notice;
 
-USE find_notice;
+---
 
--- 테이블 생성
-CREATE TABLE notice (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    site VARCHAR(20) NOT NULL,
-    company_name VARCHAR(100) NOT NULL,
-    notice_title VARCHAR(200),
-    url VARCHAR(500) UNIQUE,
-    start_date DATE,
-    end_date DATE,
-    location VARCHAR(200),
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    
-    INDEX notice_x01 (company_name),
-    INDEX notice_x02 (start_date, end_date),
-    INDEX notice_x03 (location)
-);
-```
-- ~~사람인 api 정보 확인하기~~
-- 아직 사람인 api 인증이 나오지 않았으므로 잡코리아 크롤링부터 진행해보도록 하겠습니다.
+먼저 잡코리아의 데이터를 beautifulsoup를 이용해 가져올 수 있는지 확인해봅니다.
+### 잡코리아 크롤링
 
+가장 주된 목표는 이 메인 리스트 안에 있는 데이터를 가져오는 것이 목표입니다.
+![[README-1769781598680.png]]
 
-- selenium 사용법 되새기기
+크롬의 개발자 도구를 이용해, 가져와야하는 div 블록을 찾아내었습니다.
+![[README-1769781575817.png]]
 
+공고의 데이터를 가져오는데 성공하였습니다.
+![[README-1769783614952.png]]
