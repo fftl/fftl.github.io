@@ -1,6 +1,6 @@
 ---
 created: 2025-12-30T14:06:34
-modified: 2026-01-30T22:08:39+09:00
+modified: 2026-01-31T14:55:10+09:00
 ---
 ![[Case Study2 - Pizza Runner-1766757924383.png]]
 

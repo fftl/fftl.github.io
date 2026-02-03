@@ -1,9 +1,11 @@
 ---
 created: 2025-11-27T10:47:59
-modified: 2026-01-16T13:28:32+09:00
+modified: 2026-01-31T16:05:32+09:00
 ---
 
-
+해볼 만한 일
+- 피파온라인 데이터 활용
+	- https://openapi.nexon.com/ko/game/fconline/?id=2
 
 ### keyword
 - 기호주의, 연결주의
