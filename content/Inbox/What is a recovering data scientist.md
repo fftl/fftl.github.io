@@ -1,8 +1,7 @@
 ---
 created: 2025-12-30T15:42:05
-modified: 2025-12-30T15:42:05
+modified: 2026-02-05T11:11:40+09:00
 ---
-
 
 “What is a recovering data scientist?” This question arrives in my LinkedIn messages at least once a week. It’s easy to see why, since my LinkedIn title says “recovering data scientist”. While “recovering data scientist” is admittedly a bit clickbaity, there’s also considerable truth to the moniker.
 
