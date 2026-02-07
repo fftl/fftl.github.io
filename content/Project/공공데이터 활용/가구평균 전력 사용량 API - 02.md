@@ -1,6 +1,6 @@
 ---
 created: 2026-02-04T10:54:04+09:00
-modified: 2026-02-05T10:18:00+09:00
+modified: 2026-02-06T14:46:51+09:00
 ---
 ## 이 글에서 다룰 것
 ---
@@ -54,3 +54,43 @@ CREATE TABLE household_power(
 
 ### 데이터 수집 코드 작성
 일회성 작업이기 때문에 Jupyter notebook을 통해 데이터 수집을 진행하였습니다.
+```python
+for r in region:
+	region_code = r[:2]
+
+	#이미 수집된 날짜, 지역의 경우 API 요청을 스킵합니다.
+	if is_already_collected(year, month, region_code):
+		# print(f"{year}-{month:02d} {region_code}: 이미 수집됨")
+		continue
+
+	#API의 요청 조건을 담는 params
+	params = {
+		'year' : year,
+		'month' : f'{month:02d}',
+		'metroCd' : region_code,
+		'apiKey' : os.getenv('ELECTRIC_API_KEY')
+	}
+	
+	try:
+		response = requests.get(url, params=params, timeout=5)
+		response.raise_for_status()
+		result = response.json()
+
+		#row_data에는 제외되어 있는 지역코드를 추가해줍니다.
+		if 'data' in result and result['data']:
+			for data in result['data'] :
+				data['sd_code'] = region_code
+
+			#convert_input함수를 통해 dict 리스트의 형태를 테이블과 맞도록 변형해주었습니다.
+			convert_data = [convert_input(d) for d in result['data']]
+			# print(f"{year}-{month:02d} {region_code}: {len(result['data'])}건 입력됨")
+			save_batch(convert_data)  # Raw SQL로 저장
+				
+	except Exception as e:
+		print(f"✗ {year}-{month:02d} {region_code}: {type(e).__name__}")
+		fail_list.append([year, f'{month:02d}', region_code])
+	
+	time.sleep(5)
+```
+
+- API요청 단위로 데이터를 DB에 저장하고, 이미 저장된 부분은 Skip 할 수 있도록 check과정을 넣어 중간에 문제가 발생하여 수집이 중단되더라도 이어서 수집할 수 있도록 만들었습니다.
