@@ -1,6 +1,6 @@
 ---
 created: 2025-12-24T13:40:57
-modified: 2026-01-01T23:51:37+09:00
+modified: 2026-02-15T23:36:06+09:00
 ---
 https://8weeksqlchallenge.com/ - **챌린지**
 
