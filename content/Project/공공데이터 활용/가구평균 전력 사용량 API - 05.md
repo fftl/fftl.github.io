@@ -1,0 +1,5 @@
+---
+created: 2026-02-24T15:55:07+09:00
+modified: 2026-02-24T15:55:42+09:00
+---
+구글 Looker studio를 통한 차트 생성 - https://lookerstudio.google.com/reporting/c2722fff-023f-4023-a24c-c67660254b12
